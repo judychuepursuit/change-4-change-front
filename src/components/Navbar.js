@@ -33,7 +33,7 @@ function Navbar() {
       <>
         <nav className='navbar'>
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            <h5>change 4 change <i class="fa-solid fa-coins"></i></h5>
+            <h5>change 4 change <i className="fa-solid fa-coins"></i></h5>
           </Link>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />

@@ -9,19 +9,23 @@ import ContactUs from './components/pages/ContactUs';
 import SignUp from './components/pages/Sign-Up';
 import HowItWorks from './components/pages/How-It-Works';
 import Charities from './components/pages/Charities';
+// import FourOFour from "./pages/FourOFour";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path='/' exact component={Home} />
-        <Route path='/about' component={About} />
-        <Route path='/rewards' component={Rewards} />
-        <Route path='/contact-us' component={ContactUs} />
-        <Route path='/sign-up' component={SignUp} />
-        <Route path='/how-it-works' component={HowItWorks} />
-        <Route path='/charities' component={Charities} />
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/rewards' element={<Rewards />} />
+        <Route path='/contact-us' element={<ContactUs />} />
+        <Route path='/sign-up' element={<SignUp />} />
+        <Route path='/how-it-works' element={<HowItWorks />} />
+        <Route path='/charities' element={<Charities />} />
+        {/* <Route path='*' element={<FourOFour />} />
+        <Route path='/pages/*' element={FourOFour}></Route> */}
+        {/* <Route path="/pages/*" element={<FourOFour />} /> */}
       </Routes>
     </Router>
   );
