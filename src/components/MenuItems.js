@@ -1,29 +1,26 @@
 
 export const MenuItems = [
-    {
-        title: 'Home',
-        url: '#',
-        cName: 'nav-links',
-    },
-    {
-        title: 'About',
-        url: '#',
-        cName: 'nav-links',
-    },
+    // {
+    //     title: 'Home',
+    //     url: '#',
+    //     cName: 'nav-links',
+    // },
+
     {
         title: 'How it works',
-        url: '#',
+        url: '/how-it-works',
         cName: 'nav-links',
     },
     {
         title: 'Charities',
-        url: '#',
+        url: '/charities',
+        // url: 'https://pursuit.org',
         cName: 'nav-links',
     },
-    {
-        title: 'Sign up',
-        url: '#',
-        cName: 'nav-links-mobile',
-    }
+    // {
+    //     title: 'Sign up',
+    //     url: '#',
+    //     cName: 'nav-links-mobile',
+    // }
        
 ]

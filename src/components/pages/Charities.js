@@ -1,9 +1,11 @@
 import React from 'react';
+import '../../App.css';
 
 export default function Charities() {
-  return (
-    <>
-      <h1 className='charities'>CHARITIES</h1>
-    </>
-  );
+  return (  
+  <div className="charities">
+  <h1>charities</h1>
+</div>
+);
+
 }

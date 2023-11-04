@@ -15,8 +15,9 @@
 
 .home,
 .about,
-.how-it-works,
-.charities
+.rewards,
+.contact-us
+.sign-up 
 /* .home,
 .about,
 .rewards,
@@ -36,53 +37,73 @@
   background-size: cover;
   background-repeat: no-repeat;
   color: #ffffff;
-  /* color: black; */
   /* color: #ff7300; */
-  /* color: #1888ff; */
-  font-size: 100px;
-  /* font-weight: lighter; */
-  /* line-height: 130%; */
+  font-size: 45px;
 }
 
 .about {
-  background-image: url('./images/img-2a.jpeg');
-  background-position: center;
+  /* background-image: url('./images/img-2a.jpeg'); */
+  /* background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  color: #ffffff;
-  font-size: 100px;
+  background-repeat: no-repeat; */
+  /* color: #ffffff; */
+  color: #ff7300;
+  font-size: 45px;
 }
 
 .rewards {
-  background-image: url('./images/img-3b.jpg');
+  /* background-image: url('./images/img-3a.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #ffffff;
-  font-size: 100px;
+  color: #ffffff; */
+  color: #ff7300;
+  font-size: 45px;
+}
+
+.how-it-works {
+  /* background-image: url('./images/img-3a.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  color: black;
+  /* color: #ff7300; */
+  font-size: 30px;
+}
+
+.charities {
+  /* background-image: url('./images/img-3a.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-position: center; */
+  color: black;
+  /* color: #ff7300; */
+  font-size: 30px;
 }
 
 .contact-us {
-  background-image: url('./images/img-4.jpg');
+  /* background-image: url('./images/img-4.jpg');
   background-position: center;
   background-size: cover;
-  background-repeat: no-repeat;
-  color: #ffffff;
-  font-size: 100px;
+  background-repeat: no-repeat; */
+  /* color: #ffffff; */
+  color: #ff7300;
+  font-size: 30px;
 }
 
 .sign-up {
-  background-image: url('./images/img-7.jpg');
+  /* background-image: url('./images/img-5.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  color: #ffffff;
-  font-size: 100px;
+  color: #ffffff; */
+  color: #ff7300;
+  font-size: 30px;
 }
 
-.sign-up:hover {
-  background-color: #ea2d95;
-}
+/* .sign-up:hover {
+  background-color: #551aeb;
+} */
 
   @media screen and (max-width: 960px) {
     .NavbarItems {
@@ -148,7 +169,7 @@
     display: block;
     text-align: center;
     padding: 1rem;
-    margin: 1.5rem auto;
+    margin: .25rem auto;
     border-radius: 8px;
     width: 80%;
     background: #551aeb;
@@ -159,8 +180,9 @@
 }
 
 .nav-links-mobile:hover {
+
     background-color: #2deae1;
-   /* opacity: 50%; */
+   /* opacity: 50%;*/
 }
 
 Button {

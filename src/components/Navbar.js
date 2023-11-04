@@ -1,5 +1,5 @@
-import React, { Component, useState } from 'react';
-import { MenuItems } from "./MenuItems"
+import React, { useState } from 'react';
+// import { MenuItems } from "./MenuItems"
 import { Link } from 'react-router-dom';
 import './Navbar.css'
 import { Button } from "./Button"
@@ -58,6 +58,7 @@ function Navbar() {
               </Link>
               {dropdown && <Dropdown />}
             </li>
+
             <li className='nav-item'>
               <Link
                 to='/rewards'
@@ -67,6 +68,7 @@ function Navbar() {
                 Rewards
               </Link>
             </li>
+            
             <li className='nav-item'>
               <Link
                 to='/contact-us'
