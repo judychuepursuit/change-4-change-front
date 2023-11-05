@@ -8,6 +8,8 @@ import HowItWorks from './components/pages/How-It-Works';
 import Rewards from './components/pages/Rewards';
 import Charities from './components/pages/Charities';
 import ContactUs from './components/pages/ContactUs';
+import LoginPage from "./components/LoginPage"
+import RegisterPage from "./components/RegisterPage";
 import SignUp from './components/pages/Sign-Up';
 // import FourOFour from "./pages/FourOFour";
 
@@ -23,6 +25,8 @@ function App() {
         <Route path='/sign-up' element={<SignUp />} />
         <Route path='/how-it-works' element={<HowItWorks />} />
         <Route path='/charities' element={<Charities />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
         {/* <Route path='*' element={<FourOFour />} />
         <Route path='/pages/*' element={FourOFour}></Route> */}
         {/* <Route path="/pages/*" element={<FourOFour />} /> */}
