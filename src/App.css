@@ -31,7 +31,7 @@
 }
 
 .home {
-  background-image: url(images/img-1a.jpeg);
+  /* background-image: url(images/img-1a.jpeg); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -45,25 +45,41 @@
 }
 
 .about {
-  background-image: url('./images/img-2a.jpeg');
+  /* background-image: url('./images/img-2a.jpeg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #ffffff;
   font-size: 100px;
+}
+
+.badges {
+  border: 2px solid rgb(255, 115, 0) ;
+  padding: 80px;
+}
+
+.points {
+  border: 2px solid rgb(255, 115, 0);
+  padding: 80px;
 }
 
 .rewards {
-  background-image: url('./images/img-3b.jpg');
+  /* background-image: url('./images/img-3b.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #ffffff;
   font-size: 100px;
+  padding: 20px;
+}
+
+.reward-intro {
+  padding: 40px;
+  text-align: center;
 }
 
 .contact-us {
-  background-image: url('./images/img-4.jpg');
+  /* background-image: url('./images/img-4.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -72,7 +88,7 @@
 }
 
 .sign-up {
-  background-image: url('./images/img-7.jpg');
+  /* background-image: url('./images/img-7.jpg'); */
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -166,5 +182,6 @@
 Button {
     display: none;
 }
+
 
 }
