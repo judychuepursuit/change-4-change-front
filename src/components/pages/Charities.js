@@ -17,7 +17,7 @@ export default function Charities() {
     </div>
     <div>
       <a href='https://www.redcross.org/donate/donation.html/'>
-        <img src='https://www.redcross.org/content/dam/redcross/local/news-articles/greater-new-york/RedCrossNY_Podcast_960x540.jpg.transform/1288/q82/feature/image.jpeg'></img>
+        <img src=''></img>
       </a>
     </div>
     <div>
