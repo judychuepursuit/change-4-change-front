@@ -78,6 +78,17 @@ function Navbar() {
                 Contact Us
               </Link>
             </li>
+
+            <li className='nav-item'>
+              <Link
+                to='/payment'
+                className='nav-links'
+                onClick={closeMobileMenu}
+              >
+                Payment Form
+              </Link>
+            </li>
+
             <li>
               <Link
                 to='/sign-up'
