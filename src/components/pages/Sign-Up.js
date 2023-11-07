@@ -7,11 +7,12 @@
 
 import React from 'react';
 import '../../App.css';
+import { Link } from 'react-router-dom';
 
 export default function SignUp() {
   return (  
   <div className="signup">
-  <h1>sign up</h1>
+  <Link to="/register"><h1>sign up</h1></Link>
 </div>
 );
 
