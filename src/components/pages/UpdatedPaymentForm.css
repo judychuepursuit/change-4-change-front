@@ -1,0 +1,78 @@
+/* UpdatedPaymentForm.css */
+
+.content {
+    font-family: Arial, sans-serif;
+    max-width: 400px; /* Further reduced width for smaller form */
+    margin: 20px auto;
+    padding: 10px; /* Further reduced padding for smaller form */
+    background-color: #f4f4f4;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+label, input, .StripeElement, button {
+    width: 100%;
+    margin-bottom: 8px; /* Further reduced margin for smaller spacing */
+}
+
+label {
+    display: block;
+    margin-bottom: 3px; /* Further reduced margin for tighter label spacing */
+    font-size: 12px; /* Smaller font size for labels */
+}
+
+input, .StripeElement {
+    padding: 6px; /* Further reduced padding for smaller input height */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px; /* Smaller font size for inputs */
+}
+
+button {
+    background-color: #551aeb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px; /* Adjusted padding for smaller button */
+    border-radius: 20px;
+    font-size: 14px; /* Kept readable font size for button text */
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #7a3feb;
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 8px; /* Further reduced margin for error messages */
+}
+
+/* UpdatedPaymentForm.css additions */
+
+.radio-group {
+    display: flex;
+    gap: 5px; /* Further reduced gap for smaller form */
+    margin-bottom: 8px; /* Further reduced margin for tighter grouping */
+}
+
+/* Media query for responsiveness */
+@media (max-width: 768px) {
+    .content {
+        margin: 10px;
+        padding: 10px;
+    }
+
+    label, input, .StripeElement, button {
+        font-size: 11px; /* Further reduced font size for smaller screens */
+    }
+
+    /* Additional responsive adjustments as needed */
+}
+
+/* Rest of your CSS */
