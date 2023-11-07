@@ -79,7 +79,7 @@ function Navbar() {
               </Link>
             </li>
 
-            <li className='nav-item'>
+            {/* <li className='nav-item'>
               <Link
                 to='/payment'
                 className='nav-links'
@@ -87,7 +87,7 @@ function Navbar() {
               >
                 Payment Form
               </Link>
-            </li>
+            </li> */}
 
             <li>
               <Link

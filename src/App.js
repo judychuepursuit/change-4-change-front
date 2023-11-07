@@ -51,6 +51,8 @@ import Rewards from './components/pages/Rewards';
 import HowItWorks from './components/pages/How-It-Works';
 import Charities from './components/pages/Charities';
 import ContactUs from './components/pages/ContactUs';
+import LoginPage from "./components/LoginPage"
+import RegisterPage from "./components/RegisterPage";
 import Signup from './components/pages/Sign-Up';
 // Added PaymentForm and PaymentSuccess imports
 import PaymentForm from './components/pages/PaymentForm';
@@ -72,6 +74,8 @@ function App() {
           <Route path='/rewards' element={<Rewards />} />
           <Route path='/how-it-works' element={<HowItWorks />} />
           <Route path='/charities' element={<Charities />} />
+          <Route path="/login" element={<LoginPage />} />
+          <Route path="/register" element={<RegisterPage />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/sign-up' element={<Signup />} />
           {/* Added payment routes */}

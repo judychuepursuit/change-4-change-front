@@ -13,6 +13,7 @@ export default function SignUp() {
   return (  
   <div className="signup">
   <Link to="/register"><h1>sign up</h1></Link>
+  <Link to="/payment"><h1>payment</h1></Link>
 </div>
 );
 
