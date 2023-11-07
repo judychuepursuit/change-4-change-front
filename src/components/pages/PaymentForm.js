@@ -9,7 +9,6 @@ import './UpdatedPaymentForm.css'; // Make sure to rename your CSS file accordin
 import { CardNumberElement, CardExpiryElement, CardCvcElement } from "@stripe/react-stripe-js";
 
 
-
 const CARD_ELEMENT_OPTIONS = {
     style: {
       base: {
@@ -71,6 +70,28 @@ const PaymentForm = () => {
             setCardBrand(brand);
         }
     };
+
+
+      // Function to handle the creation of the Stripe Payment Link
+    const handleCreatePaymentLink = async () => {
+    try {
+      // This would be your input values for product name and amount
+      const productName = 'Donation'; // Example product name
+      const amount = 1099; // Example amount in cents
+
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/create-payment-link`, {
+        productName,
+        amount,
+      });
+
+      const paymentLinkUrl = response.data.url;
+      window.open(paymentLinkUrl, '_blank'); // Open the Stripe Payment Link in a new tab
+        } catch (err) {
+      console.error('Error creating payment link:', err);
+      // Handle error, e.g., show an error message to the user
+        }
+    };
+
 
     const validateForm = () => {
         let errors = {};
@@ -239,7 +260,6 @@ const PaymentForm = () => {
                     />
                     {cardError && <div className="error-message">{cardError}</div>}
 
-                    
                 </div>
 
                 {/* <div className="form-group">
@@ -290,6 +310,9 @@ const PaymentForm = () => {
                 {/* <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Submit Payment'}</button> */}
 
                 <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button>
+                <button onClick={handleCreatePaymentLink} disabled={loading}>
+                    {loading ? 'Loading...' : 'Donate with Stripe'}
+                </button>
 
             </form>
 
