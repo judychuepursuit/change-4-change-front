@@ -22,9 +22,11 @@ const CARD_ELEMENT_OPTIONS = {
         color: '#9e2146',
       },
     },
-  };
+};
 
 function getCardType(cardNumber) {
+    if (typeof cardNumber !== 'string') return null; // or 'unknown'
+
     const cardTypes = {
         visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
         mastercard: /^5[1-5][0-9]{14}$/,
@@ -36,9 +38,7 @@ function getCardType(cardNumber) {
     }
 
     return null; // or 'unknown' if you prefer
-}  
-
-
+}
 
 
 const PaymentForm = () => {
@@ -59,6 +59,8 @@ const PaymentForm = () => {
 
 
     const handleCardNumberChange = async (event) => {
+        console.log(event); // This will show you the structure of the event object
+
         if (event.error) {
             setCardError(event.error.message);
         } else {
@@ -113,8 +115,6 @@ const PaymentForm = () => {
         return formIsValid;
     };
     
-
-
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -242,13 +242,11 @@ const PaymentForm = () => {
                     {formErrors["amount"] && <div className="error-message">{formErrors["amount"]}</div>}
                 </div>
 
-
-
-
-
                 <div className="form-group">
                     <label>Card Number</label>
-                    <CardNumberElement 
+                    <CardNumberElement options={CARD_ELEMENT_OPTIONS} onChange={handleCardNumberChange} />
+
+                    {/* <CardNumberElement 
                         options={CARD_ELEMENT_OPTIONS}
                         onChange={(event) => {
                             if (event.error) {
@@ -257,7 +255,7 @@ const PaymentForm = () => {
                             setCardError(null);
                             }
                         }}
-                    />
+                    /> */}
                     {cardError && <div className="error-message">{cardError}</div>}
 
                 </div>
@@ -274,14 +272,11 @@ const PaymentForm = () => {
                 </div> */}
 
 
-
-
-
                 <div className="form-group">
                     <label>Expiration Date</label>
                     <CardExpiryElement options={CARD_ELEMENT_OPTIONS} />
                 </div>
-                    <div className="form-group">
+                <div className="form-group">
                     <label>CVC</label>
                     <CardCvcElement options={CARD_ELEMENT_OPTIONS} />
                 </div>
@@ -292,10 +287,6 @@ const PaymentForm = () => {
                     <label>Card Details</label>
                     <CardElement />
                 </div> */}
-
-                
-
-
 
 
                 {/* <div className="form-group">
@@ -310,8 +301,9 @@ const PaymentForm = () => {
                 {/* <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Submit Payment'}</button> */}
 
                 <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button>
+
                 <button onClick={handleCreatePaymentLink} disabled={loading}>
-                    {loading ? 'Loading...' : 'Donate with Stripe'}
+                    {loading ? 'redirecting...' : 'Or Donate with Stripe'}
                 </button>
 
             </form>
