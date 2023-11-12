@@ -371,9 +371,9 @@ const PaymentForm = () => {
 
                 <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button>
 
-                <button onClick={handleCreatePaymentLink} disabled={loading}>
+                {/* <button onClick={handleCreatePaymentLink} disabled={loading}>
                     {loading ? 'redirecting...' : 'Or Donate with Stripe'}
-                </button>
+                </button> */}
 
             </form>
 
