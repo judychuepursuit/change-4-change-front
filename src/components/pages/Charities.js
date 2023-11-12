@@ -1,6 +1,8 @@
 import React from 'react';
 import '../../App.css';
 
+//test
+
 export default function Charities() {
   return (  
   <div className="charities">
