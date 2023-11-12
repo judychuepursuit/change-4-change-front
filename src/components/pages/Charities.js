@@ -2,6 +2,7 @@ import React from 'react';
 import '../../App.css';
 import './Charities.css'
 
+
 export default function Charities() {
   return (  
   <div className="charities">
@@ -10,6 +11,8 @@ export default function Charities() {
     <div className='charity-box'>
       <a href='https://secure.aspca.org/donate/ps-gn-p2?ms=MP_PMK_Googlebrand&initialms=MP_PMK_Googlebrand&pcode=WPSN7GO2PK01&lpcode=WPSN7GO1PK01&test&ds_rl=1066461&gad=1&gclid=CjwKCAjw1t2pBhAFEiwA_-A-NOKUGazmuhnQ5UAlcLa5Bq_wZxto2hCL8XhpOu_w3hGw5sBs8y1vYhoCH4cQAvD_BwE&gclsrc=aw.ds'>
         <img src='https://www.animalprotective.org/dev/wp-content/uploads/2016/08/aspca_logo-768x294.jpg' alt='aspca'></img>
+        <button className='donation'>
+        </button>
       </a>
           <p className='mission-statement'>The ASPCA's mission is to "provide effective means for the prevention of cruelty to animals throughout the United States." The ASPCA works to rescue animals from abuse, pass humane laws, and share resources with shelters nationwide.</p>
     </div>
@@ -21,7 +24,7 @@ export default function Charities() {
     </div>
     <div className='charity-box'>
       <a href='https://www.redcross.org/donate/donation.html/'>
-        <img src='https://www.redcross.org/' alt='red-cross'></img>
+        <img src='https://bloximages.newyork1.vip.townnews.com/spiritofomaha.com/content/tncms/assets/v3/editorial/e/97/e972a4be-737c-5737-9b3d-6bf1608d4155/5f241adfa5c01.image.jpg?resize=1200%2C534' alt='red-cross'></img>
       </a>
           <p className='mission-statement'>The Red Cross honors donor intent and all donations earmarked for Disaster Relief will be used to help people affected by disasters, big and small. Americans work hard for their money, and we’re committed to being the very best stewards of our donors’ dollar.</p>
     </div>
@@ -31,9 +34,6 @@ export default function Charities() {
       </a>
           <p className='mission-statement'>Relentlessly Pursuing a Better World for Every Child
 UNICEF has helped save and meaningfully improve more children’s lives than any other humanitarian organization. UNICEF won’t stop until every child is healthy, educated, protected and respected.</p>
-    </div>
-    <div className='donation'>
-      <p>CLICK HERE TO DONATE</p>
     </div>
   </div>
 );
