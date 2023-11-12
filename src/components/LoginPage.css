@@ -7,6 +7,12 @@
     background-color: #f0f0f0; 
   } */
   
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .login-page {
     display: flex;
