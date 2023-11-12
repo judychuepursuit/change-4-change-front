@@ -39,6 +39,7 @@
 
 
 
+
 import React from 'react';
 import Navbar from './components/Navbar';
 // Added Stripe imports
@@ -55,8 +56,8 @@ import LoginPage from "./components/LoginPage"
 import RegisterPage from "./components/RegisterPage";
 import Signup from './components/pages/Sign-Up';
 // Added PaymentForm and PaymentSuccess imports
-// import PaymentForm from './components/pages/PaymentForm';
-// import PaymentSuccess from './components/pages/PaymentSuccess';
+import PaymentForm from './components/pages/PaymentForm';
+import PaymentSuccess from './components/pages/PaymentSuccess';
 // ... other imports
 
 // Added stripePromise for Stripe API initialization
@@ -79,8 +80,8 @@ function App() {
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/sign-up' element={<Signup />} />
           {/* Added payment routes */}
-          {/* <Route path='/payment' element={<PaymentForm />} />
-          <Route path='/payment-success' element={<PaymentSuccess />} /> */}
+          <Route path='/payment' element={<PaymentForm />} />
+          <Route path='/payment-success' element={<PaymentSuccess />} />
           {/* ... other routes */}
         </Routes>
       </Elements>
@@ -89,7 +90,6 @@ function App() {
 }
 
 export default App;
-
 
 
 

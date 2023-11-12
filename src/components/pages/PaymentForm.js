@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useStripe, useElements } from "@stripe/react-stripe-js";
 // import { CardElement } from "@stripe/react-stripe-js";
-//test
+
 // import './PaymentForm.css'; // Make sure this CSS file has the necessary styles
 import { useNavigate } from 'react-router-dom';
 import './UpdatedPaymentForm.css'; // Make sure to rename your CSS file accordingly
 import { CardNumberElement, CardExpiryElement, CardCvcElement } from "@stripe/react-stripe-js";
-
 
 
 const CARD_ELEMENT_OPTIONS = {
@@ -23,9 +22,11 @@ const CARD_ELEMENT_OPTIONS = {
         color: '#9e2146',
       },
     },
-  };
+};
 
 function getCardType(cardNumber) {
+    if (typeof cardNumber !== 'string') return null; // or 'unknown'
+
     const cardTypes = {
         visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
         mastercard: /^5[1-5][0-9]{14}$/,
@@ -37,9 +38,7 @@ function getCardType(cardNumber) {
     }
 
     return null; // or 'unknown' if you prefer
-}  
-
-
+}
 
 
 const PaymentForm = () => {
@@ -60,6 +59,8 @@ const PaymentForm = () => {
 
 
     const handleCardNumberChange = async (event) => {
+        console.log(event); // This will show you the structure of the event object
+
         if (event.error) {
             setCardError(event.error.message);
         } else {
@@ -71,6 +72,28 @@ const PaymentForm = () => {
             setCardBrand(brand);
         }
     };
+
+
+      // Function to handle the creation of the Stripe Payment Link
+    const handleCreatePaymentLink = async () => {
+    try {
+      // This would be your input values for product name and amount
+      const productName = 'Donation'; // Example product name
+      const amount = 1099; // Example amount in cents
+
+      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/create-payment-link`, {
+        productName,
+        amount,
+      });
+
+      const paymentLinkUrl = response.data.url;
+      window.open(paymentLinkUrl, '_blank'); // Open the Stripe Payment Link in a new tab
+        } catch (err) {
+      console.error('Error creating payment link:', err);
+      // Handle error, e.g., show an error message to the user
+        }
+    };
+
 
     const validateForm = () => {
         let errors = {};
@@ -92,8 +115,6 @@ const PaymentForm = () => {
         return formIsValid;
     };
     
-
-
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -155,6 +176,75 @@ const PaymentForm = () => {
             setLoading(false);
         });
     };
+
+
+
+    // const handleSubmit = async (event) => {
+    //     event.preventDefault();
+    
+    //     if (!stripe || !elements) {
+    //         setError('Stripe has not loaded');
+    //         return;
+    //     }
+    
+    //     if (!validateForm()) {
+    //         return;
+    //     }
+    
+    //     setLoading(true);
+    //     setError(null);
+    
+    //     try {
+    //         const cardNumberElement = elements.getElement(CardNumberElement);
+    
+    //         const billingDetails = {
+    //             name: `${firstName} ${lastName}`,
+    //             email,
+    //         };
+    
+    //         const { error: stripeError, paymentMethod } = await stripe.createPaymentMethod({
+    //             type: 'card',
+    //             card: cardNumberElement,
+    //             billing_details: billingDetails,
+    //         });
+    
+    //         if (stripeError) {
+    //             setError(stripeError.message);
+    //             setLoading(false);
+    //             return;
+    //         }
+    
+    //         // Adjust the amount to be in the smallest currency unit (e.g., cents)
+    //         const paymentData = {
+    //             paymentMethodId: paymentMethod.id,
+    //             firstName,
+    //             lastName,
+    //             email,
+    //             amount: parseInt(amount) * 100, // Convert to cents
+    //             donationFrequency,
+    //         };
+    
+    //         // Choose the correct backend endpoint based on the donation frequency
+    //         const backendEndpoint = donationFrequency === 'one-time' 
+    //             ? '/payment' 
+    //             : '/create-payment-link';
+    
+    //         const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}${backendEndpoint}`, paymentData);
+    
+    //         // Redirect to success page or open the payment link based on the donation frequency
+    //         if (donationFrequency === 'one-time') {
+    //             navigate('/payment-success');
+    //         } else {
+    //             window.open(response.data.url, '_blank');
+    //         }
+    //     } catch (error) {
+    //         console.error('Payment error:', error);
+    //         setError('Payment failed. Please try again.');
+    //     } finally {
+    //         setLoading(false);
+    //     }
+    // };
+    
 
     return (
         <div className="content">
@@ -221,13 +311,11 @@ const PaymentForm = () => {
                     {formErrors["amount"] && <div className="error-message">{formErrors["amount"]}</div>}
                 </div>
 
-
-
-
-
                 <div className="form-group">
                     <label>Card Number</label>
-                    <CardNumberElement 
+                    <CardNumberElement options={CARD_ELEMENT_OPTIONS} onChange={handleCardNumberChange} />
+
+                    {/* <CardNumberElement 
                         options={CARD_ELEMENT_OPTIONS}
                         onChange={(event) => {
                             if (event.error) {
@@ -236,10 +324,9 @@ const PaymentForm = () => {
                             setCardError(null);
                             }
                         }}
-                    />
+                    /> */}
                     {cardError && <div className="error-message">{cardError}</div>}
 
-                    
                 </div>
 
                 {/* <div className="form-group">
@@ -254,14 +341,11 @@ const PaymentForm = () => {
                 </div> */}
 
 
-
-
-
                 <div className="form-group">
                     <label>Expiration Date</label>
                     <CardExpiryElement options={CARD_ELEMENT_OPTIONS} />
                 </div>
-                    <div className="form-group">
+                <div className="form-group">
                     <label>CVC</label>
                     <CardCvcElement options={CARD_ELEMENT_OPTIONS} />
                 </div>
@@ -272,10 +356,6 @@ const PaymentForm = () => {
                     <label>Card Details</label>
                     <CardElement />
                 </div> */}
-
-                
-
-
 
 
                 {/* <div className="form-group">
@@ -290,6 +370,10 @@ const PaymentForm = () => {
                 {/* <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Submit Payment'}</button> */}
 
                 <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button>
+
+                <button onClick={handleCreatePaymentLink} disabled={loading}>
+                    {loading ? 'redirecting...' : 'Or Donate with Stripe'}
+                </button>
 
             </form>
 
