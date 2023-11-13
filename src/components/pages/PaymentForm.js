@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useStripe, useElements } from "@stripe/react-stripe-js";
-// import { CardElement } from "@stripe/react-stripe-js";
 
-// import './PaymentForm.css'; // Make sure this CSS file has the necessary styles
 import { useNavigate } from 'react-router-dom';
 import './UpdatedPaymentForm.css'; // Make sure to rename your CSS file accordingly
 import { CardNumberElement, CardExpiryElement, CardCvcElement } from "@stripe/react-stripe-js";
@@ -178,74 +176,7 @@ const PaymentForm = () => {
     };
 
 
-
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
     
-    //     if (!stripe || !elements) {
-    //         setError('Stripe has not loaded');
-    //         return;
-    //     }
-    
-    //     if (!validateForm()) {
-    //         return;
-    //     }
-    
-    //     setLoading(true);
-    //     setError(null);
-    
-    //     try {
-    //         const cardNumberElement = elements.getElement(CardNumberElement);
-    
-    //         const billingDetails = {
-    //             name: `${firstName} ${lastName}`,
-    //             email,
-    //         };
-    
-    //         const { error: stripeError, paymentMethod } = await stripe.createPaymentMethod({
-    //             type: 'card',
-    //             card: cardNumberElement,
-    //             billing_details: billingDetails,
-    //         });
-    
-    //         if (stripeError) {
-    //             setError(stripeError.message);
-    //             setLoading(false);
-    //             return;
-    //         }
-    
-    //         // Adjust the amount to be in the smallest currency unit (e.g., cents)
-    //         const paymentData = {
-    //             paymentMethodId: paymentMethod.id,
-    //             firstName,
-    //             lastName,
-    //             email,
-    //             amount: parseInt(amount) * 100, // Convert to cents
-    //             donationFrequency,
-    //         };
-    
-    //         // Choose the correct backend endpoint based on the donation frequency
-    //         const backendEndpoint = donationFrequency === 'one-time' 
-    //             ? '/payment' 
-    //             : '/create-payment-link';
-    
-    //         const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}${backendEndpoint}`, paymentData);
-    
-    //         // Redirect to success page or open the payment link based on the donation frequency
-    //         if (donationFrequency === 'one-time') {
-    //             navigate('/payment-success');
-    //         } else {
-    //             window.open(response.data.url, '_blank');
-    //         }
-    //     } catch (error) {
-    //         console.error('Payment error:', error);
-    //         setError('Payment failed. Please try again.');
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
-    
-
     return (
         <div className="content">
             <h1>Set Up Your Payment</h1>
