@@ -66,7 +66,7 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 function App() {
   return (
     <Router>
-      <Navbar />
+      {/* <Navbar /> */}
       {/* Wrapped the Routes with Elements for Stripe */}
       <Elements stripe={stripePromise}>
         <Routes>
