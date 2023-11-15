@@ -41,7 +41,8 @@ function getCardType(cardNumber) {
 }
 
 
-const PaymentForm = () => {
+const PaymentForm = (props) => {
+    console.log(props)
     const stripe = useStripe();
     const elements = useElements();
     const navigate = useNavigate();

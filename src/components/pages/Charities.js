@@ -4,7 +4,7 @@ import './Charities.css'
 import { Link } from 'react-router-dom';
 
 
-export default function Charities() {
+export default function Charities(props) {
   return (  
   <div className="charities">
     <div className='suggested-charities'>Suggested Charities</div>
@@ -14,7 +14,11 @@ export default function Charities() {
         <img src='https://www.animalprotective.org/dev/wp-content/uploads/2016/08/aspca_logo-768x294.jpg' alt='aspca'></img>
       </a>
           <p className='mission-statement'>The ASPCA's mission is to "provide effective means for the prevention of cruelty to animals throughout the United States." The ASPCA works to rescue animals from abuse, pass humane laws, and share resources with shelters nationwide.</p>
-            <Link to="/payment">
+            <Link onClick={() => {
+              props.setUserPurchaseData({
+                recipient:'aspca'
+              })
+            }} to="/payment">
               <button className='donation'>DONATE</button>
             </Link>
     </div>
