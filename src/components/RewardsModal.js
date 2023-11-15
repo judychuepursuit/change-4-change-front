@@ -1,6 +1,12 @@
 import React, { useEffect } from 'react';
+import BadgeDisplay from './BadgeDisplay';
+import badgeData from '../api/badgeData';
 
-export default function RewardsModal() {
+export default function RewardsModal({ onClose }) {
+
+    const [points, setPoints] = useState(0);
+    const [hasSignedUp, setHasSignedUp] = useState(false);
+    const [hasDonated, setHasDonated] = useState(false);
 
     useEffect(() => {
         const link = encodeURI(window.location.href);
@@ -21,8 +27,17 @@ export default function RewardsModal() {
 
 
   return (  
-    <div className='rewards-modal'>
-    <h1>You've Earned </h1>
+    <div className="modal">
+    <div className="modal-content">
+      <span className="close" onClick={onClose}>
+        &times;
+      </span>
+      <h2>Congratulations!</h2>
+      <p>You've earned a badge</p>
+    </div>
+    
+    <BadgeDisplay points={points} hasSignedUp={hasSignedUp} hasDonated={hasDonated} />
+    
     <div id="share-container">
       <span>Share this:</span>
       <div id="share-buttons">

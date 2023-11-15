@@ -1,16 +1,26 @@
 import React from 'react';
-import "../../Button.css"
-function Rewards (){
+import logo from "../../reward-img/logo.png"
+import flowChart from "../../reward-img/flow-chart.png"
+import fb from "../../sm-icon/fb-logo.jpeg"
+import ig from "../../sm-icon/ig-logo.jpeg"
+import twit from "../../sm-icon/twitter-logo.png"
+import "../../components/Rewards.css"
+// import "../Button.css"
+function Rewards (props){
+
+props.hideNavBar()
+  
   return (
     <div>
       <section className="header">
-        <img src="src/reward-img/logo.png" alt="logo" width="12%" height="5%" />
-        <button className="btn">Home</button>
+        <img src={logo} alt="logo" width="12%" height="5%" />
+        <button className="button">Home</button>
       </section>
 
       <section className="top">
         <h4>Earn</h4>
         <h1>Rewards</h1>
+
       </section>
 
       <section className="reward-intro">
@@ -29,7 +39,7 @@ function Rewards (){
           This integrated rewards system not only acknowledges the altruistic endeavors of individuals but also fosters a sense of belonging and purpose within the community, creating a powerful cycle of giving and gratitude.
         </p>
 
-        <img src="src/reward-img/flow-chart.png" alt="flow chart" width="100%" height="auto" />
+        <img src={flowChart} alt="flow chart" width="100%" height="auto" />
         <br />
         <br />
 
@@ -57,9 +67,9 @@ function Rewards (){
       <div className="social-media">
         <h4>Share with</h4>
         <a href="#">
-        <img src='src/sm-icon/fb-logo.jpeg' alt='fb-logo'></img>
-        <img src='src/sm-icon/ig-logo.jpeg' alt='ig-logo'></img>
-        <img src='src/sm-icon/twitter-logo.png' alt='twitter'></img>
+        <img src={fb} alt='fb-logo'  width="12%" height="5%"></img>
+        <img src={ig} alt='ig-logo'  width="12%" height="5%"></img>
+        <img src={twit} alt='twitter'  width="12%" height="5%"></img>
        </a>
         </div>
 

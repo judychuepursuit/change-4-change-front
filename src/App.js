@@ -40,7 +40,7 @@
 
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 // Added Stripe imports
 import { Elements } from '@stripe/react-stripe-js';
@@ -64,15 +64,21 @@ import PaymentSuccess from './components/pages/PaymentSuccess';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 function App() {
+
+const [isNavHidden, setIsNavHidden] = useState(false);
+
+function hideNavBar() {
+    setIsNavHidden(true)
+}
   return (
     <Router>
-      <Navbar />
+      <Navbar hidden={isNavHidden} />
       {/* Wrapped the Routes with Elements for Stripe */}
       <Elements stripe={stripePromise}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/rewards' element={<Rewards />} />
+          <Route path='/rewards' element={<Rewards hideNavBar={hideNavBar}/>} />
           <Route path='/how-it-works' element={<HowItWorks />} />
           <Route path='/charities' element={<Charities />} />
           <Route path="/login" element={<LoginPage />} />
