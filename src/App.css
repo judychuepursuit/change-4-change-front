@@ -216,7 +216,7 @@ text-align: center;
    /* opacity: 50%;*/
 }
 
-Button {
+.navbar Button {
     display: none;
 }
 

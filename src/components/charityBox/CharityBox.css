@@ -1,0 +1,20 @@
+.charity-box {
+    width: 340px;
+    height: 300px;
+    margin: 1rem;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 5px;
+    /* display: flex;
+    flex-direction: column; */
+  }
+
+  /* .charity-box:hover .mission-statement {
+    display: block;
+  } */
+
+  .charity-box img {
+    width: 60%; /* Set a fixed width for the images */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Adjust the max-height as needed to make the images smaller */
+  }
