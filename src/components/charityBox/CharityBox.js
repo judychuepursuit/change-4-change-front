@@ -4,12 +4,15 @@ import './CharityBox.css';
 const CharityBox = (props) => {
   return (
     <div className="charity-box">
-      <a href={props.charity.url}>
-        <img
-          src={props.charity.imageUrl}
-          alt="aspca"
+      <img 
+        src={props.charity.imageUrl}
+        alt='imageUrl'>
+      </img>
+      <img
+          src={props.charity.messageImage}
+          alt="messageImage"
+          className="messageImg"
         ></img>
-      </a>
       <p className="mission-statement">
         {props.charity.missionStatement}
       </p>
