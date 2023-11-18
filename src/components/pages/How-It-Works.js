@@ -4,7 +4,7 @@ import '../../App.css';
 export default function HowItWorks() {
   return (  
     <body>
-        <div className="how-it-works">
+        <div className="how-it-works-page">
   <h1>how it works</h1><br></br>
   <div className="text-overlay hiw-header">
 <div className="centered"><b> Rewards Badges & connecting to like minded people in your commnity via your Social media accounts: </b> 

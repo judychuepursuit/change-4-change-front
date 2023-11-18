@@ -58,12 +58,18 @@ import Signup from './components/pages/Sign-Up';
 // Added PaymentForm and PaymentSuccess imports
 import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
+// import TestComponent from './components/pages/TestComponent';
 // ... other imports
+import { useState } from 'react';
 
 // Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 function App() {
+  const [userPurchaseData, setUserPurchaseData] = useState({
+    recipient: null
+  })
+
   return (
     <Router>
       <Navbar />
@@ -74,14 +80,15 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/rewards' element={<Rewards />} />
           <Route path='/how-it-works' element={<HowItWorks />} />
-          <Route path='/charities' element={<Charities />} />
+          <Route path='/charities' element={<Charities setUserPurchaseData={setUserPurchaseData}/>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path='/contact-us' element={<ContactUs />} />
           <Route path='/sign-up' element={<Signup />} />
           {/* Added payment routes */}
-          <Route path='/payment' element={<PaymentForm />} />
+          <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
+          {/* <Route path='/test' element={<TestComponent />} /> */}
           {/* ... other routes */}
         </Routes>
       </Elements>
