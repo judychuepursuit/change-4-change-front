@@ -1,8 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import BadgeDisplay from './BadgeDisplay';
 import badgeData from '../api/badgeData';
+import "../components/RewardsModal.css"
+import blue from "../reward-img/lev 1 blu badge.png"
 
-export default function RewardsModal({ onClose }) {
+
+
+export default function RewardsModal({ isOpen, onClose }) {
 
     const [points, setPoints] = useState(0);
     const [hasSignedUp, setHasSignedUp] = useState(false);
@@ -25,19 +29,26 @@ export default function RewardsModal({ onClose }) {
         twit.href = `http://twitter.com/share?url=${link}&text=${msg}&hashtags=donate,charity,support,kindness`;
       }, []);
 
+      
+  
 
   return (  
-    <div className="modal">
-    <div className="modal-content">
-      <span className="close" onClick={onClose}>
+    
+    <div onClick={onClose} className="overlay">
+        <div className='modalContainer'>
+    <div className="modal-right">
+      <button className="modalBtn" onClick={onClose}>
         &times;
-      </span>
+      </button>
+    <div className='modal-content'>
       <h2>Congratulations!</h2>
       <p>You've earned a badge</p>
-    </div>
-    
+      <br/>
+    <img src={blue} ></img>
     <BadgeDisplay points={points} hasSignedUp={hasSignedUp} hasDonated={hasDonated} />
-    
+                
+            
+        
     <div id="share-container">
       <span>Share this:</span>
       <div id="share-buttons">
@@ -49,8 +60,11 @@ export default function RewardsModal({ onClose }) {
 
         {/* twitter */}
         <a className="twitter" target="blank"><i className="fab fa-twitter"></i></a>
+        </div>
+        </div>
       </div>
     </div>
+  </div>
   </div>
 );
 };

@@ -30,11 +30,11 @@ const BadgeDisplay = ({ points, hasSignedUp, hasDonated }) => {
     }
     return false;
   });
-
+  
   return (
-    
+
     <div>
-      <h1>Badges</h1>
+      
       <div className="badge-container">
         {filteredBadges.map(badge => (
           <div key={badge.id} className="badge-item">

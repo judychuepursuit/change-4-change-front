@@ -18,7 +18,7 @@ props.hideNavBar()
       </section>
 
       <section className="top">
-        <h4>Earn</h4>
+        <h4>earn</h4>
         <h1>Rewards</h1>
 
       </section>
@@ -44,7 +44,7 @@ props.hideNavBar()
         <br />
 
         <section className="middle">
-          <h2>Earn</h2>
+          <h2>earn </h2>
           <h1>Points & Badges:</h1>
         </section>
 

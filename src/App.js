@@ -59,12 +59,13 @@ import Signup from './components/pages/Sign-Up';
 import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
 // ... other imports
-
+import RewardsModal from './components/RewardsModal';
 // Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 function App() {
 
+const [openModal, setOpenModal] = useState(false);
 const [isNavHidden, setIsNavHidden] = useState(false);
 
 function hideNavBar() {
@@ -89,8 +90,13 @@ function hideNavBar() {
           <Route path='/payment' element={<PaymentForm />} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
           {/* ... other routes */}
+          
         </Routes>
       </Elements>
+      <RewardsModal
+      isOpen={openModal}
+      closeModal={() => setOpenModal(false)} 
+      />
     </Router>
   );
 }
