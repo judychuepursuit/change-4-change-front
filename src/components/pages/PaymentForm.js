@@ -249,7 +249,7 @@ const PaymentForm = (props) => {
 
     return (
         <div className="content">
-            <h1>Set Up Your Payment</h1>
+            <h1>Set Up Your Payment for {props.recipient}</h1>
             <p>Connect your preferred payment method and set your donation preferences.</p>
             <form onSubmit={handleSubmit}>
 

@@ -13,23 +13,19 @@
   }
   
   .charity-boxes {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: center;
     align-items: center;
   }
   
-  .charity-box {
-    width: 45%;
-    height: 300px;
-    margin: 1rem;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 5px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
+  @media screen and (max-width: 440px) {
+    .charity-boxes {
+        display: block;
+        margin-top: 220px;
+    }
+  }   
+  
   
   .mission-statement {
     display: none;
@@ -43,15 +39,9 @@
     font-size: 14px;
   }
   
-  .charity-box:hover .mission-statement {
-    display: block;
-  }
+ 
   
-  .charity-box img {
-    width: 60%; /* Set a fixed width for the images */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 150px; /* Adjust the max-height as needed to make the images smaller */
-  }
+
   
   /* Additional styles for the donation button if needed */
   .donation {
