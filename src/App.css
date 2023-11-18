@@ -76,6 +76,16 @@
   margin: 100px 0 60px;
 }
 
+.how-it-works-page{
+  /* background-image: url('./images/img-3a.jpg'); */
+  position: relative;
+  padding-top: 100px;
+  /* top: 47%; */
+  color: #ff7300;
+  text-align: center;
+  font-size: 45px;
+}
+
 /* InfoSection.css */
 .info-section {
   display: flex;
