@@ -58,6 +58,7 @@ import Signup from './components/pages/Sign-Up';
 // Added PaymentForm and PaymentSuccess imports
 import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
+// import TestComponent from './components/pages/TestComponent';
 // ... other imports
 import { useState } from 'react';
 
@@ -87,6 +88,7 @@ function App() {
           {/* Added payment routes */}
           <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
+          {/* <Route path='/test' element={<TestComponent />} /> */}
           {/* ... other routes */}
         </Routes>
       </Elements>
