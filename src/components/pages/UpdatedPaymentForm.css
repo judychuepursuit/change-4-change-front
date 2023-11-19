@@ -33,7 +33,7 @@ input, .StripeElement {
     font-size: 12px; /* Smaller font size for inputs */
 }
 
-button {
+.stripe-button {
     background-color: #551aeb;
     color: white;
     border: none;
@@ -44,7 +44,22 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
+
+.create-payment {
+    background-color: #551aeb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px; /* Adjusted padding for smaller button */
+    border-radius: 20px;
+    font-size: 14px; /* Kept readable font size for button text */
+    transition: background-color 0.3s ease;
+}
+.stripe-button:hover {
+    background-color: #7a3feb;
+}
+
+.create-payment:hover {
     background-color: #7a3feb;
 }
 
