@@ -68,7 +68,7 @@ let navigate = useNavigate();
         title="share"
         description="Connect to your Social Media accounts to share your Milestones with friends and family."
         buttonText="share"
-        infoLink="/contact-us"
+        infoLink="/connect-us"
         img={info3}
         altText="Share"
       />
