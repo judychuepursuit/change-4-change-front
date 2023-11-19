@@ -51,7 +51,7 @@ import About from './components/pages/About';
 import Rewards from './components/pages/Rewards';
 import HowItWorks from './components/pages/How-It-Works';
 import Charities from './components/pages/Charities';
-import ContactUs from './components/pages/ContactUs';
+import ConnectUs from './components/pages/ConnectUs';
 import LoginPage from "./components/LoginPage"
 import RegisterPage from "./components/RegisterPage";
 import Signup from './components/pages/Sign-Up';
@@ -83,7 +83,7 @@ function App() {
           <Route path='/charities' element={<Charities setUserPurchaseData={setUserPurchaseData}/>} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path='/contact-us' element={<ContactUs />} />
+          <Route path='/connect-us' element={<ConnectUs />} />
           <Route path='/sign-up' element={<Signup />} />
           {/* Added payment routes */}
           <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
