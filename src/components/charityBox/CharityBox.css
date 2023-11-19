@@ -8,15 +8,16 @@
     /* display: flex;
     flex-direction: column; */
   }
-
+/* 
   .donation {
     border-radius: 4px;
-    color: #551AEB;
+    color: white;
+    background-color:  #551AEB;
   }
 
   .donation hover {
     color: #ff7300;
-  }
+  } */
 
   /* .charity-box:hover .mission-statement {
     display: block;
