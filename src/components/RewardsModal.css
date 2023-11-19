@@ -17,7 +17,7 @@
 }  */
 
 .overlay {
-    position: fixed;
+    /* position: fixed; */
     top: 0;
     left: 0;
     width: 100%;
@@ -128,9 +128,9 @@
     background-color: #1da1f2; /* Twitter blue */
   }
 
-  /* .modalContainer { */
-    /* display: none; set default display to none */
-  /* } */
+  .modalContainer {
+    display: none;  /*set default display to none */
+  }
   
   .modalContainer.visible {
     display: block; /* add this class to make it visible */
