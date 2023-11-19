@@ -21,6 +21,11 @@
     background-color: #e66700;
 }
 
+.logo {
+    position:relative;
+    
+}
+
 .reward-intro {
     /* border: 2px solid #ff7300; */
     padding: 45px;
@@ -44,52 +49,10 @@ body {
     position: relative;
 }
 
-nav {
-    background-color: #ff7300;
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 22px;
-    font-weight: 500;
-  }
-  
-  .navbar-logo {
-    color: #ffffff;
-    justify-self: start;
-    /* margin-left: 20px; */
-    cursor: pointer;
-    text-decoration: none;
-    font-size: 2rem;
-  }
-
-  
-
-  
   
   @media screen and (max-width: 960px) {
-    .NavbarItems {
-      position: relative;
-    }
  
   
-    .navbar-logo {
-      position: absolute;
-      top: 0;
-      left: 0;
-      transform: translate(25%, 50%);
-    }
-  
-    .menu-icon {
-      display: block;
-      position: absolute;
-      top: 0;
-      right: 0;
-      transform: translate(-100%, 60%);
-      font-size: 1.8rem;
-      cursor: pointer;
-    }
-
   
     button {
       display: none;
@@ -170,7 +133,7 @@ nav {
       :root {
         --primary: #551AEB;
       }
-/*       
+     
       .btn {
         padding: 8px 20px;
         border-radius: 4px;
@@ -181,9 +144,9 @@ nav {
         color: #fff;
         cursor: pointer;
         background-color: var(--primary);
-      } */
+      } 
       
-      /* .btn:hover {
+       .btn:hover {
         padding: 6px 18px;
         transition: all 0.3s ease-out;
         background-color: #ffffff;
@@ -192,14 +155,15 @@ nav {
         font-weight: bold;
         border: 2px solid var(--primary);
         transition: all 0.3s ease-out;
-      }  */
+      }  
 
       .header {
         display: grid;   
-        
+
     }
 
     .header button{
         position: absolute;
         top: 10px;
         right: 40px;    }
+

@@ -6,7 +6,7 @@ import blue from "../reward-img/lev 1 blu badge.png"
 
 
 
-export default function RewardsModal({ isOpen, onClose }) {
+export default function RewardsModal({  onClose }) {
 
     const [points, setPoints] = useState(0);
     const [hasSignedUp, setHasSignedUp] = useState(false);
@@ -33,7 +33,6 @@ export default function RewardsModal({ isOpen, onClose }) {
   
 
   return (  
-    
     <div onClick={onClose} className="overlay">
         <div className='modalContainer'>
     <div className="modal-right">
@@ -43,8 +42,8 @@ export default function RewardsModal({ isOpen, onClose }) {
     <div className='modal-content'>
       <h2>Congratulations!</h2>
       <p>You've earned a badge</p>
-      <br/>
-    <img src={blue} ></img>
+   
+    <img src={blue} alt='badge' class='badge'></img>
     <BadgeDisplay points={points} hasSignedUp={hasSignedUp} hasDonated={hasDonated} />
                 
             

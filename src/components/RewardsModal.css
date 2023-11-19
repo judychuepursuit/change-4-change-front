@@ -22,7 +22,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.1); /* Semi-transparent black overlay */
+    background-color: rgba(0, 0, 0, 0.1); /*Semi-transparent black overlay */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -68,6 +68,14 @@
     color: #3498db;
   }
   
+  .reward img {
+    align-self: center;
+    width: 250px;
+    object-fit: cover;
+    /* width: 10px;
+    height: 20px; */
+  }
+
   img {
     align-self:center ;
     width: 250px;
@@ -80,6 +88,7 @@
   
   /* Badge Display Styles - Adjust as needed based on BadgeDisplay component structure */
   
+ 
   /* Share Container Styles */
   #share-container {
     margin-top: 20px;
@@ -117,4 +126,12 @@
   
   .twitter {
     background-color: #1da1f2; /* Twitter blue */
+  }
+
+  /* .modalContainer { */
+    /* display: none; set default display to none */
+  /* } */
+  
+  .modalContainer.visible {
+    display: block; /* add this class to make it visible */
   }

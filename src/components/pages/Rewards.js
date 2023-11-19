@@ -13,8 +13,8 @@ props.hideNavBar()
   return (
     <div>
       <section className="header">
-        <img src={logo} alt="logo" width="12%" height="5%" />
-        <button className="button">Home</button>
+        <img src={logo} alt="logo" width="15%" height="30%" className='logo'/>
+        {/* <button className="button">Home</button> */}
       </section>
 
       <section className="top">

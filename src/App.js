@@ -59,7 +59,7 @@ import Signup from './components/pages/Sign-Up';
 import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
 // ... other imports
-import RewardsModal from './components/RewardsModal';
+import RewardsModal from './components/RewardsModal.js';
 // Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
