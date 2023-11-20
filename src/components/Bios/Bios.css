@@ -1,6 +1,20 @@
 .github-bio {
-    display: grid;
-    grid-template-rows: repeat(2, 300px); /* Two rows */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 850px;
     gap: 10px; /* Adjust the gap between boxes */
+    margin-left: 550px; /* Center horizontally using margin */
 }
 
+.bio-box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 300px;
+}
+
+.name {
+    color: #ff7300;
+}

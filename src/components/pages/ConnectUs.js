@@ -2,21 +2,23 @@
 import React from 'react';
 import './ConnectUs.css'
 import Bios from '../Bios/Bios';
+import { Link } from 'react-router-dom';
 
 const bios = [
-  {
-    id:1,
-    name: 'Angel Tirado',
-    image: 'https://avatars.githubusercontent.com/u/122419430?v=4',
-    githubLink: 'https://github.com/atiradoGit88',
-    aboutMe:'A young eager full stack software engineer.',
-  },
+  
   {
     id:2,
     name: 'Allahvel Salisbury',
     image: 'https://avatars.githubusercontent.com/u/119988077?v=4',
     githubLink: 'https://github.com/AllahvelS',
     aboutMe:'A full stack software engineer.',
+  },
+  {
+    id:1,
+    name: 'Angel Tirado',
+    image: 'https://avatars.githubusercontent.com/u/122419430?v=4',
+    githubLink: 'https://github.com/atiradoGit88',
+    aboutMe:'A young eager full stack software engineer.',
   },
   {
     id:3,
@@ -52,8 +54,8 @@ export default function ConnectUs() {
       Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
       Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
     </div>
-      <div className='connect'>
-        <p>CONNECT</p>
+      <div>
+        <p className='connect'>CONNECT</p>
       </div>
     <div className='personal-mission'>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
@@ -67,6 +69,9 @@ export default function ConnectUs() {
         )
       })}
     </div>
+    <Link to='/charities'>
+            <button className="donation orange-button">DONATE</button>
+    </Link>
   </div>
 );
 
