@@ -11,11 +11,7 @@
 .rewards,
 .contact-us
 .sign-up 
-/* .home,
-.about,
-.rewards,
-.contact-us,
-.sign-up */
+
  {
   display: flex;
   height: 90vh;
@@ -52,10 +48,22 @@
   margin-top: 10px;
   margin-bottom: 20px;
   border-radius: 4px;
+  background-color:#551aeb;
+  color: #ffffff;
+  padding: 8px;;
 }
 
 .hero-image {
   background-image: url(images/img-1a-trans.jpg);
+}
+
+.hero-images {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+.carousel-image {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -65,15 +73,48 @@
   align-items: center;
   padding-top: 200px;
 }
-
-.hero-image h1{
-  color:#ffffff;
-  font-size: 5rem;
+.unicef-home {
+  background-image: url(images/carousel-images/unicef_home.jpg);
 }
 
+.home-content {
+  top: 80%;
+  position: absolute;
+  
+}
+/* .hero-image h1{
+  color:#ffffff;
+  font-size: 5rem;
+  font-weight: 600;
+} */
+/* hiw button */
 .how-it-works {
-  width: 320px;
-  margin: 100px 0 60px;
+  margin: 100px 0 70px;
+  width: 165px;
+  background-color:#ff7300;
+  font-weight:bolder;
+  font-size: 18px;
+  padding: 8px;
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+}
+
+.how-it-works button:hover {
+  background-color:#551aeb;
+}
+
+.how-it-works-page {
+  position:relative;
+  padding-top: 100px;
+  /* top: 47%; */
+  color: #ff7300;
+  text-align: center;
+  font-size: 45px;
+}
+
+.how-it-works-image {
+  background-image: url('images/hiw-banner_2.jpg');
 }
 
 .how-it-works-page{
@@ -94,21 +135,37 @@
   align-items: center;
   padding: 1rem;
 }
+
 .info-box {
-  width: 320px
+  width: 320px;
+  justify-content: center;
+  align-items: center;
 }
 
 .info-box img {
   width: 200px;
+  margin-left: 55px;
+  padding-bottom: 12px;
 }
 
 .info-box p{
   min-height: 100px;
   text-align: center;
+  font-size: small;
+  font-weight: 600;
+  padding-top: 20px;
+  width: 300px;
+}
+
+/* .info-box-button-text{ */
+.info-box-button {
+  width: 30px;
+  font-weight: bolder;
+  border-radius: 4px;
 }
 
 .info-box button:hover {
-  background-color: #ff7300; /* Darker shade on hover */
+  background-color: #ff7300;
 }
 
 /* Responsive adjustments */
@@ -123,24 +180,6 @@
     width: 90%; /* Full width boxes on smaller screens */
   }
 }
-
-
-/* .about {
-  background-image: url('./images/img-2a_opacity.jpg'); */
-  /* width: 100vw; */
-  /* height: 100vh; */
-  /* height: 120vh;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-top: -80px; */
-  /* opacity: 0.5; */
-  /* color: #ffffff; */
-  /* color: #ff7300; */
-  /* font-size: 22px;
-  position: relative;
-  z-index: -1;
-} */
 
 .about {
   background-image: url('./images/img-2a.jpeg');
@@ -177,11 +216,6 @@ text-align: center;
 }
 
 .rewards {
-  /* background-image: url('./images/img-3a.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #ffffff; */
   color: #ff7300;
   font-size: 45px;
 }
@@ -202,31 +236,18 @@ text-align: center;
 }
 
 .charities {
-  /* background-image: url('./images/img-3a.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  /* background-position: center; */
-  color: black;
-  /* color: #ff7300; */
+  /* color: black; */
+  color: #ff7300;
   font-size: 30px;
 }
 
-.contact-us {
-  /* background-image: url('./images/img-4.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat; */
-  /* color: #ffffff; */
+/* .contact-us { */
+.connect {
   color: #ff7300;
   font-size: 30px;
 }
 
 .sign-up {
-  /* background-image: url('./images/img-5.jpg');
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #ffffff; */
   color: #ff7300;
   font-size: 30px;
 }
