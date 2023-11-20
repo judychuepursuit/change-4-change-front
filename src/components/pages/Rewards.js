@@ -1,40 +1,6 @@
 import React from 'react';
-import logo from "../../reward-img/logo.png";
-import flowChart from "../../reward-img/flow-chart.png";
-import fb from "../../sm-icon/fb-logo.jpeg";
-import ig from "../../sm-icon/ig-logo.jpeg";
-import twit from "../../sm-icon/twitter-logo.png";
-import "../../components/Rewards.css";
-import { Link } from 'react-router-dom';
-
-import badgeData from "../../api/badgeData.js"
-
-
-import lev1RedBadge from '../../reward-img/lev 1 red badge.png';
-import lev1OrangeBadge from '../../reward-img/lev 1 orange badge.png';
-import lev1YelBadge from '../../reward-img/lev 1 yel badge.png';
-import lev1GrnBadge from '../../reward-img/lev 1 grn_badge.png';
-import lev1BluBadge from '../../reward-img/lev 1 blu badge.png';
-import lev1IndigoBadge from '../../reward-img/lev 1 indigo badge.png';
-import lev1VioBadge from '../../reward-img/lev 1 vio badge.png';
-import unicornBadge from '../../reward-img/unicorn badge.png';
-
-function Rewards(props) {
-  // props.hideNavBar();
-
-    const badgeImages = [
-      lev1RedBadge,
-      lev1OrangeBadge,
-      lev1YelBadge,
-      lev1GrnBadge,
-      lev1BluBadge,
-      lev1IndigoBadge,
-      lev1VioBadge,
-      unicornBadge,
-    ];
-
-
-  
+import "../Button.css"
+function Rewards (){
   return (
     <div className='rewards-page'>
       <section className="header">

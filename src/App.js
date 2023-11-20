@@ -3,7 +3,7 @@ import Navbar from './components/Navbar';
 // Added Stripe imports
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Rewards from './components/pages/Rewards';
@@ -25,23 +25,31 @@ import History from "./components/pages/History.js"
 // Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
-function App() {
-
-// const [openModal, setOpenModal] = useState(false);
-const [isNavHidden, setIsNavHidden] = useState(false);
-const [isModalOpen, setIsModalOpen] = useState(true);
-
-
-function hideNavBar() {
-    setIsNavHidden(true)
-}
-  const [userPurchaseData, setUserPurchaseData] = useState({
-    recipient: null
-  })
-
+const App=()=> {
+ 
   return (
     <Router>
-      <Navbar hidden={isNavHidden} />
+      <AppContent />
+    </Router>
+  );
+}
+
+const AppContent = () => {
+const [userPurchaseData, setUserPurchaseData] = useState({
+  recipient: null
+})
+
+const location = useLocation();
+
+const hideNavbarRoutes = ['/how-it-works']; // Add the routes where you want to hide the navbar
+
+const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
+
+  return (
+    <>
+   {shouldShowNavbar && <Navbar />}
+      {/* <Navbar /> */}
+      
       {/* Wrapped the Routes with Elements for Stripe */}
       <Elements stripe={stripePromise}>
         <Routes>
@@ -65,12 +73,10 @@ function hideNavBar() {
           
         </Routes>
       </Elements>
-      <RewardsModal
-      isModalOpen={isModalOpen}
-      setIsModalOpen={setIsModalOpen}
-      />
-    </Router>
+      </>
+
   );
+  
 }
 
 export default App;

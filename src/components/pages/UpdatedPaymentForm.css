@@ -25,26 +25,37 @@
   margin-bottom: 10px;
 }
 
-.payment-form input, .StripeElement {
-  width: 100%;
-  padding: 10px;
-  margin: 5px 0;
-  border: 1px solid #551aeb;
-  border-radius: 3px;
+label, input, .StripeElement, button {
+    width: 100%;
+    margin-bottom: 8px; /* Further reduced margin for smaller spacing */
 }
 
-.payment-form button {
-  display: block; /* Block display will allow the button to respect the margin auto */
-  width: calc(50% - 20px); /* Full width minus the padding from the container */
-  background-color: #FF7300;
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  padding: 10px 15px;
-  cursor: pointer;
-  margin: 10px auto; /* Top and bottom margin of 10px and auto margin on the sides */
-  transition: background-color 0.3s ease;
+label {
+    display: block;
+    margin-bottom: 3px; /* Further reduced margin for tighter label spacing */
+    font-size: 12px; /* Smaller font size for labels */
 }
+
+input, .StripeElement {
+    padding: 6px; /* Further reduced padding for smaller input height */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 12px; /* Smaller font size for inputs */
+}
+
+/* .form-button { */
+    /* background-color: #551aeb;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 15px;  */
+    /* Adjusted padding for smaller button */
+    /* border-radius: 4px;
+    font-size: 14px;  */
+    /* Kept readable font size for button text */
+    /* transition: background-color 0.3s ease;
+} */
 
 
 .payment-form button:hover {

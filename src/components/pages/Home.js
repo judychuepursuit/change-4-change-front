@@ -20,6 +20,7 @@ import info1 from '../../images/img-1a.jpeg';
 import info2 from '../../images/img-4.jpg';
 import info3 from '../../images/sm_image.jpeg';
 
+
 function InfoBox({ title, description, buttonText, infoLink, img, altText }) {
   let navigate = useNavigate();
 
@@ -41,13 +42,19 @@ let navigate = useNavigate();
       <h1> MAKE A CHANGE </h1>
       <h2> with your change </h2>
       <h3> Get started now by donating just 66¢ a day </h3>
-      <button className="donate-btn">CLICK TO DONATE </button>
+      <Link to= "/payment"><button className="donate-btn">CLICK TO DONATE </button></Link>
     </div>
-    <div className="hero-image">
-      <h1>change</h1>
+    {/* <div className="hero-image"></div> */}
+    <div className="hero-images">
+      <div className="carousel-image hero-image"></div>
+      <div className="carousel-image unicef-home"></div>
+    </div>
+    <div className="home-content">
+      {/* <h1>change</h1> */}
         <Link to="/how-it-works"><button className="how-it-works">how it works</button></Link>
         {/* <button className="how-it-works" onClick={() => navigate(infoLink)}>how it works</button>  */}
         <div className="info-section">
+          <div className='button-text'></div>
        <InfoBox
         title="subscription"
         description="Choose donation amount and frequency: One time or Monthly."
@@ -66,7 +73,7 @@ let navigate = useNavigate();
       />
       <InfoBox
         title="share"
-        description="Connect to your Social Media accounts to share your Milestones with friends and family."
+        description="Connect your Social Media accounts and share your Rewards with friends and family."
         buttonText="share"
         infoLink="/connect-us"
         img={info3}

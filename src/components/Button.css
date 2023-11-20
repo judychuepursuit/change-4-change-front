@@ -1,31 +1,8 @@
 /* :root {
     --primary: #551AEB;
   }
-
-button {
-      background-color: #551aeb;
-      color: white;
-      border: none;
-      cursor: pointer;
-      padding: 8px 15px; /* Adjusted padding for smaller button */
-      border-radius: 4px;
-      font-size: 14px; /* Kept readable font size for button text */
-      transition: background-color 0.3s ease;
-  }
-
-button:hover {
-      background-color: #ff7300;
-  }
-    
-.orange-button {
-     background-color: #ff7300;
-  }
-
-.orange-button:hover {
-    background-color: #551AEB;
-}
-
-.btn {
+  
+  .btn {
     padding: 8px 20px;
     border-radius: 4px;
     outline: none;
@@ -37,7 +14,7 @@ button:hover {
     background-color: var(--primary);
   } */
   
-  .btn:hover {
+  /* .btn:hover {
     padding: 6px 18px;
     transition: all 0.3s ease-out;
     background-color: #ffffff;
@@ -45,28 +22,5 @@ button:hover {
     border-radius: 4px;
     font-weight: bold; */
     /* border: 2px solid var(--primary); */
-    /* transition: all 0.3s ease-out;
-  } */
-
-  button {
-    background-color: #551aeb;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 8px 15px; /* Adjusted padding for smaller button */
-    border-radius: 4px;
-    font-size: 14px; /* Kept readable font size for button text */
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #ff7300;
-}
-  
-.orange-button {
-   background-color: #ff7300;
-}
-
-.orange-button:hover {
-  background-color: #551AEB;
-}
+    transition: all 0.3s ease-out;
+  }
