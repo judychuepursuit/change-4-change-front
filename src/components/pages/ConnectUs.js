@@ -1,7 +1,7 @@
 
 import React from 'react';
 import './ConnectUs.css'
-import Bios from '../Bios/Bios';
+import BioBox from '../bioBox/BioBox';
 
 const bios = [
   {
@@ -43,29 +43,23 @@ const bios = [
 
 export default function ConnectUs() {
   return (  
-  <div className="connectus">
-    <div className='header-picture'>
-      <img src='https://media.discordapp.net/attachments/756738190219673693/1172955746779009155/connect_banner_image.jpg?ex=6562332a&is=654fbe2a&hm=2af9a80c30195e149fb9816df1c5d6755010e4c6808812c1bf3b454fbc48c924&=&width=2160&height=778' alt='mission-field'></img>
-    </div>
-    <div>
-      <p className='donation-statistics'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-      <div className='connect'>
-        <p>CONNECT</p>
+  <div className="connect-us">
+    <div className='header-picture'></div>
+    <div className='connect-us__content'>
+  
+      <div className='connect'>CONNECT</div>
+      <div className='personal-mission'>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
       </div>
-    <div className='personal-mission'>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-      Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    </div>
-    <div className='github-bio'>
-      {bios.map(bio => {
-        return(
-        <Bios key={bio.id} bio={bio}/>
-        )
-      })}
+      <div className='connect-us__bios'>
+        {bios.map(bio => {
+          return(
+          <BioBox key={bio.id} bio={bio}/>
+          )
+        })}
+      </div>
     </div>
   </div>
 );

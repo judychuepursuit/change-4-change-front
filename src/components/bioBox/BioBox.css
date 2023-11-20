@@ -1,0 +1,25 @@
+.bio-box {
+   width: 325px;
+   border: 1px black solid;
+   padding: 10px;
+}
+
+.bio-box img {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.bio-box__name {
+    font-weight: bold;
+}
+
+.bio-box__header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bio-box__links img{
+    width: auto;
+    height: 30px;
+}
