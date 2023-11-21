@@ -1,0 +1,89 @@
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 24px;
+    min-height: 100vh;
+    width: 100%;
+    background-image: url(../front-end/images/background.png);
+    background-position: center;
+    background-size:cover;
+    position: relative;
+    }
+
+.container {
+    width:80%;
+    margin: 4em auto;
+
+    button {
+        border: none; 
+        outline: none; 
+        padding: 1em 1.5em;
+        font-size: 1rem;
+        margin-top: 2em;
+        cursor: pointer;
+        background-color:  #551aeb;
+        color: white;
+        font-weight: bold;
+        will-change: background;
+        transition: background 1s;
+
+        &:hover {
+            background:  #ea2d95;
+        }
+
+      
+    }
+}  
+
+.overlay {
+    content: ' ';
+    opacity: 1;
+    position: absolute;
+    z-index: 0; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+}
+
+.share, .overlay {
+    display: none;
+}
+
+.show-share {
+    display: block;
+}
+
+.share {
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    top: 30%; 
+    margin: auto; 
+    width: 50%; 
+    z-index: 1; 
+    padding: 1em; 
+    background: white;
+
+    h2 {
+        margin: 0;
+    }
+
+    button {
+        border: none;
+        padding: .8em 1.2em;
+        margin-top: 3em;
+        width: 32%;
+        cursor: pointer;
+    }
+}
+
+h6 {
+    text-align: center;
+}
+
+h1 {
+    text-align: center;
+    color: #ff7300;
+}

@@ -6,7 +6,10 @@ import { Button } from "./Button"
 import Dropdown from './Dropdown';
 
 
-function Navbar() {
+function Navbar(props) {
+  
+  console.log(props)
+
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
   
@@ -31,7 +34,7 @@ function Navbar() {
   
     return (
       <>
-        <nav className='navbar'>
+        <nav className={props.hidden ? 'navbar hidden' : 'navbar'} >
           <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
             <h5>change 4 change <i className="fa-solid fa-coins"></i></h5>
           </Link>
@@ -71,11 +74,11 @@ function Navbar() {
             
             <li className='nav-item'>
               <Link
-                to='/contact-us'
+                to='/connect-us'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Contact Us
+                Connect
               </Link>
             </li>
 

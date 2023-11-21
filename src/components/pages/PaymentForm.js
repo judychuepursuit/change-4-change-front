@@ -41,7 +41,8 @@ function getCardType(cardNumber) {
 }
 
 
-const PaymentForm = () => {
+const PaymentForm = (props) => {
+    console.log(props)
     const stripe = useStripe();
     const elements = useElements();
     const navigate = useNavigate();
@@ -248,7 +249,7 @@ const PaymentForm = () => {
 
     return (
         <div className="content">
-            <h1>Set Up Your Payment</h1>
+            <h1>Set Up Your Payment for {props.recipient}</h1>
             <p>Connect your preferred payment method and set your donation preferences.</p>
             <form onSubmit={handleSubmit}>
 
@@ -369,7 +370,7 @@ const PaymentForm = () => {
                 {/* Update the button text and disabled state */}
                 {/* <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Submit Payment'}</button> */}
 
-                <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button>
+                <button  type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button>
 
                 {/* <button onClick={handleCreatePaymentLink} disabled={loading}>
                     {loading ? 'redirecting...' : 'Or Donate with Stripe'}
