@@ -1,6 +1,6 @@
 import React from "react";
-import './Bios.css';
-import { Link } from "react-router-dom";
+import './bioBox.css';
+
 
 const Bios = (props) => {
     return (
