@@ -1,11 +1,9 @@
 import React from "react";
 import {useState} from "react";
-// import "./App.css";
 
 function Points ({donationAmount}) {
 
 const[points, setPoints] = useState(0);
-const [showModal, setShowModal] = useState(false);
 
 const updatePoints = (amount) => {
     // Calculate points earned for the current donation
@@ -20,9 +18,6 @@ const updatePoints = (amount) => {
     }
   };
 
-  const closeModal = () => {
-    setShowModal(false);
-  };
 
 
   // Call the updatePoints function when a donation is made
@@ -33,7 +28,6 @@ const updatePoints = (amount) => {
         <div>
         <h1>You've Earned {points} Points</h1>
           
-        {showModal && <BadgeModal onClose={closeModal} />}
       </div>
     );
 }

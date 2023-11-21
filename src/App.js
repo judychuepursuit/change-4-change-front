@@ -61,14 +61,16 @@ import PaymentSuccess from './components/pages/PaymentSuccess';
 // import TestComponent from './components/pages/TestComponent';
 // ... other imports
 import RewardsModal from './components/RewardsModal.js';
-
+import History from "./components/pages/History.js"
 // Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 function App() {
 
-const [openModal, setOpenModal] = useState(false);
+// const [openModal, setOpenModal] = useState(false);
 const [isNavHidden, setIsNavHidden] = useState(false);
+const [isModalOpen, setIsModalOpen] = useState(true);
+
 
 function hideNavBar() {
     setIsNavHidden(true)
@@ -95,14 +97,15 @@ function hideNavBar() {
           {/* Added payment routes */}
           <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
+          <Route path='/history' element={<History />} />
           {/* <Route path='/test' element={<TestComponent />} /> */}
           {/* ... other routes */}
           
         </Routes>
       </Elements>
       <RewardsModal
-      isOpen={openModal}
-      closeModal={() => setOpenModal(false)} 
+      isModalOpen={isModalOpen}
+      setIsModalOpen={setIsModalOpen}
       />
     </Router>
   );
