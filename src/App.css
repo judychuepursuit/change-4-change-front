@@ -133,6 +133,19 @@
   background-position: center;
 }
 
+.aspca-home {
+  background-image: url(images/carousel-images/aspca_home.jpg);
+}
+
+.red-cross-home {
+  background-image: url(images/carousel-images/red-cross_home.jpg);
+}
+
+.red-cross-home {
+  background-image: url(images/carousel-images/feed_america_home.jpg);
+  padding-top: 15px;
+}
+
 .home-content {
   display: flex;
   flex-direction: column;
