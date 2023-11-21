@@ -40,7 +40,7 @@
 
 
 
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 // Added Stripe imports
 import { Elements } from '@stripe/react-stripe-js';
@@ -60,25 +60,34 @@ import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
 // import TestComponent from './components/pages/TestComponent';
 // ... other imports
-import { useState } from 'react';
-
+import RewardsModal from './components/RewardsModal.js';
+import History from "./components/pages/History.js"
 // Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 function App() {
+
+// const [openModal, setOpenModal] = useState(false);
+const [isNavHidden, setIsNavHidden] = useState(false);
+const [isModalOpen, setIsModalOpen] = useState(true);
+
+
+function hideNavBar() {
+    setIsNavHidden(true)
+}
   const [userPurchaseData, setUserPurchaseData] = useState({
     recipient: null
   })
 
   return (
     <Router>
-      <Navbar />
+      <Navbar hidden={isNavHidden} />
       {/* Wrapped the Routes with Elements for Stripe */}
       <Elements stripe={stripePromise}>
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/rewards' element={<Rewards />} />
+          <Route path='/rewards' element={<Rewards hideNavBar={hideNavBar}/>} />
           <Route path='/how-it-works' element={<HowItWorks />} />
           <Route path='/charities' element={<Charities setUserPurchaseData={setUserPurchaseData}/>} />
           <Route path="/login" element={<LoginPage />} />
@@ -88,10 +97,16 @@ function App() {
           {/* Added payment routes */}
           <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
+          <Route path='/history' element={<History />} />
           {/* <Route path='/test' element={<TestComponent />} /> */}
           {/* ... other routes */}
+          
         </Routes>
       </Elements>
+      <RewardsModal
+      isModalOpen={isModalOpen}
+      setIsModalOpen={setIsModalOpen}
+      />
     </Router>
   );
 }

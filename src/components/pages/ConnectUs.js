@@ -1,22 +1,25 @@
 
 import React from 'react';
 import './ConnectUs.css'
-import BioBox from '../bioBox/BioBox';
+import BioBox from '../bioBox/BioBox'
+import { Link } from 'react-router-dom';
+
 
 const bios = [
-  {
-    id:1,
-    name: 'Angel Tirado',
-    image: 'https://avatars.githubusercontent.com/u/122419430?v=4',
-    githubLink: 'https://github.com/atiradoGit88',
-    aboutMe:'A young eager full stack software engineer.',
-  },
+  
   {
     id:2,
     name: 'Allahvel Salisbury',
     image: 'https://avatars.githubusercontent.com/u/119988077?v=4',
     githubLink: 'https://github.com/AllahvelS',
     aboutMe:'A full stack software engineer.',
+  },
+  {
+    id:1,
+    name: 'Angel Tirado',
+    image: 'https://avatars.githubusercontent.com/u/122419430?v=4',
+    githubLink: 'https://github.com/atiradoGit88',
+    aboutMe:'A young eager full stack software engineer.',
   },
   {
     id:3,

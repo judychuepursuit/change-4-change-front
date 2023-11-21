@@ -25,7 +25,7 @@ const CharityBox = (props) => {
         }}
         to="/payment"
       >
-        <button className="donation">DONATE</button>
+        <button className="donation orange-button">DONATE</button>
       </Link>
       </div>
     </div>

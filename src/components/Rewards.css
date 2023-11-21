@@ -1,1 +1,188 @@
-origin
+*{
+    box-sizing: border-box;
+    margin: 0;
+
+}
+
+.badges-container{
+    margin-left: 200px;
+    padding: 10px;
+}
+
+
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    width: 100%;
+    /* background-image: url(../reward-img/background.png); */
+    background-position: center;
+    background-size:cover;
+    position: relative;
+}
+
+.header {
+    display:flex;
+    justify-content:row;
+    /* align-items: center; */
+    padding: 5px;
+  }
+  
+  .earn-header{
+    font-style: italic;
+    margin-left: 180px;
+  }
+
+  .earn-two{
+    font-size: 2em;
+    font-style: italic;
+  }
+
+  .middle h1 {
+    font-size: 10em;
+  }
+  .points-two{
+    font-size: 2em;
+  }
+  .reward-header {
+    font-weight: 800;
+  }
+
+  .reward-pg{
+    padding: 12px;
+  }
+  .logo {
+    margin-right: 10px;
+  }
+  
+  .hm-bttn {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+.reward-intro {
+    /* border: 2px solid #ff7300; */
+    padding: 45px;
+    align-items: center;
+    justify-content: center;
+  } 
+
+.rewards-page {
+    display: grid;
+}
+ 
+
+@media screen and (max-width: 960px) {
+ 
+  
+  
+    .rewards-page button {
+      display: none;
+    }
+
+    section {
+        /* padding: 40px; */
+    }
+
+    .badges {
+        border: 2px solid rgb(255, 115, 0) ;
+        padding: 80px;
+      }
+    
+    
+    .reward-intro {
+        padding: 40px;
+    
+      }
+      
+      
+      .rewards-page {
+        position:fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -70%);
+        background-color: rgba(0, 0, 0, 0.1); /* Adjust the last value for opacity */
+        border-radius: 10px;
+        z-index: 500;
+      }
+
+    
+  }
+
+  .top h1 {
+        text-align: center;
+        font-size: 6em;
+        color: #ff7300;
+    }
+
+    .top h4{
+        text-align: left;
+        color: #551AEB;
+        font-size: 2em;
+    } 
+  
+    .reward-intro h1 {
+        text-align: center;
+        font-size: xx-large;
+        color: #ff7300;
+    }
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+  
+    .top h4 {
+       /* padding: 10px;  */
+    }
+
+    .middle {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .donateBttn{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .social-media{
+    /* display: flex; */
+        /* justify-content: center; */
+        /* justify-items:center; */
+        text-align: center; 
+        padding: 50px;
+      }
+
+
+
+      .header {
+        display: grid;   
+
+    }
+
+    .header button{
+        position: absolute;
+        top: 10px;
+        right: 40px;    }
+
+.flow-chart {
+    width: 80%;
+}
+
+.social-tag img {
+    max-width: 8%;
+    padding: 8px;
+}
+
+.hm-bttn {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+
+}

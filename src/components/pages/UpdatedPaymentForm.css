@@ -33,7 +33,7 @@ input, .StripeElement {
     font-size: 12px; /* Smaller font size for inputs */
 }
 
-button {
+.stripe-button {
     background-color: #551aeb;
     color: white;
     border: none;
@@ -44,9 +44,6 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #7a3feb;
-}
 
 .error-message {
     color: red;
