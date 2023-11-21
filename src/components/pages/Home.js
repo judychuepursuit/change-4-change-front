@@ -13,7 +13,9 @@
 // test
 
 import React from 'react';
+import { useState, useEffect } from 'react';
 import '../../App.css';
+import './Home.css';
 import './HomePageComponents/InfoSection';
 import { Link, useNavigate } from 'react-router-dom';
 import info1 from '../../images/img-1a.jpeg';
@@ -23,7 +25,6 @@ import info3 from '../../images/sm_image.jpeg';
 
 function InfoBox({ title, description, buttonText, infoLink, img, altText }) {
   let navigate = useNavigate();
-
   return (
     <div className='info-box'>
       <p>{description}</p>
@@ -35,21 +36,44 @@ function InfoBox({ title, description, buttonText, infoLink, img, altText }) {
 
 export default function Home({ title, description, buttonText, infoLink }) {
 let navigate = useNavigate();
+let [currentImage, setCurrentImage] = useState(0) 
+const timeBetweenImages =8000
+useEffect (()=>{
+  setTimeout(()=>{ 
+    console.log("current image", currentImage)
+    setCurrentImage((currentImage+1)%4)//save
+  }, timeBetweenImages)
+
+}, [])
+useEffect (()=>{
+  setTimeout(()=>{ 
+    console.log("current image", currentImage)
+    setCurrentImage((currentImage+1)%4)//save
+  }, timeBetweenImages)
+}, [currentImage]) 
+
   return (  
   <div className="home">
     {/* add maincontent code here */}
     <div className="main-content">
+      <h3> Get started now by donating just 66¢ a day </h3>
       <h1> MAKE A CHANGE </h1>
       <h2> with your change </h2>
-      <h3> Get started now by donating just 66¢ a day </h3>
-      <Link to= "/payment"><button className="donate-btn">CLICK TO DONATE </button></Link>
+      {/* <Link to= "/payment"><button className="donate-btn">DONATE </button></Link> */}
     </div>
     {/* <div className="hero-image"></div> */}
+    <Link to= "/payment"><button className="donate-btn">DONATE </button></Link>
     <div className="hero-images">
+      <div className="hero-image-container" style={{transform:`translateX(${currentImage*-100}%)`}}>
       <div className="carousel-image hero-image"></div>
       <div className="carousel-image unicef-home"></div>
+      <div className="carousel-image aspca-home"></div>
+      <div className="carousel-image red-cross-home"></div>
+      <div className="carousel-image feed-america-home"></div>
     </div>
-    <div className="home-content">
+    </div>
+
+    <div className="home-content"> 
       {/* <h1>change</h1> */}
         <Link to="/how-it-works"><button className="how-it-works">how it works</button></Link>
         {/* <button className="how-it-works" onClick={() => navigate(infoLink)}>how it works</button>  */}

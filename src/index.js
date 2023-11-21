@@ -17,9 +17,7 @@ import reportWebVitals from './reportWebVitals';
 const root = createRoot(document.getElementById('root')); // new way of using routerDOM for React 18
 
 root.render(       
-<React.StrictMode>
 <App />
-</React.StrictMode>, 
 );
     
 

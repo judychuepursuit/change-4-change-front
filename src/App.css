@@ -1,5 +1,5 @@
 
-* {
+/* * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -12,45 +12,59 @@
 .contact-us
 .sign-up 
 
- {
+ /* {
   display: flex;
   height: 90vh;
-  align-items: center;
+  align-items: center; */
   /* justify-content: center; */
-  font-size: 3rem;
-}
+  /* font-size: 3rem;
+} */
 
 .main-content {
   text-align: center;
   font-size: small;
+  font-weight: bold;
   width: 100%;
   color: #ffffff;
   background-color: #ff7300;
 }
 
 .main-content h1 {
-  background-color: white;
-  height: 30px;
-  padding: 4px;
-  color: #551aeb;
-  font-size: medium;
-  font-weight: 600;
+  background-color: #551aeb;
+  height: 40px;
+  padding: 18px;
+  color: #ebe8f4;
+  font-size: 46px;
+  font-weight: bolder;
 }
 
+.main-content h2 {
+  padding: 18px;
+  font-size: 38px;
+  font-weight: bolder;
+  padding-bottom: 8px;
+  /* height: 60px; */
+  line-height: 80px;
+}
 .main-content h3 {
-  font-size: xx-large;
+  background-color: white;
+  height: 40px;
+  padding: 6px;
+  color: #551aeb;
+  font-size: 23px;
   font-weight: bolder;
 }
 
 .donate-btn {
-  width: 250px;
-  font-weight: 600;
-  margin-top: 10px;
-  margin-bottom: 20px;
+  width: 190px;
+  font-size: 30px;
+  font-weight: bolder;
+  margin-top: -50%;
+  /* margin-bottom: 20px; */
   border-radius: 4px;
-  background-color:#551aeb;
+  background-color:#ff7300;
   color: #ffffff;
-  padding: 8px;;
+  /* padding: 8px; */
 }
 
 .hero-image {
@@ -61,6 +75,12 @@
   display: flex;
   flex-direction: row;
   width: 100%;
+  height: 900px;
+  overflow-x: hidden;
+}
+
+.button {
+  color: blue;
 }
 
 .carousel-image {
@@ -68,25 +88,49 @@
   background-size: cover;
   background-repeat: no-repeat;
   flex-direction: column;
-  height: 900px;
+  /* height: 900px; */
+  height: 73%;
   display: flex;
   align-items: center;
+  min-width: 100%;
   padding-top: 200px;
 }
+
+.hero-image-container {
+  display: flex;
+  transition: transform 1s ease;
+  width: 100%;
+  height: 100%;
+}
+
 .unicef-home {
   background-image: url(images/carousel-images/unicef_home.jpg);
+}
+
+.aspca-home {
+  background-image: url(images/carousel-images/aspca_home.jpg);
+}
+
+.red-cross-home {
+  background-image: url(images/carousel-images/red-cross_home.jpg);
+}
+
+.red-cross-home {
+  background-image: url(images/carousel-images/feed_america_home.jpg);
+  padding-top: 15px;
 }
 
 .home-content {
   top: 80%;
   position: absolute;
   
-}
-/* .hero-image h1{
+} 
+.hero-image h1{
   color:#ffffff;
   font-size: 5rem;
   font-weight: 600;
-} */
+}
+
 /* hiw button */
 .how-it-works {
   width: 320px;
