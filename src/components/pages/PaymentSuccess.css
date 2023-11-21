@@ -1,0 +1,53 @@
+.success-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background: #fff; /* Adjust the color to match your design */
+  }
+  
+
+  .success-title {
+    color: #FF7300; /* Adjust the color to match your design */
+    margin: 0;
+    font-size: 48px; /* Adjust the size to match your design */
+  }
+  
+  .success-message {
+    color:#FF7300; /* Adjust the color to match your design */
+    margin: 0;
+    font-size: 24px; /* Adjust the size to match your design */
+  }
+  
+  .thank-you-message {
+    color: #551aeb; /* Adjust the color to match your design */
+    margin: 20px 0;
+  }
+  
+  .transaction-history-button {
+    background-color: #FF7300;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    /* Add hover effect if needed */
+  }
+  
+  .transaction-history-button:hover {
+    background-color: #551aeb;
+  }
+  
+  .logout-button {
+    background-color: transparent;
+    color: #4A5568; /* Adjust the color to match your design */
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+  
+  /* Add any additional styles or responsive adjustments as needed */
+  
