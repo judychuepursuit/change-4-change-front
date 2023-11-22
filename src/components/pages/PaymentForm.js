@@ -1,389 +1,208 @@
 import React, { useState } from 'react';
-import axios from 'axios';
-import { useStripe, useElements } from "@stripe/react-stripe-js";
-// import { CardElement } from "@stripe/react-stripe-js";
-
-// import './PaymentForm.css'; // Make sure this CSS file has the necessary styles
+import { useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
 import { useNavigate } from 'react-router-dom';
-import './UpdatedPaymentForm.css'; // Make sure to rename your CSS file accordingly
-import { CardNumberElement, CardExpiryElement, CardCvcElement } from "@stripe/react-stripe-js";
+import './UpdatedPaymentForm.css'; 
 
 
-const CARD_ELEMENT_OPTIONS = {
-    style: {
-      base: {
-        fontSize: '16px',
-        color: '#424770',
-        '::placeholder': {
-          color: '#aab7c4',
-        },
-      },
-      invalid: {
-        color: '#9e2146',
-      },
-    },
-};
+// const PaymentForm = ({ recipient }) => {
+const PaymentForm = () => {
 
-function getCardType(cardNumber) {
-    if (typeof cardNumber !== 'string') return null; // or 'unknown'
+  const stripe = useStripe();
+  const elements = useElements();
+  const navigate = useNavigate();
+  const [amount, setAmount] = useState('');
+  const [donationFrequency, setDonationFrequency] = useState('one-time');
+  const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
-    const cardTypes = {
-        visa: /^4[0-9]{12}(?:[0-9]{3})?$/,
-        mastercard: /^5[1-5][0-9]{14}$/,
-        // ...other card regex patterns
-    };
+  const [charityName, setCharityName] = useState('Select a Charity');
+  const charities = [
+    { name: 'ASPCA', id: 'acct_1OEpakQTN4c4HEpl' },
+    { name: 'Feeding America', id: 'acct_1OCtfWQPst9pmMFX' },
+    { name: 'Red Cross', id: 'acct_1OCtgDQRnTyfQud7' },
+    { name: 'UNICEF', id: 'acct_1OCtjmQS1DLaPBq0' }
+  ];
 
-    for (const [cardType, pattern] of Object.entries(cardTypes)) {
-        if (cardNumber.match(pattern)) return cardType;
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setIsLoading(true); // Set loading to true when the process starts
+
+    if (!stripe || !elements) {
+      console.log('Stripe.js has not loaded yet.');
+      // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
+      return;
+    }
+    
+    const cardElement = elements.getElement(CardElement);
+
+    const { error, paymentMethod } = await stripe.createPaymentMethod({
+      type: 'card',
+      card: cardElement,
+      billing_details: {email},
+    });
+
+    if (error) {
+      console.log('[error]', error);
+      return;
     }
 
-    return null; // or 'unknown' if you prefer
-}
-
-
-const PaymentForm = (props) => {
-    console.log(props)
-    const stripe = useStripe();
-    const elements = useElements();
-    const navigate = useNavigate();
-
-    const [loading, setLoading] = useState(false);
-    const [error, setError] = useState(null);
-    const [firstName, setFirstName] = useState("");
-    const [lastName, setLastName] = useState("");
-    const [email, setEmail] = useState("");
-    const [amount, setAmount] = useState("");
-    const [donationFrequency, setDonationFrequency] = useState("one-time");
-    const [formErrors, setFormErrors] = useState({});
-    const [cardError, setCardError] = useState(null);
-    const [cardBrand, setCardBrand] = useState("");
-
-
-    const handleCardNumberChange = async (event) => {
-        console.log(event); // This will show you the structure of the event object
-
-        if (event.error) {
-            setCardError(event.error.message);
-        } else {
-            setCardError(null);
-            
-            // Set the card brand based on the card number
-            // You may need to use a different method to retrieve the card number for security reasons
-            const brand = getCardType(event.value);
-            setCardBrand(brand);
-        }
-    };
-
-
-      // Function to handle the creation of the Stripe Payment Link
-    const handleCreatePaymentLink = async () => {
-    try {
-      // This would be your input values for product name and amount
-      const productName = 'Donation'; // Example product name
-      const amount = 1099; // Example amount in cents
-
-      const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/create-payment-link`, {
-        productName,
+    const { id: payment_method } = paymentMethod;
+    const response = await fetch('/create-payment-intent', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
         amount,
-      });
+        currency: 'usd',
+        paymentMethodId: payment_method,
+        email,
+        charityName, 
+        donationFrequency
+      }),
+    });
 
-      const paymentLinkUrl = response.data.url;
-      window.open(paymentLinkUrl, '_blank'); // Open the Stripe Payment Link in a new tab
-        } catch (err) {
-      console.error('Error creating payment link:', err);
-      // Handle error, e.g., show an error message to the user
+    const paymentIntent = await response.json();
+    if (donationFrequency === 'one-time') {
+      const result = await stripe.confirmCardPayment(paymentIntent.clientSecret);
+      if (result.error) {
+        console.log(result.error.message);
+      } else {
+        if (result.paymentIntent.status === 'succeeded') {
+          console.log('Money is in the bank!');
+          navigate('/payment-success'); // Redirect to a success page
         }
-    };
+      }
+    } else {
+      // For subscriptions
+      if (paymentIntent.status === 'requires_action') {
+        // Redirect to Stripe's hosted page for additional authentication
+        const result = await stripe.confirmCardPayment(paymentIntent.clientSecret);
+        handleSubscriptionResult(result);
+      } else {
+        // Subscription setup successful, no additional action required
+        console.log('Subscription set up successfully!');
+        navigate('/payment-success'); // Redirect to a success page
+      }
+    }
+    setIsLoading(false);
 
+  };
 
-    const validateForm = () => {
-        let errors = {};
-        let formIsValid = true;
-    
-        // Amount validation
-        if (amount <= 0) {
-            errors["amount"] = "Please enter a valid amount.";
-            formIsValid = false;
-        }
-    
-        // Email validation
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-            errors["email"] = "Please enter a valid email.";
-            formIsValid = false;
-        }
-    
-        setFormErrors(errors);
-        return formIsValid;
-    };
-    
+  const handleSubscriptionResult = (result) => {
+    if (result.error) {
+      // Handle errors, such as declined card, etc.
+      console.log(result.error.message);
+    } else {
+      if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
+        console.log('First subscription payment succeeded!');
+        navigate('/payment-success'); // Redirect to a success page
+      }
+    }
+  };
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
+  
 
-        if (!stripe || !elements) {
-            setError('Stripe has not loaded');
-            return;
-        }
-
-        setLoading(true);
-        setError(null);
-    
-
-        // const cardElement = elements.getElement(CardElement);
-        const cardNumberElement = elements.getElement(CardNumberElement);
-        const cardExpiryElement = elements.getElement(CardExpiryElement);
-        const cardCvcElement = elements.getElement(CardCvcElement);
-
-        const { error, paymentMethod } = await stripe.createPaymentMethod({
-            type: 'card',
-            // card: cardElement,
-            card: cardNumberElement, // You only need to pass one element here, Stripe will handle the rest
-            billing_details: {
-                name: `${firstName} ${lastName}`,
-                email: email,
-                // address: { // Uncomment and use if you want to send the postal code separately
-                //     postal_code: zipCode
-                // }
-            },
-        });
-
-        if (error) {
-            setError(error.message);
-            setLoading(false);
-            return;
-        } 
-
-        const paymentData = {
-            paymentMethodId: paymentMethod.id,
-            firstName,
-            lastName,
-            email,
-            amount: parseInt(amount) * 100,
-            donationFrequency, // Include the donation frequency in the payment data
-
-        };
-
-        // POST to your backend server
-        axios.post(`${process.env.REACT_APP_BACKEND_URL}/payment`, paymentData)
-        .then(response => {
-            setLoading(false);
-            navigate('/payment-success');
-        })
-        .catch(err => {
-            console.error('Payment error:', err);
-            console.error('Server response:', err.response);
-            // alert('Payment failed. Please try again.');
-            setError('Payment failed. Please try again.');
-            setLoading(false);
-        });
-    };
+  return (
+    <div className="payment-container">
+      <div className="payment-form">
+        <h2>payment</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group inline">
+            <input type="text" placeholder="First Name" required />
+            <input type="text" placeholder="Last Name" required />
+          </div>
 
 
 
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    
-    //     if (!stripe || !elements) {
-    //         setError('Stripe has not loaded');
-    //         return;
-    //     }
-    
-    //     if (!validateForm()) {
-    //         return;
-    //     }
-    
-    //     setLoading(true);
-    //     setError(null);
-    
-    //     try {
-    //         const cardNumberElement = elements.getElement(CardNumberElement);
-    
-    //         const billingDetails = {
-    //             name: `${firstName} ${lastName}`,
-    //             email,
-    //         };
-    
-    //         const { error: stripeError, paymentMethod } = await stripe.createPaymentMethod({
-    //             type: 'card',
-    //             card: cardNumberElement,
-    //             billing_details: billingDetails,
-    //         });
-    
-    //         if (stripeError) {
-    //             setError(stripeError.message);
-    //             setLoading(false);
-    //             return;
-    //         }
-    
-    //         // Adjust the amount to be in the smallest currency unit (e.g., cents)
-    //         const paymentData = {
-    //             paymentMethodId: paymentMethod.id,
-    //             firstName,
-    //             lastName,
-    //             email,
-    //             amount: parseInt(amount) * 100, // Convert to cents
-    //             donationFrequency,
-    //         };
-    
-    //         // Choose the correct backend endpoint based on the donation frequency
-    //         const backendEndpoint = donationFrequency === 'one-time' 
-    //             ? '/payment' 
-    //             : '/create-payment-link';
-    
-    //         const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}${backendEndpoint}`, paymentData);
-    
-    //         // Redirect to success page or open the payment link based on the donation frequency
-    //         if (donationFrequency === 'one-time') {
-    //             navigate('/payment-success');
-    //         } else {
-    //             window.open(response.data.url, '_blank');
-    //         }
-    //     } catch (error) {
-    //         console.error('Payment error:', error);
-    //         setError('Payment failed. Please try again.');
-    //     } finally {
-    //         setLoading(false);
-    //     }
-    // };
-    
-
-    return (
-        <div className="content">
-            <h1>Set Up Your Payment for {props.recipient}</h1>
-            <p>Connect your preferred payment method and set your donation preferences.</p>
-            <form onSubmit={handleSubmit}>
-
-                <div className="form-group">
-                    <label htmlFor="firstName">First Name</label>
-                    <input type="text" id="firstName" value={firstName} onChange={(e) => setFirstName(e.target.value)} required />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="lastName">Last Name</label>
-                    <input type="text" id="lastName" value={lastName} onChange={(e) => setLastName(e.target.value)} required />
-                </div>
-
-                <div className="form-group">
-                    <label htmlFor="email">Email</label>
-                    <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-                    {formErrors["email"] && <div className="error-message">{formErrors["email"]}</div>}
-
-                </div>
-
-                {/* <div className="form-group">
-                    <label htmlFor="amount">Amount ($)</label>
-                    <input type="number" id="amount" value={amount} onChange={(e) => setAmount(e.target.value)} required />
-                </div> */}
-
-                {/* <div className="form-group">
-                    <label>Card Details</label>
-                    <CardElement />
-                </div> */}
-
-                <div className="form-group">
-                    <label>Donation Frequency</label>
-                    <div className="radio-group">
-                        <input 
-                            type="radio" 
-                            id="one-time" 
-                            name="donationFrequency" 
-                            value="one-time"
-                            checked={donationFrequency === "one-time"}
-                            onChange={(e) => setDonationFrequency(e.target.value)}
-                        />
-                        <label htmlFor="one-time">One-Time</label>
-                        
-                        <input 
-                            type="radio" 
-                            id="monthly" 
-                            name="donationFrequency" 
-                            value="monthly"
-                            checked={donationFrequency === "monthly"}
-                            onChange={(e) => setDonationFrequency(e.target.value)}
-                        />
-                        <label htmlFor="monthly">Monthly</label>
-                    </div>
-                </div>
-
-                {/* Inline validation for amount */}
-                <div className="form-group">
-                    <label htmlFor="amount">Amount ($)</label>
-                    <input type="number" id="amount" value={amount} onChange={(e) => setAmount(e.target.value)} required />
-                    {formErrors["amount"] && <div className="error-message">{formErrors["amount"]}</div>}
-                </div>
-
-                <div className="form-group">
-                    <label>Card Number</label>
-                    <CardNumberElement options={CARD_ELEMENT_OPTIONS} onChange={handleCardNumberChange} />
-
-                    {/* <CardNumberElement 
-                        options={CARD_ELEMENT_OPTIONS}
-                        onChange={(event) => {
-                            if (event.error) {
-                            setCardError(event.error.message);
-                            } else {
-                            setCardError(null);
-                            }
-                        }}
-                    /> */}
-                    {cardError && <div className="error-message">{cardError}</div>}
-
-                </div>
-
-                {/* <div className="form-group">
-                    <label>Card Number</label>
-                    <CardNumberElement 
-                        options={CARD_ELEMENT_OPTIONS}
-                        onChange={handleCardNumberChange}
-                    />
-
-                    {cardBrand && <div className="card-brand">{`Card Brand: ${cardBrand}`}</div>}
-                    {cardError && <div className="error-message">{cardError}</div>}
-                </div> */}
-
-
-                <div className="form-group">
-                    <label>Expiration Date</label>
-                    <CardExpiryElement options={CARD_ELEMENT_OPTIONS} />
-                </div>
-                <div className="form-group">
-                    <label>CVC</label>
-                    <CardCvcElement options={CARD_ELEMENT_OPTIONS} />
-                </div>
-
-
-
-                {/* <div className="form-group">
-                    <label>Card Details</label>
-                    <CardElement />
-                </div> */}
-
-
-                {/* <div className="form-group">
-                    <label htmlFor="amount">Amount ($)</label>
-                    <input type="number" id="amount" value={amount} onChange={(e) => setAmount(e.target.value)} required />
-                </div> */}
-
-                {error && <div className="error-message">{error}</div>}
-                {/* <button type="submit" disabled={!stripe || loading}>Pay Now</button> */}
-
-                {/* Update the button text and disabled state */}
-                {/* <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Submit Payment'}</button> */}
-
-                <button  type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button>
-
-                <button onClick={handleCreatePaymentLink} disabled={loading}>
-                    {loading ? 'redirecting...' : 'Or Donate with Stripe'}
-                </button>
-
-            </form>
-
-            <footer>
-            <a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a>
-            </footer>
-            
+        <div className="form-group">
+          {/* <label>Email</label> */}
+          <input
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="Enter your email"
+            required
+          />
         </div>
-    );
+
+        <div className="form-group">
+          {/* <label>Charity Name</label> */}
+          <select
+            value={charityName}
+            onChange={(e) => setCharityName(e.target.value)}
+            required
+          >
+            <option value="">Select a Charity</option>
+            {charities.map((charity, index) => (
+              <option key={index} value={charity.name}>{charity.name}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className="form-group">
+          <label>Donation Frequency</label>
+          <div className="radio-group">
+
+          <div className="radio-option">
+            <label>
+              <input
+                type="radio"
+                name="donationFrequency"
+                value="one-time"
+                checked={donationFrequency === 'one-time'}
+                onChange={(e) => setDonationFrequency(e.target.value)}
+              />
+              One Time
+            </label>
+          </div>
+
+
+            <div className="radio-option">
+              <label>
+                <input
+                  type="radio"
+                  name="donationFrequency"
+                  value="monthly"
+                  checked={donationFrequency === 'monthly'}
+                  onChange={(e) => setDonationFrequency(e.target.value)}
+                />
+                Monthly
+              </label>
+            </div>
+
+          </div>
+        </div>
+
+
+        <div className="form-group">
+          <label>Amount ($)</label>
+          <input
+            type="number"
+            value={amount}
+            onChange={(e) => setAmount(e.target.value)}
+            placeholder="Enter amount"
+            required
+          />
+        </div>
+        <div className="form-group">
+          <label>Card Information</label>
+          <CardElement />
+        </div>
+        <button type="submit" disabled={!stripe || isLoading}>
+          {isLoading ? (
+            <>
+              <div className="spinner"></div>
+              Processing...
+            </>
+          ) : (
+            "Pay Now"
+          )}
+        </button>
+      </form>
+    </div>
+  </div>
+
+
+  );
 };
 
 export default PaymentForm;

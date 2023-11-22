@@ -1,75 +1,114 @@
-/* UpdatedPaymentForm.css */
 
-.content {
-    font-family: Arial, sans-serif;
-    max-width: 400px; /* Further reduced width for smaller form */
-    margin: 20px auto;
-    padding: 10px; /* Further reduced padding for smaller form */
-    background-color: #f4f4f4;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+.payment-container {
+  display: flex;
+  justify-content: center; /* Align to the start of the container */
+  align-items: center;
+  height: 100vh;
+  padding-top: 80px; /* Add padding to the top to push the form down slightly */
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: -300px; /* Adjust this value to move the form up */
+  padding: 20px;
+  border: 1px solid #551aeb;
+  border-radius: 5px;
+  width: 300px;
+  background-color: #f5f5f5;
+}
+
+.payment-form h2 {
+  color: #551aeb;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.payment-form input, .StripeElement {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #551aeb;
+  border-radius: 3px;
+}
+
+.payment-form button {
+  display: block; /* Block display will allow the button to respect the margin auto */
+  width: calc(50% - 20px); /* Full width minus the padding from the container */
+  background-color: #FF7300;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin: 10px auto; /* Top and bottom margin of 10px and auto margin on the sides */
+  transition: background-color 0.3s ease;
+}
+
+
+.payment-form button:hover {
+  background-color: #551aeb;
+}
+
+.payment-form .form-group.inline {
+  display: flex;
+  gap: 10px;
+}
+
+.payment-form .form-group.inline input {
+  flex: 1;
 }
 
 .form-group {
-    margin-bottom: 10px;
+  margin-bottom: 20px; /* Adjust spacing as needed */
 }
 
-label, input, .StripeElement, button {
-    width: 100%;
-    margin-bottom: 8px; /* Further reduced margin for smaller spacing */
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px; /* Adjust font size as needed */
+  color: #333; /* Adjust label color as needed */
 }
-
-label {
-    display: block;
-    margin-bottom: 3px; /* Further reduced margin for tighter label spacing */
-    font-size: 12px; /* Smaller font size for labels */
-}
-
-input, .StripeElement {
-    padding: 6px; /* Further reduced padding for smaller input height */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 12px; /* Smaller font size for inputs */
-}
-
-.stripe-button {
-    background-color: #551aeb;
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 8px 15px; /* Adjusted padding for smaller button */
-    border-radius: 20px;
-    font-size: 14px; /* Kept readable font size for button text */
-    transition: background-color 0.3s ease;
-}
-
-
-.error-message {
-    color: red;
-    margin-bottom: 8px; /* Further reduced margin for error messages */
-}
-
-/* UpdatedPaymentForm.css additions */
 
 .radio-group {
-    display: flex;
-    gap: 5px; /* Further reduced gap for smaller form */
-    margin-bottom: 8px; /* Further reduced margin for tighter grouping */
+  display: flex;
+  justify-content: center; /* Center the radio buttons horizontally */
+  gap: 70px; /* Space between radio buttons */
+  flex-direction: row;
 }
 
-/* Media query for responsiveness */
-@media (max-width: 768px) {
-    .content {
-        margin: 10px;
-        padding: 10px;
-    }
-
-    label, input, .StripeElement, button {
-        font-size: 11px; /* Further reduced font size for smaller screens */
-    }
-
-    /* Additional responsive adjustments as needed */
+.radio-option {
+  display: flex;
+  align-items: center;
+  white-space: nowrap; /* Prevents the label from wrapping */
 }
 
-/* Rest of your CSS */
+.radio-option label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 5px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #551aeb;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+
+
