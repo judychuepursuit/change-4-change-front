@@ -37,4 +37,7 @@ const BadgeGallery = () => {
   );
 };
 
+
+
 export default BadgeGallery;
+

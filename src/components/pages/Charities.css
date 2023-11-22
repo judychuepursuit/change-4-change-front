@@ -1,61 +1,54 @@
 /* Charities.css */
 .charities {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    height: 100vh; /* This will make the container take the full height of the viewport */
-  }
-  
-  .suggested-charities {
-    margin-top: 50px; /* Adjust the top margin as needed */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh; /* This will make the container take the full height of the viewport */
+}
+
+.suggested-charities {
+  margin-top: 50px; /* Adjust the top margin as needed */
+}
+
+.charity-boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  border-radius: 4px;
+  color: #551AEB;
+}
+
+.button hover {
+  color: #ff7300;
+}
+
+@media screen and (max-width: 440px) {
   .charity-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+      display: block;
+      margin-top: 220px;
   }
-  
-  .charity-box {
-    width: 45%;
-    height: 300px;
-    margin: 1rem;
-    text-align: center;
-    padding: 1rem;
-    border-radius: 5px;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .mission-statement {
-    display: none;
-    position: absolute;
-    background-color: rgba(255, 255, 255, 0.9);
-    padding: 10px;
-    width: 100%;
-    bottom: 0;
-    left: 0;
-    align-self: flex-end;
-    font-size: 14px;
-  }
-  
-  .charity-box:hover .mission-statement {
-    display: block;
-  }
-  
-  .charity-box img {
-    width: 60%; /* Set a fixed width for the images */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 150px; /* Adjust the max-height as needed to make the images smaller */
-  }
-  
-  /* Additional styles for the donation button if needed */
-  .donation {
-    margin-top: 20px;
-    font-weight: bold;
-  }
-  
+}   
+
+
+.mission-statement {
+  display: none;
+  position: absolute;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 10px;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  align-self: flex-end;
+  font-size: 14px;
+}
+
+
+
+
+
