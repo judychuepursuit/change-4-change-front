@@ -20,7 +20,7 @@ import lev1VioBadge from '../../reward-img/lev 1 vio badge.png';
 import unicornBadge from '../../reward-img/unicorn badge.png';
 
 function Rewards(props) {
-  props.hideNavBar();
+  // props.hideNavBar();
 
     const badgeImages = [
       lev1RedBadge,
@@ -38,7 +38,7 @@ function Rewards(props) {
   return (
     <div className='rewards-page'>
       <section className="header">
-        <img src={logo} alt="logo" width="15%" height="25%" className='logo' />
+        {/* <img src={logo} alt="logo" width="15%" height="25%" className='logo' /> */}
         {/* <Link to='/'>
         <button className="hm-bttn">Home</button>
         </Link>
@@ -103,10 +103,10 @@ function Rewards(props) {
        </section>
 
       <div className='donateBttn'>
-        <a>
+      
         <p>CLICK HERE TO </p>
-        <p className='orange'>DONATE</p>
-        </a>
+        <Link to='/charities' className='orange'>DONATE</Link>
+        
       </div>
 
       <div className="social-media">
