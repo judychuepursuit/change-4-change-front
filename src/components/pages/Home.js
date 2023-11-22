@@ -63,7 +63,6 @@ useEffect (()=>{
       {/* <Link to= "/payment"><button className="donate-btn">DONATE </button></Link> */}
     </div>
     {/* <div className="hero-image"></div> */}
-    <Link to= "/payment"><button className="donate-btn">DONATE </button></Link>
     <div className="hero-images">
       <Link to= "/charities"><button className="donate-btn">DONATE </button></Link>
       <div className="hero-image-container" style={{transform:`translateX(${currentImage*-100}%)`}}>
