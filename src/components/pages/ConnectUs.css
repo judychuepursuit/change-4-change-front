@@ -1,21 +1,26 @@
-.header-picture img{
-    justify-content: center;
-    align-content: center;
-    width: 100%;
-    height: auto;
+.header-picture {
+    background-image: url(https://media.discordapp.net/attachments/756738190219673693/1172955746779009155/connect_banner_image.jpg?ex=6562332a&is=654fbe2a&hm=2af9a80c30195e149fb9816df1c5d6755010e4c6808812c1bf3b454fbc48c924&=&width=2160&height=778);
+    height: 230px;
+    background-size: auto 100%;
+}
+
+.connect-us__content{
+    margin: 0 auto;
+    width: 1000px;
 }
 
 .connect {
     color: #ff7300;
-    font-size: 150px;
+    font-size: 6rem;
     justify-content: center;
     align-content: center;
     display: flex;
+    margin: 5px;
 }
 
-.github-bio {
-    justify-content: center;
+.connect-us__bios {
     display: grid;
-    grid-template-rows: repeat(2, auto); /* Two rows */
-    gap: 10px; /* Adjust the gap between boxes */
+    grid-template-columns: 1fr 1fr 1fr;
+    margin-top: 30px;
+    grid-gap: 10px;
 }
