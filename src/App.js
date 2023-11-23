@@ -41,7 +41,8 @@ const [userPurchaseData, setUserPurchaseData] = useState({
 
 const location = useLocation();
 
-const hideNavbarRoutes = ['/how-it-works']; // Add the routes where you want to hide the navbar
+const hideNavbarRoutes = [];// Add the routes where you want to hide the navbar
+// const hideNavbarRoutes = ['/how-it-works'];// Add the routes where you want to hide the navbar
 
 const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
 
