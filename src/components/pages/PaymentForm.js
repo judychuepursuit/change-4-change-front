@@ -99,8 +99,6 @@ const PaymentForm = () => {
     }
   };
 
-  
-
   return (
     <div className="payment-container">
       <div className="payment-form">
@@ -110,8 +108,6 @@ const PaymentForm = () => {
             <input type="text" placeholder="First Name" required />
             <input type="text" placeholder="Last Name" required />
           </div>
-
-
 
         <div className="form-group">
           {/* <label>Email</label> */}
@@ -155,7 +151,6 @@ const PaymentForm = () => {
             </label>
           </div>
 
-
             <div className="radio-option">
               <label>
                 <input
@@ -171,7 +166,6 @@ const PaymentForm = () => {
 
           </div>
         </div>
-
 
         <div className="form-group">
           <label>Amount ($)</label>
