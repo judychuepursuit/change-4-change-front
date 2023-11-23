@@ -57,12 +57,13 @@
 }
 
 .donate-btn {
-  margin-left: 44%;
+  /* margin-left: 44%; */
   width: 190px;
   font-size: 30px;
   font-weight: bolder;
-  margin-top: 50px;
+  margin-top: 60px;
   position: absolute;
+  left: 43%;
   /* margin-bottom: 20px; */
   border-radius: 4px;
   background-color:#ff7300;
@@ -72,16 +73,17 @@
 }
 
 .hero-image {
-  background-image: url(images/img-1a-trans.jpg);
-
+  background-image: url(images/carousel-images/change-4-change_home.jpg);  background-position: bottom;
+  /* background-image: url(images/img-1a-trans.jpg); */
 }
 
 .hero-images {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  height: 900px;
-  overflow-x: hidden;
+  height: 700px;
+  overflow-x: hidden; 
 }
 
 .button {
@@ -96,7 +98,7 @@
   /* position: relative; */
   /* height: 900px; */
   /* min-height: 90%; */
-  height: 70vh;
+  /* height: 70vh; */
   /* display: flex;
   align-items: center; */
   min-width: 100%;
@@ -113,26 +115,33 @@
 
 .unicef-home {
   background-image: url(images/carousel-images/unicef_home.jpg);
+  background-position: bottom;
 }
 
 .aspca-home {
   background-image: url(images/carousel-images/aspca_home.jpg);
+  background-position: bottom;
 }
 
 .red-cross-home {
-  background-image: url(images/carousel-images/red-cross_home.jpg);
+  background-image: url(images/carousel-images/red-cross4_home.jpeg);
 }
 
-.red-cross-home {
-  background-image: url(images/carousel-images/feed_america_home.jpg);
-  padding-top: 15px;
+.feed-america-home {
+  background-image: url(images/carousel-images/feed_america2-home.jpg);
+  background-position: center;
 }
 
 .home-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
   top: 80%;
   position: absolute;
   
 } 
+
 .hero-image h1{
   color:#ffffff;
   font-size: 5rem;
@@ -141,12 +150,11 @@
 
 /* hiw button */
 .how-it-works {
-  margin: 100px 0 70px;
-  width: 165px;
+  margin: 160px 0 30px;
+  width: 180px;
   background-color:#ff7300;
-  font-weight:bolder;
-margin-left: 48%;
-  font-size: 18px;
+  font-weight: bolder;
+  font-size: 20px;
   padding: 8px;
   color: #ffffff;
   border-radius: 4px;
@@ -158,16 +166,21 @@ margin-left: 48%;
 }
 
 .how-it-works-page {
-  position:relative;
-  padding-top: 100px;
+  /* position:relative; */
+  padding-top: 200px;
   /* top: 47%; */
   color: #ff7300;
   text-align: center;
   font-size: 45px;
 }
 
-.how-it-works-image {
-  background-image: url('images/hiw-banner_2.jpg');
+/* .how-it-works-image {
+  background-image: url('images/hiw-banner_2.jpg'); */
+  .header-picture {
+    background-image: url(images/hiw-banner_2.jpg);
+    height: 230px;
+    background-size: auto 100%;
+/* } */
 }
 
 /* InfoSection.css */
@@ -176,7 +189,7 @@ margin-left: 48%;
   gap: 40px;
   justify-content: center;
   align-items: center;
-  padding: 1rem;
+  padding: 1%;
 }
 
 .info-box {
@@ -188,7 +201,7 @@ margin-left: 48%;
 .info-box img {
   width: 200px;
   margin-left: 55px;
-  padding-bottom: 12px;
+  padding-bottom: 15px;
 }
 
 .info-box p{
@@ -196,7 +209,7 @@ margin-left: 48%;
   text-align: center;
   font-size: small;
   font-weight: 600;
-  padding-top: 20px;
+  /* padding-top: 20px; */
   width: 300px;
 }
 
@@ -221,6 +234,12 @@ margin-left: 48%;
 @media (max-width: 768px) {
   .info-box {
     width: 90%; /* Full width boxes on smaller screens */
+  }
+}
+
+@media (max-height: 1350px) {
+  .carousel-image {
+    max-height: 850px;
   }
 }
 
@@ -386,8 +405,8 @@ text-align: center;
    /* opacity: 50%;*/
 }
 
-.navbar Button {
+/* Button {
     display: none;
-}
+} */
 
 }

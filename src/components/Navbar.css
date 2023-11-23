@@ -143,9 +143,9 @@
       transition: 250ms;
     }
   
-    .navbar button {
+    /* button {
       display: none;
-    }
+    } */
   }
 
   .hidden { 

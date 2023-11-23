@@ -41,14 +41,14 @@ const timeBetweenImages =8000
 useEffect (()=>{
   setTimeout(()=>{ 
     console.log("current image", currentImage)
-    setCurrentImage((currentImage+1)%4)//save
+    setCurrentImage((currentImage+1)%5)//save
   }, timeBetweenImages)
 
 }, [])
 useEffect (()=>{
   setTimeout(()=>{ 
     console.log("current image", currentImage)
-    setCurrentImage((currentImage+1)%4)//save
+    setCurrentImage((currentImage+1)%5)//save
   }, timeBetweenImages)
 }, [currentImage]) 
 
@@ -63,14 +63,14 @@ useEffect (()=>{
     </div>
     {/* <div className="hero-image"></div> */}
     <div className="hero-images">
-    <Link to= "/charities"><button className="donate-btn">DONATE </button></Link>
+      <Link to= "/charities"><button className="donate-btn">DONATE </button></Link>
       <div className="hero-image-container" style={{transform:`translateX(${currentImage*-100}%)`}}>
-      <div className="carousel-image hero-image"></div>
-      <div className="carousel-image unicef-home"></div>
-      <div className="carousel-image aspca-home"></div>
-      <div className="carousel-image red-cross-home"></div>
-      <div className="carousel-image feed-america-home"></div>
-    </div>
+        <div className="carousel-image hero-image"></div>
+        <div className="carousel-image unicef-home"></div>
+        <div className="carousel-image aspca-home"></div>
+        <div className="carousel-image red-cross-home"></div>
+        <div className="carousel-image feed-america-home"></div>
+      </div>
     </div>
 
     <div className="home-content"> 
@@ -81,7 +81,7 @@ useEffect (()=>{
           <div className='button-text'></div>
        <InfoBox
         title="subscription"
-        description="Choose donation amount and frequency: One time or Monthly."
+        description="Select a charity, then add amount and frequency type."
         buttonText="subscription" 
         infoLink='/charities'
         img={info1}
@@ -89,7 +89,7 @@ useEffect (()=>{
       />
       <InfoBox
         title="rewards"
-        description="Earn Points towards Badges and earn monthly Milestones."
+        description="Earn Points towards Badges and monthly Milestones."
         buttonText="rewards"
         infoLink="/rewards"
         img={info2}
@@ -97,7 +97,7 @@ useEffect (()=>{
       />
       <InfoBox
         title="share"
-        description="Connect your Social Media accounts and share your Rewards with friends and family."
+        description="Connect and share your Rewards with friends and family."
         buttonText="share"
         infoLink="/connect-us"
         img={info3}
