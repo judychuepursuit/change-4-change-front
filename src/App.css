@@ -116,7 +116,6 @@
 
 .unicef-home {
   background-image: url(images/carousel-images/unicef_home.jpg);
-  background-position: bottom;
 }
 
 .aspca-home {
@@ -131,19 +130,6 @@
 .feed-america-home {
   background-image: url(images/carousel-images/feed_america2-home.jpg);
   background-position: center;
-}
-
-.aspca-home {
-  background-image: url(images/carousel-images/aspca_home.jpg);
-}
-
-.red-cross-home {
-  background-image: url(images/carousel-images/red-cross_home.jpg);
-}
-
-.red-cross-home {
-  background-image: url(images/carousel-images/feed_america_home.jpg);
-  padding-top: 15px;
 }
 
 .home-content {
@@ -164,12 +150,11 @@
 
 /* hiw button */
 .how-it-works {
-  margin: 100px 0 70px;
-  width: 165px;
+  margin: 160px 0 30px;
+  width: 180px;
   background-color:#ff7300;
-  font-weight:bolder;
-margin-left: 48%;
-  font-size: 18px;
+  font-weight: bolder;
+  font-size: 20px;
   padding: 8px;
   color: #ffffff;
   border-radius: 4px;
@@ -181,16 +166,21 @@ margin-left: 48%;
 }
 
 .how-it-works-page {
-  position:relative;
-  padding-top: 100px;
+  /* position:relative; */
+  padding-top: 200px;
   /* top: 47%; */
   color: #ff7300;
   text-align: center;
   font-size: 45px;
 }
 
-.how-it-works-image {
-  background-image: url('images/hiw-banner_2.jpg');
+/* .how-it-works-image {
+  background-image: url('images/hiw-banner_2.jpg'); */
+  .header-picture {
+    background-image: url(images/hiw-banner_2.jpg);
+    height: 230px;
+    background-size: auto 100%;
+/* } */
 }
 
 /* InfoSection.css */
