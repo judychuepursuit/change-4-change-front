@@ -1,44 +1,3 @@
-// import React from 'react';
-// import Navbar from './components/Navbar';
-// import './App.css';
-// import Home from './components/pages/Home';
-// import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-// import About from './components/pages/About';
-// import HowItWorks from './components/pages/How-It-Works';
-// import Rewards from './components/pages/Rewards';
-// import Charities from './components/pages/Charities';
-// import ContactUs from './components/pages/ContactUs';
-// import SignUp from './components/pages/Sign-Up';
-// // import FourOFour from "./pages/FourOFour";
-
-// function App() {
-//   return (
-//     <Router>
-//       <Navbar />
-//       <Routes>
-//         <Route path='/' element={<Home />} />
-//         <Route path='/about' element={<About />} />
-//         <Route path='/rewards' element={<Rewards />} />
-//         <Route path='/contact-us' element={<ContactUs />} />
-//         <Route path='/sign-up' element={<SignUp />} />
-//         <Route path='/how-it-works' element={<HowItWorks />} />
-//         <Route path='/charities' element={<Charities />} />
-//         {/* <Route path='*' element={<FourOFour />} />
-//         <Route path='/pages/*' element={FourOFour}></Route> */}
-//         {/* <Route path="/pages/*" element={<FourOFour />} /> */}
-//       </Routes>
-//     </Router>
-//   );
-// }
-// export default App;
-
-
-
-
-
-
-
-
 
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
@@ -58,6 +17,8 @@ import Signup from './components/pages/Sign-Up';
 // Added PaymentForm and PaymentSuccess imports
 import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
+import TransactionHistory from './components/pages/TransactionHistory';
+
 // import TestComponent from './components/pages/TestComponent';
 // ... other imports
 import RewardsModal from './components/RewardsModal.js';
@@ -97,6 +58,8 @@ function hideNavBar() {
           {/* Added payment routes */}
           <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
+          <Route path='/TransactionHistory' element={<TransactionHistory />} />
+
           <Route path='/history' element={<History />} />
           {/* <Route path='/test' element={<TestComponent />} /> */}
           {/* ... other routes */}

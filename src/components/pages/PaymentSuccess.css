@@ -34,7 +34,6 @@
     margin-bottom: 20px;
     border-radius: 5px;
     cursor: pointer;
-    /* Add hover effect if needed */
   }
   
   .transaction-history-button:hover {
@@ -48,6 +47,4 @@
     padding: 10px 20px;
     cursor: pointer;
   }
-  
-  /* Add any additional styles or responsive adjustments as needed */
-  
+    
