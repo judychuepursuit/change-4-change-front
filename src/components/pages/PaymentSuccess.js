@@ -21,9 +21,9 @@ const PaymentSuccess = () => {
             <button className="TransactionHistory" onClick={handleViewTransactions}>
                 CLICK HERE TO VIEW TRANSACTION HISTORY
             </button>
-            {/* Additional content */}
         </div>
     );
 }
 
 export default PaymentSuccess;
+

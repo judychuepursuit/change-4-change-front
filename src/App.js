@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
 // Added Stripe imports
@@ -75,9 +74,5 @@ function hideNavBar() {
 }
 
 export default App;
-
-
-
-
 
 
