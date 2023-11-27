@@ -288,13 +288,25 @@ text-align: center;
   line-height: 33px;
   top: 17%;
   color: black;
-  width: 50%;
+  width: 60%;
   text-align: center;
   font-size: 22px;
   }
 
 .hiw-header {
   left: 25%;
+}
+
+.how-it-works-image {
+  background-image: url('./images/hiw-banner_2.jpg');
+  width: 100%;
+  height: 600px;
+  margin-top: -22.4%;
+  margin-bottom: 4%;
+}
+
+.hiw-centered {
+  margin-bottom: -10px;
 }
 
 .charities {
