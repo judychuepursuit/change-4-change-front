@@ -14,7 +14,7 @@ function Rewards (){
       <section className="top">
         <h4 className='earn-header'>earn</h4>
         <h1 className='reward-header'>rewards</h1>
-        <img src={flowChart} alt="flow chart" className='flow-chart' />
+        {/* <img src={flowChart} alt="flow chart" className='flow-chart' /> */}
 
         </section>
       </section>
@@ -56,7 +56,7 @@ function Rewards (){
 
       <section className="badges-container">
       <div style={{ display: 'flex' }}>
-      {badgeImages.map((badge, index) => (
+      {/* {badgeImages.map((badge, index) => (
         <div key={index} style={{ marginRight: '10px' }}>
           <img
             src={badge}
@@ -64,23 +64,23 @@ function Rewards (){
             style={{ width: '100px', height: '100px' }}
           />
         </div>
-      ))}
+      ))} */}
     </div>
        </section>
 
       <div className='donateBttn'>
       
         <p>CLICK HERE TO </p>
-        <Link to='/charities' className='orange'>DONATE</Link>
+        {/* <Link to='/charities' className='orange'>DONATE</Link> */}
         
       </div>
 
       <div className="social-media">
         <h4>Share with</h4>
         <a href="#" className='social-tag'>
-          <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
+          {/* <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
           <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
-          <img src={twit} alt='twitter' width="12%" height="5%"></img>
+          <img src={twit} alt='twitter' width="12%" height="5%"></img> */}
         </a>
       </div>
     </div>

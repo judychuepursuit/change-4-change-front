@@ -56,7 +56,7 @@ const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
         <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
-          <Route path='/rewards' element={<Rewards hideNavBar={hideNavBar}/>} />
+          <Route path='/rewards' element={<Rewards/>} />
           <Route path='/how-it-works' element={<HowItWorks />} />
           <Route path='/charities' element={<Charities setUserPurchaseData={setUserPurchaseData}/>} />
           <Route path="/login" element={<LoginPage />} />

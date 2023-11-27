@@ -158,12 +158,12 @@ const PaymentForm = () => {
                 <div className="form-group">
                     <label htmlFor="amount">Amount ($)</label>
                     <input type="number" id="amount" value={amount} onChange={(e) => setAmount(e.target.value)} required />
-                    {formErrors["amount"] && <div className="error-message">{formErrors["amount"]}</div>}
+                    {/* {formErrors["amount"] && <div className="error-message">{formErrors["amount"]}</div>} */}
                 </div>
 
                 <div className="form-group">
                     <label>Card Number</label>
-                    <CardNumberElement options={CARD_ELEMENT_OPTIONS} onChange={handleCardNumberChange} />
+                    {/* <CardNumberElement options={CARD_ELEMENT_OPTIONS} onChange={handleCardNumberChange} /> */}
 
                     {/* <CardNumberElement 
                         options={CARD_ELEMENT_OPTIONS}
@@ -175,7 +175,7 @@ const PaymentForm = () => {
                             }
                         }}
                     /> */}
-                    {cardError && <div className="error-message">{cardError}</div>}
+                    {/* {cardError && <div className="error-message">{cardError}</div>} */}
 
                 </div>
 
@@ -193,11 +193,11 @@ const PaymentForm = () => {
 
                 <div className="form-group">
                     <label>Expiration Date</label>
-                    <CardExpiryElement options={CARD_ELEMENT_OPTIONS} />
+                    {/* <CardExpiryElement options={CARD_ELEMENT_OPTIONS} /> */}
                 </div>
                 <div className="form-group">
                     <label>CVC</label>
-                    <CardCvcElement options={CARD_ELEMENT_OPTIONS} />
+                    {/* <CardCvcElement options={CARD_ELEMENT_OPTIONS} /> */}
                 </div>
 
 
@@ -213,17 +213,17 @@ const PaymentForm = () => {
                     <input type="number" id="amount" value={amount} onChange={(e) => setAmount(e.target.value)} required />
                 </div> */}
 
-                {error && <div className="error-message">{error}</div>}
+                {/* {error && <div className="error-message">{error}</div>} */}
                 {/* <button type="submit" disabled={!stripe || loading}>Pay Now</button> */}
 
                 {/* Update the button text and disabled state */}
                 {/* <button type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Submit Payment'}</button> */}
 
-                <button className="form-button" type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button>
+                {/* <button className="form-button" type="submit" disabled={!stripe || loading}>{loading ? 'Processing...' : 'Pay Now'}</button> */}
 
-                <button className="form-button" onClick={handleCreatePaymentLink} disabled={loading}>
+                {/* <button className="form-button" onClick={handleCreatePaymentLink} disabled={loading}>
                     {loading ? 'redirecting...' : 'Or Donate with Stripe'}
-                </button>
+                </button> */}
 
             </form>
 
@@ -242,10 +242,7 @@ const PaymentForm = () => {
             "Pay Now"
           )}
         </button>
-      </form>
     </div>
-  </div>
-
 
   );
 };
