@@ -1,5 +1,5 @@
 import React from 'react';
-import badgeData from '../api/badgeData.js'
+import badgeData from '../reward-data/badgeData.js'
 
 const BadgeDisplay = ({ points, hasSignedUp, hasDonated }) => {
   // Filter badges based on conditions
