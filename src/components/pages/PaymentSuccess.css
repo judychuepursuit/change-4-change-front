@@ -3,9 +3,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 70vh;
     text-align: center;
     background: #fff; /* Adjust the color to match your design */
+    margin-top: 10px; /* Adjust this value to move the form up */
+
   }
   
 
@@ -28,6 +30,7 @@
   
   .transaction-history-button {
     background-color: #FF7300;
+
     color: white;
     border: none;
     padding: 10px 20px;
@@ -38,6 +41,7 @@
   
   .transaction-history-button:hover {
     background-color: #551aeb;
+
   }
   
   .logout-button {

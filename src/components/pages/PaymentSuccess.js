@@ -18,7 +18,7 @@ const PaymentSuccess = () => {
             </div>
             <h2 className="success-message">Payment Successful!</h2>
             <p className="thank-you-message">THANK YOU for your donations<br/>Your payment was successful.</p>
-            <button className="TransactionHistory" onClick={handleViewTransactions}>
+            <button className="transaction-history-button" onClick={handleViewTransactions}>
                 CLICK HERE TO VIEW TRANSACTION HISTORY
             </button>
         </div>
