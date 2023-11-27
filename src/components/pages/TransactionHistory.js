@@ -52,7 +52,7 @@ const formatDate = (dateString) => {
   return (
         <div className="transaction-history-container">
           <div className="transaction-history">
-            <h2>Transaction History</h2>
+            <h2>transaction history</h2>
             <ul>
               {transactions.map((transaction, index) => (
                 <li key={index} className="transaction-item">
