@@ -7,7 +7,7 @@ import twit from "../../sm-icon/twitter-logo.png";
 import "../../components/Rewards.css";
 import { Link } from 'react-router-dom';
 
-import badgeData from "../../api/badgeData.js"
+import badgeData from "../../../reward-data/badgeData.js"
 
 
 import lev1RedBadge from '../../reward-img/lev 1 red badge.png';
@@ -20,35 +20,35 @@ import lev1VioBadge from '../../reward-img/lev 1 vio badge.png';
 import unicornBadge from '../../reward-img/unicorn badge.png';
 
 function Rewards(props) {
-  props.hideNavBar();
+  // props.hideNavBar();
 
-    const badgeImages = [
-      lev1RedBadge,
-      lev1OrangeBadge,
-      lev1YelBadge,
-      lev1GrnBadge,
-      lev1BluBadge,
-      lev1IndigoBadge,
-      lev1VioBadge,
-      unicornBadge,
-    ];
+  const badgeImages = [
+    lev1RedBadge,
+    lev1OrangeBadge,
+    lev1YelBadge,
+    lev1GrnBadge,
+    lev1BluBadge,
+    lev1IndigoBadge,
+    lev1VioBadge,
+    unicornBadge,
+  ];
 
 
   
   return (
     <div className='rewards-page'>
       <section className="header">
-        <img src={logo} alt="logo" width="15%" height="25%" className='logo' />
+        {/* <img src={logo} alt="logo" width="15%" height="25%" className='logo' /> */}
         {/* <Link to='/'>
         <button className="hm-bttn">Home</button>
         </Link>
          */}
    
 
-      <section className="top">
-        <h4 className='earn-header'>earn</h4>
-        <h1 className='reward-header'>rewards</h1>
-        <img src={flowChart} alt="flow chart" className='flow-chart' />
+        <section className="top">
+          <h4 className='earn-header'>earn</h4>
+          <h1 className='reward-header'>rewards</h1>
+          <img src={flowChart} alt="flow chart" className='flow-chart' />
 
         </section>
       </section>
@@ -59,7 +59,6 @@ function Rewards(props) {
           <h1 >Points & Badges:</h1>
         </section>
 
-        <br />
         <p className='reward-pg'>
           Introducing a groundbreaking charity rewards system that not only fosters generosity but also cultivates a culture of continuous giving.
           Donors earn badges for their contributions through monetary donations.
@@ -68,10 +67,6 @@ function Rewards(props) {
           With each milestone achieved, participants unlock exclusive rewards such as personalized certificates of appreciation that can be posted to social media.
           This integrated rewards system not only acknowledges the altruistic endeavors of individuals but also fosters a sense of belonging and purpose within the community, creating a powerful cycle of giving and gratitude.
         </p>
-
-        <br />
-        <br />
-
         {/* <p>
           Our reward program awards points based on each recorded purchase.
           <br />
@@ -89,34 +84,35 @@ function Rewards(props) {
       </section>
 
       <section className="badges-container">
-      <div style={{ display: 'flex' }}>
-      {badgeImages.map((badge, index) => (
-        <div key={index} style={{ marginRight: '10px' }}>
-          <img
-            src={badge}
-            alt={`Badge ${index + 1}`}
-            style={{ width: '100px', height: '100px' }}
-          />
+        <div style={{ display: 'flex' }}>
+          {badgeImages.map((badge, index) => (
+            <div key={index} style={{ marginRight: '10px' }}>
+              <img
+                src={badge}
+                alt={`Badge ${index + 1}`}
+                style={{ width: '90px', height: '90px' }}
+              />
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
-       </section>
+      </section>
 
-      <div className='donateBttn'>
-        <a>
-        <p>CLICK HERE TO </p>
-        <p className='orange'>DONATE</p>
-        </a>
+      <div className='rewards-footer'>
+        <div className='donate-button'>
+          <a href="/charities">
+            <div><span class="orange-square"></span>CLICK HERE TO <span className='orange'>DONATE</span></div>
+          </a>
+        </div>
+        <div className="social-media">
+          <h4>Share with</h4>
+          <a href="#" className='social-tag'>
+            <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
+            <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
+            <img src={twit} alt='twitter' width="12%" height="5%"></img>
+          </a>
+        </div>
       </div>
 
-      <div className="social-media">
-        <h4>Share with</h4>
-        <a href="#" className='social-tag'>
-          <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
-          <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
-          <img src={twit} alt='twitter' width="12%" height="5%"></img>
-        </a>
-      </div>
     </div>
 
     

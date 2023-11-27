@@ -48,7 +48,7 @@ import { loadStripe } from '@stripe/stripe-js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
-import Rewards from './components/pages/Rewards';
+import Rewards from './components/pages/rewards/Rewards.js';
 import HowItWorks from './components/pages/How-It-Works';
 import Charities from './components/pages/Charities';
 import ContactUs from './components/pages/ContactUs';
@@ -60,7 +60,7 @@ import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
 // import TestComponent from './components/pages/TestComponent';
 // ... other imports
-import RewardsModal from './components/RewardsModal.js';
+import RewardsModal from './components/modal/RewardsModal.js';
 import History from "./components/pages/History.js"
 // Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
@@ -103,10 +103,10 @@ function hideNavBar() {
           
         </Routes>
       </Elements>
-      <RewardsModal
+      {/* <RewardsModal
       isModalOpen={isModalOpen}
       setIsModalOpen={setIsModalOpen}
-      />
+      /> */}
     </Router>
   );
 }
