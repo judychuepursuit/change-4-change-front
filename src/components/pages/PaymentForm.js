@@ -4,7 +4,6 @@ import { useNavigate } from 'react-router-dom';
 import './UpdatedPaymentForm.css'; 
 
 
-// const PaymentForm = ({ recipient }) => {
 const PaymentForm = () => {
 
   const stripe = useStripe();
@@ -14,7 +13,6 @@ const PaymentForm = () => {
   const [donationFrequency, setDonationFrequency] = useState('one-time');
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-
   const [charityName, setCharityName] = useState('Select a Charity');
   const charities = [
     { name: 'ASPCA', id: 'acct_1OEpakQTN4c4HEpl' },
@@ -22,19 +20,23 @@ const PaymentForm = () => {
     { name: 'Red Cross', id: 'acct_1OCtgDQRnTyfQud7' },
     { name: 'UNICEF', id: 'acct_1OCtjmQS1DLaPBq0' }
   ];
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true); // Set loading to true when the process starts
 
     if (!stripe || !elements) {
-      console.log('Stripe.js has not loaded yet.');
-      // Stripe.js has not loaded yet. Make sure to disable form submission until Stripe.js has loaded.
+      console.error('Stripe.js has not loaded yet.');
+      setIsLoading(false);
       return;
     }
-    
-    const cardElement = elements.getElement(CardElement);
 
+    if (!amount || isNaN(amount) || amount <= 0) {
+      alert('Please enter a valid amount.'); // Example of a simple validation message
+      setIsLoading(false);
+      return;
+    }
+
+    const cardElement = elements.getElement(CardElement);
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: 'card',
       card: cardElement,
@@ -42,64 +44,47 @@ const PaymentForm = () => {
     });
 
     if (error) {
-      console.log('[error]', error);
+      alert(error.message); // Displaying error to the user
+      setIsLoading(false);
       return;
     }
 
-    const { id: payment_method } = paymentMethod;
-    const response = await fetch('/create-payment-intent', {
-      method: 'POST',
-      headers: {'Content-Type': 'application/json'},
-      body: JSON.stringify({
-        amount,
-        currency: 'usd',
-        paymentMethodId: payment_method,
-        email,
-        charityName, 
-        donationFrequency
-      }),
-    });
+    try {
+      const response = await fetch('/create-payment-intent', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          amount,
+          currency: 'usd',
+          paymentMethodId: paymentMethod.id,
+          email,
+          charityName,
+          donationFrequency
+        }),
+      });
 
-    const paymentIntent = await response.json();
-    if (donationFrequency === 'one-time') {
-      const result = await stripe.confirmCardPayment(paymentIntent.clientSecret);
-      if (result.error) {
-        console.log(result.error.message);
-      } else {
-        if (result.paymentIntent.status === 'succeeded') {
-          console.log('Money is in the bank!');
-          navigate('/payment-success'); // Redirect to a success page
+      const paymentIntentResponse = await response.json();
+
+      if (paymentIntentResponse.status === 'succeeded') {
+        navigate('/payment-success');
+      } else if (paymentIntentResponse.status === 'requires_action' || 
+                 paymentIntentResponse.status === 'requires_confirmation') {
+        const result = await stripe.confirmCardPayment(paymentIntentResponse.clientSecret);
+        if (result.error) {
+          alert(result.error.message); // Displaying error to the user
+        } else if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
+          navigate('/payment-success');
         }
-      }
-    } else {
-      // For subscriptions
-      if (paymentIntent.status === 'requires_action') {
-        // Redirect to Stripe's hosted page for additional authentication
-        const result = await stripe.confirmCardPayment(paymentIntent.clientSecret);
-        handleSubscriptionResult(result);
       } else {
-        // Subscription setup successful, no additional action required
-        console.log('Subscription set up successfully!');
-        navigate('/payment-success'); // Redirect to a success page
+        console.log(`Unhandled payment intent status: ${paymentIntentResponse.status}`);
       }
+    } catch (error) {
+      console.error(error);
+      alert('An error occurred while processing your payment.'); // Displaying error to the user
     }
+
     setIsLoading(false);
-
   };
-
-  const handleSubscriptionResult = (result) => {
-    if (result.error) {
-      // Handle errors, such as declined card, etc.
-      console.log(result.error.message);
-    } else {
-      if (result.paymentIntent && result.paymentIntent.status === 'succeeded') {
-        console.log('First subscription payment succeeded!');
-        navigate('/payment-success'); // Redirect to a success page
-      }
-    }
-  };
-
-  
 
   return (
     <div className="payment-container">
@@ -110,8 +95,6 @@ const PaymentForm = () => {
             <input type="text" placeholder="First Name" required />
             <input type="text" placeholder="Last Name" required />
           </div>
-
-
 
         <div className="form-group">
           {/* <label>Email</label> */}
@@ -155,7 +138,6 @@ const PaymentForm = () => {
             </label>
           </div>
 
-
             <div className="radio-option">
               <label>
                 <input
@@ -171,7 +153,6 @@ const PaymentForm = () => {
 
           </div>
         </div>
-
 
         <div className="form-group">
           <label>Amount ($)</label>
