@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import BadgeDisplay from '../BadgeDisplay';
-import "../components/RewardsModal.css"
+import "./RewardsModal.css"
 import blue from "../reward-img/lev 1 blu badge.png"
 
 
