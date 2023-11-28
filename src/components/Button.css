@@ -48,6 +48,7 @@
     border-radius: 4px;
     font-size: 16px; /* Kept readable font size for button text */
     font-weight: bold;
+    /* margin-left: 90px; */
     transition: background-color 0.3s ease;
 }
 
