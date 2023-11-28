@@ -19,7 +19,7 @@ export default function RegisterPage() {
 
   const handleRegister = async () => {
     try {
-      const response = await axios.post(`http://localhost:3000/register`, {
+      const response = await axios.post(`${API}/register`, {
         firstName,
         lastName,
         dob,
