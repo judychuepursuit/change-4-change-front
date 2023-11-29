@@ -13,7 +13,7 @@ const CharityBox = (props) => {
           alt="messageImage"
           className="messageImg"
         ></img>
-      <p className="mission-statement">
+      <p className="charity-box__mission-statement">
         {props.charity.missionStatement}
       </p>
       <div>
@@ -27,6 +27,9 @@ const CharityBox = (props) => {
       >
         <button className="donation orange-button">DONATE</button>
       </Link>
+      </div>
+      <div className="charity-box__filter">
+        
       </div>
     </div>
   );

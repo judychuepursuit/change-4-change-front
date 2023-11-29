@@ -8,7 +8,7 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Rewards from './components/pages/rewards/Rewards.js';
 import HowItWorks from './components/pages/How-It-Works';
-import Charities from './components/pages/Charities';
+import Charities from './components/pages/Charities'
 import ConnectUs from './components/pages/ConnectUs';
 import LoginPage from "./components/LoginPage"
 import RegisterPage from "./components/RegisterPage";
@@ -38,6 +38,8 @@ const AppContent = () => {
 const [userPurchaseData, setUserPurchaseData] = useState({
   recipient: null
 })
+
+const [buttons, setButtons] = useState([])
 
 const location = useLocation();
 
