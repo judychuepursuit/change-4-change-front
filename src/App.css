@@ -150,7 +150,7 @@
 
 /* hiw button */
 .how-it-works {
-  margin: 160px 0 30px;
+  margin: 220px 0 30px;
   width: 180px;
   background-color:#ff7300;
   font-weight: bolder;
@@ -169,10 +169,27 @@
   /* position:relative; */
   /* padding-top: 300px; */
   /* top: 47%; */
-  height: 100px;
   color: #ff7300;
   text-align: center;
   font-size: 45px;
+}
+
+.hiw-header {
+  margin-left: 19.7%;
+  height: 80vh;
+}
+
+.how-it-works-image {
+  background-image: url('images/hiw-banner_2wider.jpg');
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  /* margin-top: .5%; */
+  margin-bottom: 4%;
+  /* overflow: hidden; */
+  /* z-index: 100%; */
 }
 
 /* .how-it-works-image {
@@ -298,26 +315,9 @@ text-align: center;
   font-size: 22px;
   }
 
-.hiw-header {
-  left: 25%;
-}
-
-.how-it-works-image {
-  background-image: url('images/hiw-banner_2wider.jpg');
-  /* background-size: cover; */
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 600px;
-  /* margin-top: .5%; */
-  margin-bottom: 1%;
-  object-fit: cover;
-  /* overflow: hidden; */
-  z-index: -100;
-}
-
-.hiw-centered {
+/* .hiw-centered {
   margin-bottom: -10px;
-}
+} */
 
 .charities {
   /* color: black; */
