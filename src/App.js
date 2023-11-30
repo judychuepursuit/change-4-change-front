@@ -27,12 +27,12 @@ const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const App=()=> {
  
-//   return (
-//     <Router>
-//       <AppContent />
-//     </Router>
-//   );
-// }
+  return (
+    // <Router>
+      <AppContent />
+    // </Router>
+  );
+}
 
 const AppContent = () => {
 const [userPurchaseData, setUserPurchaseData] = useState({
@@ -41,21 +41,23 @@ const [userPurchaseData, setUserPurchaseData] = useState({
 
 const [buttons, setButtons] = useState([])
 
-const location = useLocation();
+// const location = useLocation();
 
 const hideNavbarRoutes = [];// Add the routes where you want to hide the navbar
 // const hideNavbarRoutes = ['/how-it-works'];// Add the routes where you want to hide the navbar
 
-const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
+// const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   return (
     <Router>
-   {shouldShowNavbar && <Navbar />}
-      {/* <Navbar /> */}
+   {/* {shouldShowNavbar && <Navbar />} */}
+      <Navbar />
       
       {/* Wrapped the Routes with Elements for Stripe */}
-      <Elements stripe={stripePromise}>
-        <Routes>
+      {/* <Elements stripe={stripePromise}>
+    
+      </Elements> */}
+      <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
           <Route path='/rewards' element={<Rewards/>} />
@@ -75,11 +77,9 @@ const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
           {/* ... other routes */}
           
         </Routes>
-      </Elements>
-      </>
+      </Router>
 
   );
   }
-}
 
 export default App;
