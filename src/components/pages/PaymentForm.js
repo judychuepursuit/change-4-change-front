@@ -20,21 +20,33 @@ const PaymentForm = () => {
     { name: 'Red Cross', id: 'acct_1OCtgDQRnTyfQud7' },
     { name: 'UNICEF', id: 'acct_1OCtjmQS1DLaPBq0' }
   ];
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
+
+    if (isSubmitting) return;
+
     setIsLoading(true); // Set loading to true when the process starts
+    setIsSubmitting(true); // Disable the button
 
-    if (!stripe || !elements) {
-      console.error('Stripe.js has not loaded yet.');
-      setIsLoading(false);
-      return;
-    }
 
-    if (!amount || isNaN(amount) || amount <= 0) {
-      alert('Please enter a valid amount.'); // Example of a simple validation message
-      setIsLoading(false);
-      return;
-    }
+   // Early return if Stripe hasn't loaded yet
+   if (!stripe || !elements) {
+    console.error('Stripe.js has not loaded yet.');
+    setIsLoading(false);
+    setIsSubmitting(false); // Re-enable the form for future submissions
+    return;
+  }
+
+  // Validate the amount before attempting to process the payment
+  if (!amount || isNaN(amount) || amount <= 0) {
+    alert('Please enter a valid amount.');
+    setIsLoading(false);
+    setIsSubmitting(false); // Re-enable the form for future submissions
+    return;
+  }
+
 
     const cardElement = elements.getElement(CardElement);
     const { error, paymentMethod } = await stripe.createPaymentMethod({
@@ -46,10 +58,15 @@ const PaymentForm = () => {
     if (error) {
       alert(error.message); // Displaying error to the user
       setIsLoading(false);
+      setIsSubmitting(false); // Re-enable the form for future submissions
+
       return;
     }
+    
 
     try {
+      // console.log('Calling API to create payment intent');
+
       const response = await fetch('/create-payment-intent', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -84,6 +101,8 @@ const PaymentForm = () => {
     }
 
     setIsLoading(false);
+    setIsSubmitting(false); // Re-enable the form for future submissions, if necessary
+
   };
 
   return (
@@ -168,8 +187,8 @@ const PaymentForm = () => {
           <label>Card Information</label>
           <CardElement />
         </div>
-        <button type="submit" disabled={!stripe || isLoading}>
-          {isLoading ? (
+        <button type="submit" disabled={!stripe || isSubmitting}>
+          {isSubmitting ? (
             <>
               <div className="spinner"></div>
               Processing...

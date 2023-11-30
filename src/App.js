@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Navbar from './components/Navbar';
-// Added Stripe imports
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -13,24 +12,18 @@ import ConnectUs from './components/pages/ConnectUs';
 import LoginPage from "./components/LoginPage"
 import RegisterPage from "./components/RegisterPage";
 import Signup from './components/pages/Sign-Up';
-// Added PaymentForm and PaymentSuccess imports
 import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
 import TransactionHistory from './components/pages/TransactionHistory';
-
-// import TestComponent from './components/pages/TestComponent';
-// ... other imports
+import TestComponent from './components/pages/TestComponent';
 import RewardsModal from './components/RewardsModal.js';
 import History from "./components/pages/History.js"
-// Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 function App() {
 
-// const [openModal, setOpenModal] = useState(false);
 const [isNavHidden, setIsNavHidden] = useState(false);
 const [isModalOpen, setIsModalOpen] = useState(true);
-
 
 function hideNavBar() {
     setIsNavHidden(true)
@@ -42,7 +35,6 @@ function hideNavBar() {
   return (
     <Router>
       <Navbar hidden={isNavHidden} />
-      {/* Wrapped the Routes with Elements for Stripe */}
       <Elements stripe={stripePromise}>
         <Routes>
           <Route path='/' element={<Home />} />
@@ -54,15 +46,10 @@ function hideNavBar() {
           <Route path="/register" element={<RegisterPage />} />
           <Route path='/connect-us' element={<ConnectUs />} />
           <Route path='/sign-up' element={<Signup />} />
-          {/* Added payment routes */}
           <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
           <Route path='/TransactionHistory' element={<TransactionHistory />} />
-
           <Route path='/history' element={<History />} />
-          {/* <Route path='/test' element={<TestComponent />} /> */}
-          {/* ... other routes */}
-          
         </Routes>
       </Elements>
       <RewardsModal
