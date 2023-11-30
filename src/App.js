@@ -54,9 +54,7 @@ const hideNavbarRoutes = [];// Add the routes where you want to hide the navbar
       <Navbar />
       
       {/* Wrapped the Routes with Elements for Stripe */}
-      {/* <Elements stripe={stripePromise}>
-    
-      </Elements> */}
+      <Elements stripe={stripePromise}>
       <Routes>
           <Route path='/' element={<Home />} />
           <Route path='/about' element={<About />} />
@@ -77,6 +75,8 @@ const hideNavbarRoutes = [];// Add the routes where you want to hide the navbar
           {/* ... other routes */}
           
         </Routes>
+      </Elements>
+  
       </Router>
 
   );

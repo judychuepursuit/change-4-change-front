@@ -29,7 +29,8 @@ function InfoBox({ title, description, buttonText, infoLink, img, altText }) {
     <div className='info-box'>
       <p>{description}</p>
       <img src={img} alt={altText}/>
-      <Link to={infoLink}><button>{buttonText}</button></Link>
+      <Link to={infoLink}><button  className='info-box-button'>{buttonText}</button></Link>
+
     </div>
   )
  }
