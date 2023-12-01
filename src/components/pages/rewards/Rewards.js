@@ -1,37 +1,37 @@
 import React from 'react';
-import logo from "../../reward-img/logo.png";
-import flowChart from "../../reward-img/flow-chart.png";
-import fb from "../../sm-icon/fb-logo.jpeg";
-import ig from "../../sm-icon/ig-logo.jpeg";
-import twit from "../../sm-icon/twitter-logo.png";
-import "../../components/Rewards.css";
+// import logo from "../../reward-img/logo.png";
+// import flowChart from "../../reward-img/flow-chart.png";
+// import fb from "../../sm-icon/fb-logo.jpeg";
+// import ig from "../../sm-icon/ig-logo.jpeg";
+// import twit from "../../sm-icon/twitter-logo.png";
+import "./Rewards.css";
 import { Link } from 'react-router-dom';
 
 import badgeData from "../../../reward-data/badgeData.js"
 
 
-import lev1RedBadge from '../../reward-img/lev 1 red badge.png';
-import lev1OrangeBadge from '../../reward-img/lev 1 orange badge.png';
-import lev1YelBadge from '../../reward-img/lev 1 yel badge.png';
-import lev1GrnBadge from '../../reward-img/lev 1 grn_badge.png';
-import lev1BluBadge from '../../reward-img/lev 1 blu badge.png';
-import lev1IndigoBadge from '../../reward-img/lev 1 indigo badge.png';
-import lev1VioBadge from '../../reward-img/lev 1 vio badge.png';
-import unicornBadge from '../../reward-img/unicorn badge.png';
+// import lev1RedBadge from '../../reward-img/lev 1 red badge.png';
+// import lev1OrangeBadge from '../../reward-img/lev 1 orange badge.png';
+// import lev1YelBadge from '../../reward-img/lev 1 yel badge.png';
+// import lev1GrnBadge from '../../reward-img/lev 1 grn_badge.png';
+// import lev1BluBadge from '../../reward-img/lev 1 blu badge.png';
+// import lev1IndigoBadge from '../../reward-img/lev 1 indigo badge.png';
+// import lev1VioBadge from '../../reward-img/lev 1 vio badge.png';
+// import unicornBadge from '../../reward-img/unicorn badge.png';
 
 function Rewards(props) {
   // props.hideNavBar();
 
-  const badgeImages = [
-    lev1RedBadge,
-    lev1OrangeBadge,
-    lev1YelBadge,
-    lev1GrnBadge,
-    lev1BluBadge,
-    lev1IndigoBadge,
-    lev1VioBadge,
-    unicornBadge,
-  ];
+  // const badgeImages = [
+  //   lev1RedBadge,
+  //   lev1OrangeBadge,
+  //   lev1YelBadge,
+  //   lev1GrnBadge,
+  //   lev1BluBadge,
+  //   lev1IndigoBadge,
+  //   lev1VioBadge,
+  //   unicornBadge,
+  // ];
 
 
   
@@ -48,7 +48,7 @@ function Rewards(props) {
         <section className="top">
           <h4 className='earn-header'>earn</h4>
           <h1 className='reward-header'>rewards</h1>
-          <img src={flowChart} alt="flow chart" className='flow-chart' />
+          {/* <img src={flowChart} alt="flow chart" className='flow-chart' /> */}
 
         </section>
       </section>
@@ -85,7 +85,7 @@ function Rewards(props) {
 
       <section className="badges-container">
         <div style={{ display: 'flex' }}>
-          {badgeImages.map((badge, index) => (
+          {/* {badgeImages.map((badge, index) => (
             <div key={index} style={{ marginRight: '10px' }}>
               <img
                 src={badge}
@@ -93,7 +93,7 @@ function Rewards(props) {
                 style={{ width: '90px', height: '90px' }}
               />
             </div>
-          ))}
+          ))} */}
         </div>
       </section>
 
@@ -106,9 +106,9 @@ function Rewards(props) {
         <div className="social-media">
           <h4>Share with</h4>
           <a href="#" className='social-tag'>
-            <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
+            {/* <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
             <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
-            <img src={twit} alt='twitter' width="12%" height="5%"></img>
+            <img src={twit} alt='twitter' width="12%" height="5%"></img> */}
           </a>
         </div>
       </div>

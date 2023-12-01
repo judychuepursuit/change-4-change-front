@@ -1,8 +1,8 @@
 .charity-box {
     width: 340px;
-    height: 300px;
+    height: 400px;
     margin: 1rem;
-    text-align: center;
+    /* text-align: center; */
     padding: 1rem;
     border-radius: 5px;
     /* display: flex;
@@ -19,13 +19,34 @@
     color: #ff7300;
   } */
 
-  /* .charity-box:hover .mission-statement {
+   /* .charity-box__mission-statement:hover {
     display: block;
   } */
 
-  .charity-box img {
-    width: 210px; /* Set a fixed width for the images */
-    height: 125px; /* Maintain aspect ratio */
+  .charity-box__mission-statement {
+    font-size: 14px;
+    max-height: 50px;
+    overflow: hidden;
+    text-align: center;
+  } 
+
+  .charity-box__logo {
+    display: block;
+    height: 50px;
+  }
+
+  .charity-box__message-image {
+    height: 150px;
+  }
+
+  .charity-box__charity-type {
+    background-color: gray;
+    color: white;
+    border-radius: 20px;
+    font-size: 18px;
+    padding: 8px;
+    margin: 5px 0;
+    display: inline-block;
   }
 
   
