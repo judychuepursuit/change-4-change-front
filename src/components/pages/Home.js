@@ -16,7 +16,6 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import '../../App.css';
 import './Home.css';
-import './HomePageComponents/InfoSection';
 import { Link, useNavigate } from 'react-router-dom';
 import info1 from '../../images/img-1a.jpeg';
 import info2 from '../../images/img-4.jpg';
