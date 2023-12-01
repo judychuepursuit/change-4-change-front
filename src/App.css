@@ -12,13 +12,13 @@
 .contact-us
 .sign-up 
 
- /* {
+ {
   display: flex;
   height: 90vh;
-  align-items: center; */
-  /* justify-content: center; */
-  /* font-size: 3rem;
-} */
+  align-items: center; 
+  justify-content: center;
+  /* /* font-size: 3rem; */
+}
 
 .main-content {
   /* position: relative; */
@@ -32,10 +32,10 @@
 
 .main-content h1 {
   background-color: #551aeb;
-  height: 40px;
-  padding: 18px;
+  height: 43px;
+  padding: 22px;
   color: #ebe8f4;
-  font-size: 46px;
+  font-size: 48px;
   font-weight: bolder;
 }
 
@@ -50,11 +50,11 @@
 }
 .main-content h3 {
   background-color: white;
-  height: 40px;
-  padding: 6px;
+  height: 45px;
+  padding: 7px;
   color: #551aeb;
-  font-size: 23px;
-  font-weight: bolder;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .donate-btn {
@@ -116,7 +116,6 @@
 
 .unicef-home {
   background-image: url(images/carousel-images/unicef_home.jpg);
-  background-position: bottom;
 }
 
 .aspca-home {
@@ -151,7 +150,7 @@
 
 /* hiw button */
 .how-it-works {
-  margin: 180px 0 30px;
+  margin: 280px 0px 40px 30px;
   width: 180px;
   background-color:#ff7300;
   font-weight: bolder;
@@ -168,21 +167,33 @@
 
 .how-it-works-page {
   /* position:relative; */
-  padding-top: 200px;
+  /* padding-bottom: 30px; */
   /* top: 47%; */
   color: #ff7300;
   text-align: center;
   font-size: 45px;
+  margin-top: -1px;
 }
 
-/* .how-it-works-image {
-  background-image: url('images/hiw-banner_2.jpg'); */
-  .header-picture {
-    background-image: url(images/hiw-banner_2.jpg);
-    height: 230px;
-    background-size: auto 100%;
-/* } */
+.hiw-header {
+  margin-left: 19.7%;
+  height: 80vh;
 }
+
+.how-it-works-image {
+  background-image: url('images/hiw-banner_2wider.jpg');
+  object-fit: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 300px;
+  margin-bottom: 50px;
+  /* z-index: 100%; */
+}
+
+/* .hiw-centered {
+  margin-bottom: -10px;
+} */
 
 /* InfoSection.css */
 .info-section {
@@ -209,7 +220,7 @@
 }
 
 .info-box p{
-  min-height: 100px;
+  min-height: 90px;
   text-align: center;
   font-size: small;
   font-weight: 600;
@@ -297,22 +308,6 @@ text-align: center;
   text-align: center;
   font-size: 22px;
   }
-
-.hiw-header {
-  left: 25%;
-}
-
-.how-it-works-image {
-  background-image: url('./images/hiw-banner_2.jpg');
-  width: 100%;
-  height: 600px;
-  margin-top: -22.4%;
-  margin-bottom: 4%;
-}
-
-.hiw-centered {
-  margin-bottom: -10px;
-}
 
 .charities {
   /* color: black; */
@@ -421,9 +416,4 @@ text-align: center;
     background-color: #2deae1;
    /* opacity: 50%;*/
 }
-
-/* Button {
-    display: none;
-} */
-
-}
+  }

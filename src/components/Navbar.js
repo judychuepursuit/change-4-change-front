@@ -78,7 +78,8 @@ function Navbar(props) {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Contact Us
+                {/* was Contact Us, now connect */}
+                Connect
               </Link>
             </li>
 
