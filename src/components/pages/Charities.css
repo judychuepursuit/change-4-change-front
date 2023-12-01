@@ -4,14 +4,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  margin-top: 140px;
   height: 100vh; /* This will make the container take the full height of the viewport */
 }
 
-.suggested-charities {
-  margin-top: -100px; /* Adjust the top margin as needed */
+.charities__suggested-charities {
+  /* margin-top: -100px; Adjust the top margin as needed */
+  font-weight: 600;
+  text-align: center;
+  font-size: 3em;
+  color: #ff7300;
+  position: relative;
+  left: -80px;
 }
 
+.charities__suggested-charities span {
+  color: #551AEB;
+  font-size: 32px;
+  font-style: italic;
+  position: relative;
+  top: -30px;
+}
 .charity-boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
