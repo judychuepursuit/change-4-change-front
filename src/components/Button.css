@@ -2,7 +2,7 @@
     --primary: #551AEB;
   }
   
-  .btn {
+  /* .btn {
     padding: 8px 20px;
     border-radius: 4px;
     outline: none;
@@ -47,7 +47,7 @@
     padding: 8px 15px; /* Adjusted padding for smaller button */
     border-radius: 4px;
     font-size: 16px; /* Kept readable font size for button text */
-    font-weight: bold;
+    font-weight: bolder;
     transition: background-color 0.3s ease;
 }
 
