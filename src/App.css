@@ -14,7 +14,7 @@
 
  {
   display: flex;
-  height: 90vh;
+  /* height: 100vh; */
   align-items: center; 
   justify-content: center;
   /* /* font-size: 3rem; */
@@ -28,30 +28,31 @@
   width: 100%;
   color: #ffffff;
   background-color: #ff7300;
+  
 }
 
 .main-content h1 {
   background-color: #551aeb;
-  height: 43px;
-  padding: 22px;
+  height: 35px;
+  padding: 14px;
   color: #ebe8f4;
-  font-size: 48px;
+  font-size: 45px;
   font-weight: bolder;
 }
 
 .main-content h2 {
-  padding: 18px;
-  font-size: 38px;
+  padding: 19px;
+  font-size: 36px;
   font-weight: bolder;
   padding-bottom: 8px;
   color: #ffffff;
   /* height: 60px; */
-  line-height: 80px;
+  line-height: 70px;
 }
 .main-content h3 {
   background-color: white;
-  height: 45px;
-  padding: 7px;
+  height: 40px;
+  padding: 5px;
   color: #551aeb;
   font-size: 24px;
   font-weight: bold;
@@ -97,7 +98,7 @@
   background-repeat: no-repeat;
   flex-direction: column;
   /* position: relative; */
-  /* height: 900px; */
+  height: 700px;
   /* min-height: 90%; */
   /* height: 70vh; */
   /* display: flex;
@@ -116,11 +117,12 @@
 
 .unicef-home {
   background-image: url(images/carousel-images/unicef_home.jpg);
+  background-position: bottom;
 }
 
 .aspca-home {
   background-image: url(images/carousel-images/aspca_home.jpg);
-  background-position: bottom;
+  background-position: center;
 }
 
 .red-cross-home {
@@ -150,12 +152,12 @@
 
 /* hiw button */
 .how-it-works {
-  margin: 280px 0px 40px 30px;
-  width: 180px;
+  margin: 230px 0px 20px 30px;
+  width: 200px;
   background-color:#ff7300;
   font-weight: bolder;
-  font-size: 20px;
-  padding: 8px;
+  font-size: 22px;
+  padding: 7px;
   color: #ffffff;
   border-radius: 4px;
   border: none;
@@ -215,8 +217,8 @@
 .info-box img {
   width: 200px;
   /* margin-left: 55px; */
-  padding-bottom: 15px;
-  margin-top: -20px;
+  padding-bottom: 12px;
+  margin-top: -25px;
 }
 
 .info-box p{
@@ -230,8 +232,11 @@
 
 /* .info-box-button-text{ */
 .info-box-button {
+  padding-top: 10px;
+  font-size: 18px;
   width: 240px;
   font-weight: bolder;
+  margin-top: 15px;
   border-radius: 4px;
   align-items: center;
 }
