@@ -5,7 +5,6 @@ import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './components/pages/Home';
-import About from './components/pages/About';
 import Rewards from './components/pages/rewards/Rewards.js';
 import HowItWorks from './components/pages/How-It-Works';
 import Charities from './components/pages/Charities'
@@ -55,7 +54,6 @@ const hideNavbarRoutes = [];// Add the routes where you want to hide the navbar
       <Elements stripe={stripePromise}>
       <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
           <Route path='/rewards' element={<Rewards/>} />
           <Route path='/how-it-works' element={<HowItWorks />} />
           <Route path='/charities' element={<Charities setUserPurchaseData={setUserPurchaseData}/>} />
