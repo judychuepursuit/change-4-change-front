@@ -1,193 +1,22 @@
-
-/* * {
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: 'Montserrat', sans-serif;
 }
 
-/* .home, */
 .rewards,
 .contact-us
 .sign-up 
-
  {
   display: flex;
   height: 90vh;
   align-items: center; 
   justify-content: center;
-  /* /* font-size: 3rem; */
-}
-
-.main-content {
-  /* position: relative; */
-  text-align: center;
-  font-size: small;
-  font-weight: bold;
-  width: 100%;
-  color: #ffffff;
-  background-color: #ff7300;
-}
-
-.main-content h1 {
-  background-color: #551aeb;
-  height: 43px;
-  padding: 22px;
-  color: #ebe8f4;
-  font-size: 48px;
-  font-weight: bolder;
-}
-
-.main-content h2 {
-  padding: 18px;
-  font-size: 38px;
-  font-weight: bolder;
-  padding-bottom: 8px;
-  color: #ffffff;
-  /* height: 60px; */
-  line-height: 80px;
-}
-.main-content h3 {
-  background-color: white;
-  height: 45px;
-  padding: 7px;
-  color: #551aeb;
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.donate-btn {
-  /* margin-left: 44%; */
-  width: 190px;
-  font-size: 30px;
-  font-weight: bolder;
-  margin-top: 60px;
-  position: absolute;
-  left: 43%;
-  /* margin-bottom: 20px; */
-  border-radius: 4px;
-  background-color:#ff7300;
-  color: #ffffff;
-  z-index: 100;
-  /* padding: 8px; */
-}
-
-.hero-image {
-  background-image: url(images/carousel-images/change-4-change_home.jpg);  background-position: bottom;
-  /* background-image: url(images/img-1a-trans.jpg); */
-}
-
-.hero-images {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  height: 700px;
-  overflow-x: hidden; 
 }
 
 .button {
   color: blue;
-}
-
-.carousel-image {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  flex-direction: column;
-  /* position: relative; */
-  /* height: 900px; */
-  /* min-height: 90%; */
-  /* height: 70vh; */
-  /* display: flex;
-  align-items: center; */
-  min-width: 100%;
-  padding-top: 200px;
-}
-
-.hero-image-container {
-  display: flex;
-  transition: transform 1s ease;
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.unicef-home {
-  background-image: url(images/carousel-images/unicef_home.jpg);
-}
-
-.aspca-home {
-  background-image: url(images/carousel-images/aspca_home.jpg);
-  background-position: bottom;
-}
-
-.red-cross-home {
-  background-image: url(images/carousel-images/red-cross4_home.jpeg);
-}
-
-.feed-america-home {
-  background-image: url(images/carousel-images/feed_america2-home.jpg);
-  background-position: center;
-}
-
-.home-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  top: 80%;
-  position: absolute;
-  
-} 
-
-.hero-image h1{
-  color:#ffffff;
-  font-size: 5rem;
-  font-weight: 600;
-}
-
-/* hiw button */
-.how-it-works {
-  margin: 280px 0px 40px 30px;
-  width: 180px;
-  background-color:#ff7300;
-  font-weight: bolder;
-  font-size: 20px;
-  padding: 8px;
-  color: #ffffff;
-  border-radius: 4px;
-  border: none;
-}
-
-.how-it-works button:hover {
-  background-color:#551aeb;
-}
-
-.how-it-works-page {
-  /* position:relative; */
-  /* padding-bottom: 30px; */
-  /* top: 47%; */
-  color: #ff7300;
-  text-align: center;
-  font-size: 45px;
-  margin-top: -1px;
-}
-
-.hiw-header {
-  margin-left: 19.7%;
-  height: 80vh;
-}
-
-.how-it-works-image {
-  background-image: url('images/hiw-banner_2wider.jpg');
-  object-fit: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 300px;
-  margin-bottom: 50px;
-  /* z-index: 100%; */
 }
 
 /* .hiw-centered {
