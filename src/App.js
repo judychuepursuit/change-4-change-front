@@ -18,8 +18,6 @@ import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
 import TransactionHistory from './components/pages/TransactionHistory';
 
-// import TestComponent from './components/pages/TestComponent';
-// ... other imports
 import RewardsModal from './components/modal/RewardsModal.js';
 import History from "./components/pages/History.js"
 // Added stripePromise for Stripe API initialization
@@ -71,8 +69,6 @@ const hideNavbarRoutes = [];// Add the routes where you want to hide the navbar
           <Route path='/TransactionHistory' element={<TransactionHistory />} />
 
           <Route path='/history' element={<History />} />
-          {/* <Route path='/test' element={<TestComponent />} /> */}
-          {/* ... other routes */}
           
         </Routes>
       </Elements>
