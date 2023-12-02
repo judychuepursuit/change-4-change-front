@@ -79,8 +79,10 @@ const PaymentForm = () => {
           donationFrequency
         }),
       });
+      // console.log(response)
 
       const paymentIntentResponse = await response.json();
+      // console.log(paymentIntentResponse)
 
       if (paymentIntentResponse.status === 'succeeded') {
         navigate('/payment-success');
