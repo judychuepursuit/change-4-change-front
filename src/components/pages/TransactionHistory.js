@@ -70,5 +70,3 @@ const formatDate = (dateString) => {
 };
 
 export default TransactionHistory;
-
-

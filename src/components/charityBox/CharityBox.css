@@ -2,7 +2,7 @@
     width: 340px;
     height: 480px;
     margin: 1rem;
-    text-align: center;
+    /* text-align: center; */
     padding: 1rem;
     border: solid 5px grey;
     border-radius: 5px;
@@ -21,7 +21,7 @@
     color: #ff7300;
   } */
 
-  /* .charity-box:hover .mission-statement {
+   /* .charity-box__mission-statement:hover {
     display: block;
   } */
 

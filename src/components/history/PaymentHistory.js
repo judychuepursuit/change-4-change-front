@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import fetch from '../api/badgeData.js';
+import fetch from '../../reward-data/badgeData.js';
 import ReactTable from 'react-table';
 import _ from 'lodash';
 
@@ -8,6 +8,7 @@ function calculateResults (incomingData) {
 
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const pointsPerTransaction = incomingData.map(transaction=> {
+    
     let points = 0;
     let over100 = transaction.amt - 100;
     

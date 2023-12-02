@@ -37,7 +37,7 @@ const charityData = [
     charityType:['Education','Worldwide'],
     missionStatement:'UNICEF is on the ground in 190 countries and territories, providing children with the lifesaving supplies and assistance they desperately need.',
     messageImage:'https://chronicle.brightspotcdn.com/dims4/default/281a7bc/2147483647/strip/true/crop/3000x2000+0+0/resize/1680x1120!/format/webp/quality/90/?url=http%3A%2F%2Fchronicle-brightspot.s3.us-east-1.amazonaws.com%2Faf%2F17%2F1313c8283b4f723798e2072d701c%2F900e73cd524668fbbd512388eef3b5e7.jpg',
-    imageUrl:'https://images.squarespace-cdn.com/content/v1/56aca675f8baf35958bfaec6/1481067906159-7AJ2R9AQOXSY2GJIAXI2/image-asset.png?format=2500w',
+    imageUrl:'./unicef_logo.png',
   }
 ]
 
