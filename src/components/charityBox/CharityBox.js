@@ -16,6 +16,15 @@ const CharityBox = (props) => {
       <p className="mission-statement">
         {props.charity.missionStatement}
       </p>
+      <div className="charity-box__charity-type-container">
+      {props.charity.charityType.map(charity => {
+        return (
+          <span className="charity-box__charity-type">
+            {charity}
+          </span>
+        )
+      })}
+      </div>
       <div>
       <Link
         onClick={() => {
