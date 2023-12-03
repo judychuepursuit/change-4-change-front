@@ -3,8 +3,6 @@ import BadgeDisplay from '../BadgeDisplay';
 import "./RewardsModal.css"
 import blue from "../../reward-img/lev 1 blu badge.png"
 
-
-
 export default function RewardsModal({isModalOpen, setIsModalOpen}) {
 
     const [points, setPoints] = useState(0);
@@ -53,7 +51,7 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
             <h2>Congratulations!</h2>
             <p>You've earned a badge</p>
    
-            <img src={blue} alt='badge' className='badge'></img>
+            {/* <img src={blue} alt='badge' className='badge'></img> */}
             <BadgeDisplay points={points} hasSignedUp={hasSignedUp} hasDonated={hasDonated} />
 
             <div id="share-container">

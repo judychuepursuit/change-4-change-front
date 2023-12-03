@@ -7,7 +7,6 @@ import "./Rewards.css";
 
 import badgeData from "../../../reward-data/badgeData.js"
 
-
 import lev1RedBadge from '../../../reward-img/lev 1 red badge.png';
 import lev1OrangeBadge from '../../../reward-img/lev 1 orange badge.png';
 import lev1YelBadge from '../../../reward-img/lev 1 yel badge.png';
@@ -20,33 +19,26 @@ import unicornBadge from '../../../reward-img/unicorn badge.png';
 function Rewards(props) {
   // props.hideNavBar();
 
-  const badgeImages = [
-    lev1RedBadge,
-    lev1OrangeBadge,
-    lev1YelBadge,
-    lev1GrnBadge,
-    lev1BluBadge,
-    lev1IndigoBadge,
-    lev1VioBadge,
-    unicornBadge,
-  ];
+  // const badgeImages = [
+  //   lev1RedBadge,
+  //   lev1OrangeBadge,
+  //   lev1YelBadge,
+  //   lev1GrnBadge,
+  //   lev1BluBadge,
+  //   lev1IndigoBadge,
+  //   lev1VioBadge,
+  //   unicornBadge,
+  // ];
 
   const badgeNames = badgeData.map(badge => badge.name);
   
   return (
     <div className='rewards-page'>
       <section className="header">
-        {/* <img src={logo} alt="logo" width="15%" height="25%" className='logo' /> */}
-        {/* <Link to='/'>
-        <button className="hm-bttn">Home</button>
-        </Link>
-         */}
-   
 
         <section className="top">
           <h4 className='earn-header'>earn</h4>
           <h1 className='reward-header'>rewards</h1>
-
 
         </section>
         <section className="badges-container">
@@ -99,8 +91,6 @@ function Rewards(props) {
         </p> */}
       </section>
 
-
-
       <div className='rewards-footer'>
         <img src={flowChart} alt="flow chart" className='flow-chart' />
         <div className='bottom'>
@@ -112,9 +102,9 @@ function Rewards(props) {
         <div className="social-media">
           <h4>Share with</h4>
           <a href="#" className='social-tag'>
-            <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
+            {/* <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
             <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
-            <img src={twit} alt='twitter' width="12%" height="5%"></img>
+            <img src={twit} alt='twitter' width="12%" height="5%"></img> */}
           </a>
         </div>
       </div>
