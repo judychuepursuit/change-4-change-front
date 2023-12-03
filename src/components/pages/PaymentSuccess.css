@@ -30,19 +30,23 @@
   
   .transaction-history-button {
     background-color: #FF7300;
-
     color: white;
     border: none;
-    padding: 10px 20px;
+    padding: 15px 30px; /* Increase padding for a larger button */
     margin-bottom: 20px;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .transaction-history-button:hover {
-    background-color: #551aeb;
+    font-size: 18px; /* Larger font size for better readability */
+    font-weight: bold; /* Thicker font weight */
+    text-transform: lowercase; /* Use capitalize to make the text sentence case */
+    transition: background-color 0.3s, transform 0.1s; /* Smooth background color transition and transform */
+}
 
-  }
+.transaction-history-button:hover {
+    background-color: #551aeb;
+    transform: scale(1.05); /* Slightly larger button on hover */
+}
+
   
   .logout-button {
     background-color: transparent;
