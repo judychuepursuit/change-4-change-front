@@ -1,12 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import BadgeDisplay from '../BadgeDisplay';
 import "./RewardsModal.css"
-
-
 import blue from "../../reward-img/lev 1 blu badge.png"
-
-
-
 
 export default function RewardsModal({isModalOpen, setIsModalOpen}) {
 
