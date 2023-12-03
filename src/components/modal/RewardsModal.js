@@ -1,7 +1,8 @@
+
 import React, { useEffect, useState } from 'react';
 import BadgeDisplay from '../BadgeDisplay';
 import "./RewardsModal.css"
-import blue from "../../reward-img/lev 1 blu badge.png"
+import blue from "../../reward-img/lev_1_blu_badge.png"
 
 export default function RewardsModal({isModalOpen, setIsModalOpen}) {
 
@@ -73,3 +74,4 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
     </div>
   );
 };
+

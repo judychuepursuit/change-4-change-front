@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 140px;
+  margin-top: 220px;
   height: 100vh; /* This will make the container take the full height of the viewport */
 }
 
@@ -61,6 +61,14 @@
   font-size: 14px;
 }
 
+.charities__main-content {
+  display: flex;
+}
+
+.charities__selector {
+  display: flex;
+  flex-direction: column;
+}
 
 
 

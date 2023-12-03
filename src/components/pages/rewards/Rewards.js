@@ -11,7 +11,7 @@ import lev1RedBadge from '../../../reward-img/lev 1 red badge.png';
 import lev1OrangeBadge from '../../../reward-img/lev 1 orange badge.png';
 import lev1YelBadge from '../../../reward-img/lev 1 yel badge.png';
 import lev1GrnBadge from '../../../reward-img/lev 1 grn_badge.png';
-import lev1BluBadge from '../../../reward-img/lev 1 blu badge.png';
+import lev1BluBadge from '../../../reward-img/lev_1_blu_badge.png';
 import lev1IndigoBadge from '../../../reward-img/lev 1 indigo badge.png';
 import lev1VioBadge from '../../../reward-img/lev 1 vio badge.png';
 import unicornBadge from '../../../reward-img/unicorn badge.png';
