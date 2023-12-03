@@ -6,6 +6,7 @@ import _ from 'lodash';
 function calculateResults (incomingData) {
   // Calculate points per transaction
 
+  
   const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
   const pointsPerTransaction = incomingData.map(transaction=> {
     

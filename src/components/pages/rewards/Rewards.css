@@ -62,7 +62,7 @@
 
     .top h4{
         text-align: left;
-        color: #551AEB;
+        color: hsl(257, 84%, 51%);
         font-size: 2em;
     } 
   
@@ -157,10 +157,6 @@ color: #ff7300;
   /* display: flex; */
   /* justify-content: space-between; This will place the child divs on opposite sides */
   padding: 10px;
-}
-
-.rewards-footer div {
-  /* margin-right: 200px; */
 }
 
 .bottom {

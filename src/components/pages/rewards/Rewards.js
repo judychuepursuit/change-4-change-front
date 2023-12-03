@@ -36,19 +36,12 @@ function Rewards(props) {
   return (
     <div className='rewards-page'>
       <section className="header">
-        {/* <img src={logo} alt="logo" width="15%" height="25%" className='logo' /> */}
-        {/* <Link to='/'>
-        <button className="hm-bttn">Home</button>
-        </Link>
-         */}
-   
 
         <section className="top">
           <h4 className='earn-header'>earn</h4>
           <h1 className='reward-header'>rewards</h1>
-
-
         </section>
+        
         <section className="badges-container">
           
         <div className='badge-info'>
