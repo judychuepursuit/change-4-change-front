@@ -11,3 +11,7 @@ const root = createRoot(document.getElementById('root')); // new way of using ro
 root.render(       
 <App />
 );
+<<<<<<< HEAD
+=======
+    
+>>>>>>> c5855227 (added howItWork & navBar folders to pages)
