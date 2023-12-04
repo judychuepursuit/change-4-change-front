@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import { Elements } from '@stripe/react-stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './components/pages/Home';
+import Home from './components/pages/home/Home';
 import About from './components/pages/About';
 import Rewards from './components/pages/rewards/Rewards.js';
 import HowItWorks from './components/pages/How-It-Works';
