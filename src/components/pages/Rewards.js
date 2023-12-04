@@ -1,78 +1,44 @@
 import React from 'react';
-import logo from "../../reward-img/logo.png";
-import flowChart from "../../reward-img/flow-chart.png";
-import fb from "../../sm-icon/fb-logo.jpeg";
-import ig from "../../sm-icon/ig-logo.jpeg";
-import twit from "../../sm-icon/twitter-logo.png";
-import "../../components/Rewards.css";
-import { Link } from 'react-router-dom';
-
-import badgeData from "../../api/badgeData.js"
-
-
-import lev1RedBadge from '../../reward-img/lev 1 red badge.png';
-import lev1OrangeBadge from '../../reward-img/lev 1 orange badge.png';
-import lev1YelBadge from '../../reward-img/lev 1 yel badge.png';
-import lev1GrnBadge from '../../reward-img/lev 1 grn_badge.png';
-import lev1BluBadge from '../../reward-img/lev 1 blu badge.png';
-import lev1IndigoBadge from '../../reward-img/lev 1 indigo badge.png';
-import lev1VioBadge from '../../reward-img/lev 1 vio badge.png';
-import unicornBadge from '../../reward-img/unicorn badge.png';
-
-function Rewards(props) {
-  // props.hideNavBar();
-
-    const badgeImages = [
-      lev1RedBadge,
-      lev1OrangeBadge,
-      lev1YelBadge,
-      lev1GrnBadge,
-      lev1BluBadge,
-      lev1IndigoBadge,
-      lev1VioBadge,
-      unicornBadge,
-    ];
-
-
-  
+import "../Button.css"
+function Rewards (){
   return (
-    <div className='rewards-page'>
+    <div>
       <section className="header">
-        {/* <img src={logo} alt="logo" width="15%" height="25%" className='logo' /> */}
-        {/* <Link to='/'>
-        <button className="hm-bttn">Home</button>
-        </Link>
-         */}
-   
+        <img src="src/reward-img/logo.png" alt="logo" width="12%" height="5%" />
+        <button className="btn">Home</button>
+      </section>
 
       <section className="top">
-        <h4 className='earn-header'>earn</h4>
-        <h1 className='reward-header'>rewards</h1>
-        <img src={flowChart} alt="flow chart" className='flow-chart' />
-
-        </section>
+        <h4>Earn</h4>
+        <h1>Rewards</h1>
       </section>
 
       <section className="reward-intro">
-        <section className="middle">
-          <h2 className='earn-two'>earn &nbsp;</h2>
-          <h1 >Points & Badges:</h1>
-        </section>
-
-        <br />
-        <p className='reward-pg'>
+        <p>
           Introducing a groundbreaking charity rewards system that not only fosters generosity but also cultivates a culture of continuous giving.
+          <br />
           Donors earn badges for their contributions through monetary donations.
+          <br />
           We bring an exclusive opportunity to make a meaningful impact on the charity of your choice.
+          <br />
           You now have a convenient and efficient way to direct your generosity to the causes that matter most to you.
+          <br />
+
           With each milestone achieved, participants unlock exclusive rewards such as personalized certificates of appreciation that can be posted to social media.
+          <br />
           This integrated rewards system not only acknowledges the altruistic endeavors of individuals but also fosters a sense of belonging and purpose within the community, creating a powerful cycle of giving and gratitude.
         </p>
 
+        <img src="src/reward-img/flow-chart.png" alt="flow chart" width="100%" height="auto" />
         <br />
         <br />
 
-        {/* <p>
+        <section className="middle">
+          <h2>Earn</h2>
+          <h1>Points & Badges:</h1>
+        </section>
+
+        <p>
           Our reward program awards points based on each recorded purchase.
           <br />
           <br />
@@ -85,42 +51,20 @@ function Rewards(props) {
           1 point for every dollar spent
           <br />
           <br />
-        </p> */}
+        </p>
       </section>
-
-      <section className="badges-container">
-      <div style={{ display: 'flex' }}>
-      {badgeImages.map((badge, index) => (
-        <div key={index} style={{ marginRight: '10px' }}>
-          <img
-            src={badge}
-            alt={`Badge ${index + 1}`}
-            style={{ width: '100px', height: '100px' }}
-          />
-        </div>
-      ))}
-    </div>
-       </section>
-
-      <div className='donateBttn'>
-      
-        <p>CLICK HERE TO </p>
-        <Link to='/charities' className='orange'>DONATE</Link>
-        
-      </div>
 
       <div className="social-media">
         <h4>Share with</h4>
-        <a href="#" className='social-tag'>
-          <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
-          <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
-          <img src={twit} alt='twitter' width="12%" height="5%"></img>
-        </a>
-      </div>
-    </div>
+        <a href="#">
+        <img src='src/sm-icon/fb-logo.jpeg' alt='fb-logo'></img>
+        <img src='src/sm-icon/ig-logo.jpeg' alt='ig-logo'></img>
+        <img src='src/sm-icon/twitter-logo.png' alt='twitter'></img>
+       </a>
+        </div>
 
-    
-  );
+        </div>
+  ) 
 }
 
 export default Rewards;

@@ -1,14 +1,15 @@
 import React from 'react';
+// import { useNavigate } from 'react-router-dom';
 import '../../App.css';
 
 export default function HowItWorks() {
   return (  
     <body>
-        <div className="how-it-works-page">
-  <h1>how it works</h1><br></br>
-  <div className="text-overlay hiw-header">
-<div className="centered"><b> Rewards Badges & connecting to like minded people in your commnity via your Social media accounts: </b> 
-Simply Register/log in, enter your payment method, select a charity(ies), select frequency and donation amount, and let the fun begin. Every step accrues points -which in turn accrues fun reward badges,  every paid donation whether it's a monthly or one time donation earns a user milestones points which also connects to a users sm feed (if they choose to connect them). The monthly payments share with your contacts (friends/family) that you have made a donation to the user's selected charity(ies), by doing so it helps incentivize others to engage and become a donator as well. The user also gets frequent reminders of the donations they make by the posts, points and badges. These are statistically equivalent to good endorphins (compared to eating chocolate, being in love), the user is reminded regularly of the help they are providing to the charities in need and connected to others that are donating and sharing via our connected sm sites.</div>
+      <div className="how-it-works-page">
+      <div className="how-it-works-image"/>
+      <h1>how it works</h1><br></br>
+      <div className="text-overlay hiw-header">
+      <div className="centered"><b> Earn Points and Badges then share these Milestones by linking your Social media accounts: </b> Simply Register or log-in, select a charity, enter your payment information the frequency and donation amount, then let the fun begin. Each step accrues points, those points accrue reward badges. Paid donation's whether it's a monthly or one time transaction earns a user milestones points which a user can chose to connect to their social media account(s). The donations, badges and milestones are shared with your friends/family. The posts/feed helps incentivize others to engage in donating through the app. Users get frequent reminders of the much needed support they are providing to those in need with their donations. These moments of acknowledgement from the app highlight their accomplishments which statistically can be compared to the equivalent of producing good endorphins (evoking good feelings similar to eating chocolate or being in love) the users is also more importantly reminded regularly of the help they are providing to the charities in need and fostering a community of like minded individuals via the connect page and change 4 chamge social media sites.</div>
 </div>
 </div>
     </body>
@@ -16,9 +17,9 @@ Simply Register/log in, enter your payment method, select a charity(ies), select
 
 }
 
-{/* <body>
+/* <body>
 <div className="about">
 <div className="text-overlay">
-<h1>about</h1><br></br> */}
+<h1>about</h1><br></br> */
 
 // test

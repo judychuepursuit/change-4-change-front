@@ -1,0 +1,171 @@
+.badges-container{
+   
+    padding: 10px;
+}
+.header {
+    display:flex;
+    justify-content:row;
+    /* align-items: center; */
+    padding: 5px;
+  }
+  
+  .earn-header{
+    font-style: italic;
+    margin-left: 180px;
+  }
+
+  .earn-two{
+    font-size: 2em;
+    font-style: italic;
+  }
+
+  .middle h1 {
+    font-size: 10em;
+  }
+  .points-two{
+    font-size: 2em;
+  }
+  .reward-header {
+    font-weight: 800;
+  }
+
+  .reward-pg{
+    padding: 12px;
+  }
+  .logo {
+    margin-right: 10px;
+  }
+  
+  .hm-bttn {
+    margin-left: 10px;
+    cursor: pointer;
+  }
+
+.reward-intro {
+    /* border: 2px solid #ff7300; */
+    /* padding: 45px; */
+    align-items: center;
+    justify-content: center;
+  } 
+
+.rewards-page {
+  width: 800px;
+  margin: 0 auto;
+  
+}
+
+  .top h1 {
+        text-align: center;
+        font-size: 6em;
+        color: #ff7300;
+    }
+
+    .top h4{
+        text-align: left;
+        color: #551AEB;
+        font-size: 2em;
+    } 
+  
+    .reward-intro h1 {
+        text-align: center;
+        font-size: xx-large;
+        color: #ff7300;
+    }
+
+    .top {
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+    }
+  
+
+
+    .middle {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .social-media{    
+      padding: 20px;
+      }
+
+      .header {
+        display: grid;   
+
+    }
+
+    .header button{
+        position: absolute;
+        top: 10px;
+        right: 40px;    }
+
+.flow-chart {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-tag img {
+  /* display: flex;
+  flex-direction: column; */
+  /* align-self:center ; */
+  width: 4%;
+  height: 4%;
+  margin-right: 10px;
+}
+
+.hm-bttn {
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+
+}
+
+.badge-info {
+  /* align-items: center; */
+  display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
+.rewards-footer {
+  /* display: flex; */
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.rewards-footer .donate-button a{
+  display: flex;
+  flex-direction: row;
+  color: black;
+  text-decoration: none;
+}
+
+
+.rewards-footer .donate-button a span {
+color: #ff7300;
+}
+
+.orange-square {
+  width: 15px; 
+  height: 15px; 
+  background-color: orange;
+}
+
+
+
+.rewards-footer {
+  /* display: flex; */
+  /* justify-content: space-between; This will place the child divs on opposite sides */
+  padding: 10px;
+}
+
+.rewards-footer div {
+  /* margin-right: 200px; */
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;/* Items will be at opposite ends */
+  padding: 10px; /* Add padding for better spacing */
+}

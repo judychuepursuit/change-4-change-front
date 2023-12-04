@@ -4,7 +4,6 @@
   align-items: center;
   height: 100vh;
   padding-top: 80px; /* Add padding to the top to push the form down slightly */
-  
 }
 
 .payment-form {
@@ -25,7 +24,8 @@
   margin-bottom: 10px;
 }
 
-.payment-form input, .StripeElement {
+.payment-form input,
+.StripeElement {
   width: 100%;
   padding: 10px;
   margin: 5px 0;
@@ -36,7 +36,7 @@
 .payment-form button {
   display: block; /* Block display will allow the button to respect the margin auto */
   width: calc(50% - 20px); /* Full width minus the padding from the container */
-  background-color: #FF7300;
+  background-color: #ff7300;
   color: #fff;
   border: none;
   border-radius: 3px;
@@ -45,7 +45,6 @@
   margin: 10px auto; /* Top and bottom margin of 10px and auto margin on the sides */
   transition: background-color 0.3s ease;
 }
-
 
 .payment-form button:hover {
   background-color: #551aeb;
@@ -95,8 +94,12 @@
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 @media (max-width: 768px) {
@@ -116,6 +119,3 @@
   display: inline-block;
   vertical-align: middle;
 }
-
-
-
