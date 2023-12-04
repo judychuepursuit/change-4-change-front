@@ -1,54 +1,54 @@
 .success-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 70vh;
-    text-align: center;
-    background: #fff; /* Adjust the color to match your design */
-    margin-top: 10px; /* Adjust this value to move the form up */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  text-align: center;
+  background: #fff; /* Adjust the color to match your design */
+  margin-top: 10px; /* Adjust this value to move the form up */
+}
 
-  }
-  
+.success-title {
+  color: #ff7300; /* Adjust the color to match your design */
+  margin: 0;
+  font-size: 48px; /* Adjust the size to match your design */
+}
 
-  .success-title {
-    color: #FF7300; /* Adjust the color to match your design */
-    margin: 0;
-    font-size: 48px; /* Adjust the size to match your design */
-  }
-  
-  .success-message {
-    color:#FF7300; /* Adjust the color to match your design */
-    margin: 0;
-    font-size: 24px; /* Adjust the size to match your design */
-  }
-  
-  .thank-you-message {
-    color: #551aeb; /* Adjust the color to match your design */
-    margin: 20px 0;
-  }
-  
-  .transaction-history-button {
-    background-color: #FF7300;
+.success-message {
+  color: #ff7300; /* Adjust the color to match your design */
+  margin: 0;
+  font-size: 24px; /* Adjust the size to match your design */
+}
 
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .transaction-history-button:hover {
-    background-color: #551aeb;
+.thank-you-message {
+  color: #551aeb; /* Adjust the color to match your design */
+  margin: 20px 0;
+}
 
-  }
-  
-  .logout-button {
-    background-color: transparent;
-    color: #4A5568; /* Adjust the color to match your design */
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
-    
+.transaction-history-button {
+  background-color: #ff7300;
+  color: white;
+  border: none;
+  padding: 15px 30px; /* Increase padding for a larger button */
+  margin-bottom: 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px; /* Larger font size for better readability */
+  font-weight: bold; /* Thicker font weight */
+  text-transform: lowercase; /* Use capitalize to make the text sentence case */
+  transition: background-color 0.3s, transform 0.1s; /* Smooth background color transition and transform */
+}
+
+.transaction-history-button:hover {
+  background-color: #551aeb;
+  transform: scale(1.05); /* Slightly larger button on hover */
+}
+
+.logout-button {
+  background-color: transparent;
+  color: #4a5568; /* Adjust the color to match your design */
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
