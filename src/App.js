@@ -12,74 +12,69 @@ import Charities from './components/pages/Charities'
 import ConnectUs from './components/pages/ConnectUs';
 import LoginPage from "./components/LoginPage"
 import RegisterPage from "./components/RegisterPage";
-import Signup from './components/pages/Sign-Up';
-// Added PaymentForm and PaymentSuccess imports
-import PaymentForm from './components/pages/PaymentForm';
-import PaymentSuccess from './components/pages/PaymentSuccess';
-import TransactionHistory from './components/pages/TransactionHistory';
+import Signup from "./components/pages/Sign-Up";
+import PaymentForm from "./components/pages/PaymentForm";
+import PaymentSuccess from "./components/pages/PaymentSuccess";
+import TransactionHistory from "./components/pages/TransactionHistory";
 
-// import TestComponent from './components/pages/TestComponent';
-// ... other imports
-import RewardsModal from './components/modal/RewardsModal.js';
-import History from "./components/pages/History.js"
-// Added stripePromise for Stripe API initialization
+import RewardsModal from "./components/modal/RewardsModal.js";
+
+import History from "./components/pages/History.js";
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
-const App=()=> {
- 
+const App = () => {
   return (
     // <Router>
-      <AppContent />
+    <AppContent />
     // </Router>
   );
-}
+};
 
 const AppContent = () => {
-const [userPurchaseData, setUserPurchaseData] = useState({
-  recipient: null
-})
+  const [userPurchaseData, setUserPurchaseData] = useState({
+    recipient: null,
+  });
 
-const [buttons, setButtons] = useState([])
+  const [buttons, setButtons] = useState([]);
 
-// const location = useLocation();
+  // const location = useLocation();
 
-const hideNavbarRoutes = [];// Add the routes where you want to hide the navbar
-// const hideNavbarRoutes = ['/how-it-works'];// Add the routes where you want to hide the navbar
+  const hideNavbarRoutes = []; // Add the routes where you want to hide the navbar
+  // const hideNavbarRoutes = ['/how-it-works'];// Add the routes where you want to hide the navbar
 
-// const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
+  // const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
 
   return (
     <Router>
-   {/* {shouldShowNavbar && <Navbar />} */}
+      {/* {shouldShowNavbar && <Navbar />} */}
       <Navbar />
-      
+
       {/* Wrapped the Routes with Elements for Stripe */}
+
       <Elements stripe={stripePromise}>
-      <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/about' element={<About />} />
-          <Route path='/rewards' element={<Rewards/>} />
-          <Route path='/how-it-works' element={<HowItWorks />} />
-          <Route path='/charities' element={<Charities setUserPurchaseData={setUserPurchaseData}/>} />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/rewards" element={<Rewards />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route
+            path="/charities"
+            element={<Charities setUserPurchaseData={setUserPurchaseData} />}
+          />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
-          <Route path='/connect-us' element={<ConnectUs />} />
-          <Route path='/sign-up' element={<Signup />} />
-          {/* Added payment routes */}
-          <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
-          <Route path='/payment-success' element={<PaymentSuccess />} />
-          <Route path='/TransactionHistory' element={<TransactionHistory />} />
-
-          <Route path='/history' element={<History />} />
-          {/* <Route path='/test' element={<TestComponent />} /> */}
-          {/* ... other routes */}
-          
+          <Route path="/connect-us" element={<ConnectUs />} />
+          <Route path="/sign-up" element={<Signup />} />
+          <Route
+            path="/payment"
+            element={<PaymentForm recipient={userPurchaseData.recipient} />}
+          />
+          <Route path="/payment-success" element={<PaymentSuccess />} />
+          <Route path="/TransactionHistory" element={<TransactionHistory />} />
+          <Route path="/history" element={<History />} />
         </Routes>
       </Elements>
-  
-      </Router>
-
+    </Router>
   );
-  }
+};
 
 export default App;

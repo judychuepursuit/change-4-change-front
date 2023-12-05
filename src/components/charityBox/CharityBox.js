@@ -4,18 +4,26 @@ import './CharityBox.css';
 const CharityBox = (props) => {
   return (
     <div className="charity-box">
-      <img 
+      <img className="charity-box__logo"
         src={props.charity.imageUrl}
         alt='imageUrl'>
       </img>
-      <img
+      <img className='charity-box__message-image'
           src={props.charity.messageImage}
           alt="messageImage"
-          className="messageImg"
         ></img>
       <p className="charity-box__mission-statement">
         {props.charity.missionStatement}
       </p>
+      <div className="charity-box__charity-type-container">
+      {props.charity.charityType.map(charity => {
+        return (
+          <span className="charity-box__charity-type">
+            {charity}
+          </span>
+        )
+      })}
+      </div>
       <div>
       <Link
         onClick={() => {
