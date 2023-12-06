@@ -33,7 +33,7 @@ const CharityBox = (props) => {
         }}
         to="/payment"
       >
-        <button className="donation orange-button">DONATE</button>
+        <button className="charity-box__donation">DONATE</button>
       </Link>
       </div>
       <div className="charity-box__filter">
