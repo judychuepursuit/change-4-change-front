@@ -7,6 +7,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import info1 from '../../../images/img-1a.jpeg';
 import info2 from '../../../images/img-4.jpg';
 import info3 from '../../../images/sm_image.jpeg';
+import '../How-It-Works'
+import HowItWorks from '../How-It-Works';
 
 
 function InfoBox({ title, description, buttonText, infoLink, img, altText }) {
@@ -58,6 +60,8 @@ useEffect (()=>{
         <div className="carousel-image red-cross-home"></div>
         <div className="carousel-image feed-america-home"></div>
       </div>
+      {/* this is the anchor for the how it works */}
+      {/* <HowItWorks></HowItWorks> */}
     </div>
 
     <div className="home-content"> 

@@ -170,17 +170,17 @@
   .main-content h1 {
     background-color: #551aeb;
     height: 43px;
-    padding: 22px;
+    padding: 18px;
     color: #ebe8f4;
     font-size: 48px;
     font-weight: bolder;
   }
 
   .main-content h2 {
-    padding: 18px;
+    padding: 16px;
     font-size: 38px;
     font-weight: bolder;
-    padding-bottom: 8px;
+    padding-bottom: 5px;
     color: #ffffff;
     line-height: 80px;
   }
@@ -198,7 +198,7 @@
     width: 190px;
     font-size: 30px;
     font-weight: bolder;
-    margin-top: 60px;
+    margin-top: 50px;
     position: absolute;
     left: 43%;
     border-radius: 4px;
@@ -216,7 +216,7 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    height: 700px;
+    height: 660px;
     overflow-x: hidden; 
   }
 
@@ -239,6 +239,7 @@
 
   .unicef-home {
     background-image: url(../../../images/carousel-images/unicef_home.jpg);
+    background-position: bottom;
   }
   
   .aspca-home {
@@ -273,7 +274,7 @@
   
   /* hiw button */
   .how-it-works {
-    margin: 280px 0px 40px 30px;
+    margin: 265px 0px 40px 10px;
     width: 180px;
     background-color:#ff7300;
     font-weight: bolder;
@@ -288,3 +289,79 @@
     background-color:#551aeb;
   }
 
+  .how-it-works-page {
+    /* position:relative; */
+    /* padding-bottom: 30px; */
+    font-weight: normal;
+    /* top: 47%; */
+    color: #ff7300;
+    text-align: center;
+    font-size: 45px;
+    margin-top: -1px;
+  }
+  
+  .hiw-header {
+    margin-left: 19.7%;
+    height: 80vh;
+  }
+  
+  .how-it-works-image {
+    background-image: url('../../../images/hiw-banner_2wider.jpg');
+    object-fit: cover;
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 340px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+  }
+
+
+  /* .main-content h3 {
+    font-size: xx-large;
+    font-weight: bolder;
+  }  */
+  
+  /* .donate-btn {
+    width: 250px;
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    background-color:#551aeb;
+    color: #ffffff;
+    padding: 8px;;
+  } */
+  
+  /* .hero-image {
+    background-image: url(images/img-1a-trans.jpg);
+  } */
+  
+  /* .hero-images {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 30%;
+  }
+  
+  .carousel-image {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-direction: column;
+    height: 900px;
+    display: flex;
+    align-items: center;
+    min-width: 100%;
+    padding-top: 200px;
+  }
+   */
+  /* .unicef-home {
+    background-image: url(images/carousel-images/unicef_home.jpg);
+  } */
+  
+  /* .home-content {
+    top: 80%;
+    position: absolute;
+    
+  } */

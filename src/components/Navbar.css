@@ -1,6 +1,7 @@
 .navbar {
     background-color: #ff7300;
     height: 100px;
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +15,7 @@
   .navbar-logo {
     color: #ffffff;
     justify-self: start;
-    /* margin-left: 20px; */
+    /* margin-left: -90px; */
     cursor: pointer;
     text-decoration: none;
     font-size: 2rem;
@@ -29,12 +30,13 @@
   .nav-menu {
     display: grid;
     grid-template-columns: repeat(5, auto);
-    grid-gap: 30px;
+    grid-gap: 25px;
     list-style: none;
     text-align: center;
     width: 60vw;
     justify-content: end;
-    margin-right: 2rem;
+    /* margin-right: 2rem; - this was commented out*/
+    margin-right: 4.5rem;
   }
   
   .nav-item {
@@ -154,11 +156,17 @@
   .hidden { 
     display: none;
   }
-  
+  /* adjust to 1450 c4c logo adjust but the menu items dissapear the sign up stays */
   @media screen and (max-width: 960px) {
     .NavbarItems {
         position: relative;
     }
+/* 
+  @media screen and (max-width: 1450px) {
+    .NavbarItems h5{
+      position: relative;
+    } */
+  /* } */
 
 .nav-menu {
     display: flex;
@@ -183,7 +191,7 @@
 
 .nav-links {
     text-align: center;
-    padding: 1.2rem;
+    /* padding: 1.2rem; */
     width: 100%;
     display: table;
 }
@@ -230,7 +238,10 @@
 }
 
 .nav-links-mobile:hover {
-    background-color: #551aeb;
+    background-color: #ffffff;
+    color: #ff7300;
+    font-weight: bolder;
+    font-size: larger;
    /* opacity: 50%;*/
 }
   }
