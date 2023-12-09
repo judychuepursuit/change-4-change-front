@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
-import Navbar from './components/Navbar';
-// Added Stripe imports
-import { Elements } from '@stripe/react-stripe-js';
-import { loadStripe } from '@stripe/stripe-js';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import Home from './components/pages/home/Home';
-import About from './components/pages/About';
-import Rewards from './components/pages/rewards/Rewards.js';
-import HowItWorks from './components/pages/How-It-Works';
-import Charities from './components/pages/Charities'
-import ConnectUs from './components/pages/ConnectUs';
-import LoginPage from "./components/LoginPage"
+import React, { useState } from "react";
+import Navbar from "./components/Navbar";
+import { Elements } from "@stripe/react-stripe-js";
+import { loadStripe } from "@stripe/stripe-js";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import Home from "./components/pages/home/Home.js";
+import Footer from "./components/Footer";
+import Rewards from "./components/pages/rewards/Rewards.js";
+import HowItWorks from "./components/pages/How-It-Works";
+import Charities from "./components/pages/Charities";
+import ConnectUs from "./components/pages/ConnectUs";
+import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import Signup from "./components/pages/Sign-Up";
 import PaymentForm from "./components/pages/PaymentForm";
@@ -73,6 +77,7 @@ const AppContent = () => {
           <Route path="/history" element={<History />} />
         </Routes>
       </Elements>
+      <Footer />
     </Router>
   );
 };
