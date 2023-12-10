@@ -31,7 +31,7 @@
 /* InfoSection.css */
 .info-section {
   display: flex;
-  gap: 40px;
+  /* gap: 40px; */
   justify-content: center;
   align-items: center;
   margin-top: -30px;
@@ -52,7 +52,7 @@
   width: 200px;
   /* margin-left: 55px; */
   padding-bottom: 12px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
   margin-top: -25px;
 }
 
@@ -62,7 +62,7 @@
   font-size: small;
   font-weight: 600;
   /* padding-bottom: 30px; */
-  margin-left: 25px;
+  /* margin-left: 25px; */
   margin-top: 10px;
   width: 300px;
 }
@@ -74,7 +74,7 @@
   width: 240px;
   font-weight: bolder;
   margin-top: 15px;
-  margin-left: 25px;
+  /* margin-left: 25px; */
   border-radius: 4px;
   align-items: center;
 }

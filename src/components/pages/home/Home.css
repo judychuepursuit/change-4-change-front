@@ -20,7 +20,8 @@
   font-size: small;
   color: #ffffff;
   background-color: #551aeb;
-  padding: 100px;
+  padding-top: 100px;
+  height: 290px;
 }
 
 .main-content h1 {
@@ -52,19 +53,18 @@
 }
 
 .donate-btn {
-  /* margin-left: 44%; */
   width: 190px;
+  align-items: center;
   font-size: 30px;
   font-weight: bolder;
   margin-top: 60px;
   position: absolute;
-  left: 43%;
-  /* margin-bottom: 20px; */
+  left: 50%;
+  transform: translateX(-50%);
   border-radius: 4px;
   background-color:#ff7300;
   color: #ffffff;
   z-index: 100;
-  /* padding: 8px; */
 }
 
 .hero-image {
@@ -79,6 +79,7 @@
   width: 100%;
   height: 700px;
   overflow-x: hidden; 
+  overflow-y: hidden;
 }
 
 .button {
@@ -132,8 +133,8 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  top: 80%;
-  position: absolute;
+  /* top: 80%; */
+  /* position: absolute; */
   
 } 
 
@@ -144,8 +145,7 @@
 }
 
 /* hiw button */
-.how-it-works {
-  margin: 230px 0px 20px 30px;
+/* .how-it-works {
   width: 200px;
   background-color:#ff7300;
   font-weight: bolder;
@@ -154,7 +154,7 @@
   color: #ffffff;
   border-radius: 4px;
   border: none;
-}
+} */
 
 .how-it-works button:hover {
   background-color:#551aeb;
@@ -193,19 +193,6 @@
     color: #551aeb;
     font-size: 24px;
     font-weight: bold;
-  }
-
-  .donate-btn {
-    width: 190px;
-    font-size: 30px;
-    font-weight: bolder;
-    margin-top: 50px;
-    position: absolute;
-    left: 43%;
-    border-radius: 4px;
-    background-color:#ff7300;
-    color: #ffffff;
-    z-index: 100;
   }
 
   .hero-image {
@@ -256,16 +243,6 @@
     background-image: url(../../../images/carousel-images/feed_america2-home.jpg);
     background-position: center;
   }
-
-  .home-content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    top: 80%;
-    position: absolute;
-    
-  } 
   
   .hero-image h1{
     color:#ffffff;
@@ -275,7 +252,7 @@
   
   /* hiw button */
   .how-it-works {
-    margin: 290px 0px 30px 75px;
+    margin: 20px 0px 30px 0px;
     width: 180px;
     background-color:#ff7300;
     font-weight: bolder;
@@ -317,51 +294,15 @@
     margin-bottom: 50px;
   }
 
-  /* .main-content h3 {
-    font-size: xx-large;
-    font-weight: bolder;
-  }  */
-  
-  /* .donate-btn {
-    width: 250px;
-    font-weight: 600;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border-radius: 4px;
-    background-color:#551aeb;
-    color: #ffffff;
-    padding: 8px;;
-  } */
-  
-  /* .hero-image {
-    background-image: url(images/img-1a-trans.jpg);
-  } */
-  
-  /* .hero-images {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    min-height: 30%;
+  @media screen and (max-width: 960px) {
+    .info-section {
+      flex-direction: column;
+      height: auto;
+      margin-top: 0;
+    }
+    .info-box {
+      margin-top: 0;
+    }
   }
+
   
-  .carousel-image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    height: 900px;
-    display: flex;
-    align-items: center;
-    min-width: 100%;
-    padding-top: 200px;
-  }
-   */
-  /* .unicef-home {
-    background-image: url(images/carousel-images/unicef_home.jpg);
-  } */
-  
-  /* .home-content {
-    top: 80%;
-    position: absolute;
-    
-  } */
