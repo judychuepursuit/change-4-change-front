@@ -19,16 +19,16 @@ import unicornBadge from '../../../reward-img/unicorn badge.png';
 function Rewards(props) {
   // props.hideNavBar();
 
-  // const badgeImages = [
-  //   lev1RedBadge,
-  //   lev1OrangeBadge,
-  //   lev1YelBadge,
-  //   lev1GrnBadge,
-  //   lev1BluBadge,
-  //   lev1IndigoBadge,
-  //   lev1VioBadge,
-  //   unicornBadge,
-  // ];
+  const badgeImages = [
+    lev1RedBadge,
+    lev1OrangeBadge,
+    lev1YelBadge,
+    lev1GrnBadge,
+    lev1BluBadge,
+    lev1IndigoBadge,
+    lev1VioBadge,
+    unicornBadge,
+  ];
 
   const badgeNames = badgeData.map(badge => badge.name);
   
