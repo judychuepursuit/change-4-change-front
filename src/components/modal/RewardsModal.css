@@ -60,7 +60,7 @@
     height: 20px; */
   }
 
-  img {
+  .badge img {
     align-self:center ;
     width: 250px;
     object-fit: cover;

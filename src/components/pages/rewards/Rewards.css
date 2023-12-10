@@ -1,4 +1,5 @@
 .badges-container{
+   
     padding: 10px;
 }
 .header {
@@ -84,9 +85,7 @@
         flex-direction: row;
     }
 
-    .social-media{
-      display: flex;
-      flex-direction: row;
+    .social-media{    
       padding: 20px;
       }
 
@@ -101,12 +100,18 @@
         right: 40px;    }
 
 .flow-chart {
-    width: 80%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
 }
 
 .social-tag img {
-    max-width: 118%;
-    /* padding: 8px; */
+  /* display: flex;
+  flex-direction: column; */
+  /* align-self:center ; */
+  width: 4%;
+  height: 4%;
+  margin-right: 10px;
 }
 
 .hm-bttn {
@@ -116,13 +121,21 @@
 
 }
 
-.rewards-footer {
+.badge-info {
+  /* align-items: center; */
   display: flex;
+  flex-direction: row;
+  padding: 40px;
+}
+.rewards-footer {
+  /* display: flex; */
   flex-direction: row;
   justify-content: space-between;
 }
 
 .rewards-footer .donate-button a{
+  display: flex;
+  flex-direction: row;
   color: black;
   text-decoration: none;
 }
@@ -141,11 +154,18 @@ color: #ff7300;
 
 
 .rewards-footer {
-  display: flex;
-  justify-content: space-between; /* This will place the child divs on opposite sides */
+  /* display: flex; */
+  /* justify-content: space-between; This will place the child divs on opposite sides */
   padding: 10px;
 }
 
 .rewards-footer div {
-  margin-right: 200px; /* Optional margin between badge divs */
+  /* margin-right: 200px; */
+}
+
+.bottom {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;/* Items will be at opposite ends */
+  padding: 10px; /* Add padding for better spacing */
 }
