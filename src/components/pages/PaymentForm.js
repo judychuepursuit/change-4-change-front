@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
-import "./UpdatedPaymentForm.css";
+import "./PaymentForm.css";
 
 const PaymentForm = () => {
   const stripe = useStripe();
@@ -62,18 +62,21 @@ const PaymentForm = () => {
     try {
       // console.log('Calling API to create payment intent');
 
-      const response = await fetch("/create-payment-intent", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          amount,
-          currency: "usd",
-          paymentMethodId: paymentMethod.id,
-          email,
-          charityName,
-          donationFrequency,
-        }),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/create-payment-intent`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            amount,
+            currency: "usd",
+            paymentMethodId: paymentMethod.id,
+            email,
+            charityName,
+            donationFrequency,
+          }),
+        }
+      );
       // console.log(response)
 
       const paymentIntentResponse = await response.json();
