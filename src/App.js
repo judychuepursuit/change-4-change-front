@@ -9,6 +9,7 @@ import {
   useLocation,
 } from "react-router-dom";
 import Home from "./components/pages/home/Home.js";
+import Footer from "./components/Footer";
 import Rewards from "./components/pages/rewards/Rewards.js";
 import HowItWorks from "./components/pages/How-It-Works";
 import Charities from "./components/pages/Charities";
@@ -76,6 +77,7 @@ const AppContent = () => {
           <Route path="/history" element={<History />} />
         </Routes>
       </Elements>
+      <Footer />
     </Router>
   );
 };
