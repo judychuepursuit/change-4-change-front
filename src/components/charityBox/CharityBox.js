@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './CharityBox.css';
+import './CharityBox.scss';
 
 const CharityBox = (props) => {
   return (

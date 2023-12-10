@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import './Charities.css'
+import './Charities.scss'
 import CharityBox from '../charityBox/CharityBox';
 import { useState } from 'react'
 
