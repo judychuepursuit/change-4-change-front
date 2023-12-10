@@ -144,18 +144,6 @@
   font-weight: 600;
 }
 
-/* hiw button */
-/* .how-it-works {
-  width: 200px;
-  background-color:#ff7300;
-  font-weight: bolder;
-  font-size: 22px;
-  padding: 7px;
-  color: #ffffff;
-  border-radius: 4px;
-  border: none;
-} */
-
 .how-it-works button:hover {
   background-color:#551aeb;
 }
