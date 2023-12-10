@@ -1,11 +1,11 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  /* padding: 0; */
+  font-weight: 400;
   font-family: 'Montserrat', sans-serif;
 }
 
-.about,
 .rewards,
 .contact-us,
 .sign-up 
@@ -18,15 +18,15 @@
 .main-content {
   text-align: center;
   font-size: small;
-  width: 100%;
   color: #ffffff;
-  background-color: #551aeb;;
+  background-color: #551aeb;
+  padding: 100px;
 }
 
 .main-content h1 {
   background-color: #551aeb;
   height: 35px;
-  padding: 14px;
+  padding: -14px;
   color: #ebe8f4;
   font-size: 45px;
   font-weight: bolder;
@@ -36,18 +36,19 @@
   padding: 19px;
   font-size: 36px;
   font-weight: bolder;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
   color: #ffffff;
-  /* height: 60px; */
-  line-height: 70px;
+  height: 0;
+  line-height: 60px;
 }
 .main-content h3 {
   background-color: white;
-  height: 40px;
+  height: 0px;
   padding: 5px;
   color: #551aeb;
   font-size: 24px;
   font-weight: bold;
+  width: 100%;
 }
 
 .donate-btn {
@@ -274,7 +275,7 @@
   
   /* hiw button */
   .how-it-works {
-    margin: 270px 0px 40px 25px;
+    margin: 290px 0px 30px 75px;
     width: 180px;
     background-color:#ff7300;
     font-weight: bolder;
@@ -316,13 +317,6 @@
     margin-bottom: 50px;
   }
 
-  /* footer {
-    color: rgb(8, 0, 0);
-    font-size: 10px;
-    bottom: 0;
-    left: 1%;
-  } */
-  
   /* .main-content h3 {
     font-size: xx-large;
     font-weight: bolder;
