@@ -14,7 +14,7 @@
   width: 80%; /* Adjust width as needed */
   max-width: 600px; /* Set a max-width for larger screens */
   background-color: #f5f5f5;
-  margin-top: 10px; /* Adjust as needed for your layout */
+  margin-top: 100px; /* Adjust as needed for your layout */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
 }
 
