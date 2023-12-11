@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css';
-import './Charities.css'
+import './Charities.scss'
 import CharityBox from '../charityBox/CharityBox';
 import { useState } from 'react'
 
@@ -94,10 +94,12 @@ export default function Charities(props) {
         </span>
         {getCharityType().map(type => {
           return (
-            <label>
-              {type}
-              <input type='checkbox' value={type}
+            <label className='charities__label'>
+              <input className='charities__checkbox' type='checkbox' value={type}
               onChange={onCheckBox}/>
+              <span className='charities__type'>
+              {type}
+              </span>
             </label>
           )
         })}

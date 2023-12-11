@@ -3,9 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 120px;
-  height: 100vh; /* This will make the container take the full height of the viewport */
+  justify-content: space-between;
+  margin-top: 40px;
 }
 
 .charities__suggested-charities {
@@ -25,6 +24,7 @@
   position: relative;
   top: -30px;
 }
+
 .charity-boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -67,4 +67,18 @@
 .charities__selector {
   display: flex;
   flex-direction: column;
+  margin-right: 50px;
+}
+
+.charities__type {
+  font-size: 18px;
+  padding-left: 10px;
+}
+
+.charities__label {
+  margin-left: 15px;
+}
+
+.charities__checkbox {
+  border-radius: 50px;
 }

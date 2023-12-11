@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import "./CharityBox.css";
+// import './CharityBox.scss';
 
 const CharityBox = (props) => {
   return (
@@ -26,14 +27,15 @@ const CharityBox = (props) => {
         <Link
           onClick={() => {
             props.setUserPurchaseData({
-              recipientid: props.charity.id,
+              recipient: props.charity.recipient,
             });
           }}
           to="/payment"
         >
-          <button className="donation orange-button">DONATE</button>
+          <button className="charity-box__donation">DONATE</button>
         </Link>
       </div>
+      <div className="charity-box__filter"></div>
       <div className="charity-box__filter"></div>
     </div>
   );
