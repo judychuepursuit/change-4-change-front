@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-top: 220px;
+  margin-top: 120px;
   height: 100vh; /* This will make the container take the full height of the viewport */
 }
 
@@ -19,7 +19,7 @@
 }
 
 .charities__suggested-charities span {
-  color: #551AEB;
+  color: #551aeb;
   font-size: 32px;
   font-style: italic;
   position: relative;
@@ -34,7 +34,7 @@
 
 .button {
   border-radius: 4px;
-  color: #551AEB;
+  color: #551aeb;
 }
 
 .button hover {
@@ -43,11 +43,10 @@
 
 @media screen and (max-width: 440px) {
   .charity-boxes {
-      display: block;
-      margin-top: 220px;
+    display: block;
+    margin-top: 220px;
   }
-}   
-
+}
 
 .mission-statement {
   display: none;
@@ -69,7 +68,3 @@
   display: flex;
   flex-direction: column;
 }
-
-
-
-

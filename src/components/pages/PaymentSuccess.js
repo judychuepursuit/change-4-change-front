@@ -12,21 +12,21 @@ const PaymentSuccess = () => {
 
   return (
     <div className="success-container">
-      <h1 className="success-title">success!</h1>
+      <h1 className="success-title">payment successful!</h1>
       <div className="success-logo">
         <img src={logo} alt="Logo" />
       </div>
-      <h2 className="success-message">payment successful!</h2>
+      {/* <h2 className="success-message">payment successful!</h2> */}
       <p className="thank-you-message">
         THANK YOU for your donations
         <br />
-        Your payment was successful.
+        {/* Your payment was successful. */}
       </p>
       <button
         className="transaction-history-button"
         onClick={handleViewTransactions}
       >
-        click here to view transaction history
+        transaction history
       </button>
     </div>
   );

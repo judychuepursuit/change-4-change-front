@@ -3,7 +3,8 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
 import "./PaymentForm.css";
 
-const PaymentForm = () => {
+const PaymentForm = (props) => {
+  console.log(props);
   const stripe = useStripe();
   const elements = useElements();
   const navigate = useNavigate();
@@ -19,15 +20,11 @@ const PaymentForm = () => {
     { name: "UNICEF", id: "acct_1OCtjmQS1DLaPBq0" },
   ];
   const [isSubmitting, setIsSubmitting] = useState(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
     if (isSubmitting) return;
-
     setIsLoading(true); // Set loading to true when the process starts
     setIsSubmitting(true); // Disable the button
-
     // Early return if Stripe hasn't loaded yet
     if (!stripe || !elements) {
       console.error("Stripe.js has not loaded yet.");
@@ -202,7 +199,7 @@ const PaymentForm = () => {
                 Processing...
               </>
             ) : (
-              "Pay Now"
+              "Donate Now"
             )}
           </button>
         </form>
