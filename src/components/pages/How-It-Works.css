@@ -1,5 +1,41 @@
-/* .header-picture {
-    background-image: url(images/hiw-banner_2.jpg);
-    height: 230px;
-    background-size: auto 100%;
-} */
+.how-it-works-page {
+    /* position:relative; */
+    /* padding-bottom: 30px; */
+    /* top: 47%; */
+    color: #ff7300;
+    text-align: center;
+    font-size: 45px;
+    margin-top: -1px;
+    min-height: 1380px;
+    }
+
+.hiw-header {
+    margin-left: 19.7%;
+    height: 80vh;
+    }
+
+.how-it-works-image {
+background-image: url('images/hiw-banner_2wider.jpg');
+object-fit: cover;
+background-size: cover;
+background-repeat: no-repeat;
+width: 100%;
+height: auto;
+display: block;
+/* height: 300px;
+margin-bottom: 50px; */
+/* z-index: 100%; */
+}
+      
+
+@media (max-width: 960px) {
+    .how-it-works-image {
+      max-height: 300px; /* Adjust the max height for smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .how-it-works-image {
+      max-height: 200px; /* Further adjust for very small screens */
+    }
+  }

@@ -16,10 +16,3 @@ export default function HowItWorks() {
 );
 
 }
-
-/* <body>
-<div className="about">
-<div className="text-overlay">
-<h1>about</h1><br></br> */
-
-// test
