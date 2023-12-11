@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
-import "./CharityBox.css";
-// import './CharityBox.scss';
+import "./CharityBox.scss";
 
 const CharityBox = (props) => {
   return (
@@ -35,7 +34,6 @@ const CharityBox = (props) => {
           <button className="charity-box__donation">DONATE</button>
         </Link>
       </div>
-      <div className="charity-box__filter"></div>
       <div className="charity-box__filter"></div>
     </div>
   );
