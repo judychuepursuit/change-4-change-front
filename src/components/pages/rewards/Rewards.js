@@ -7,12 +7,11 @@ import "./Rewards.css";
 
 import badgeData from "../../../reward-data/badgeData.js"
 
-
 import lev1RedBadge from '../../../reward-img/lev 1 red badge.png';
 import lev1OrangeBadge from '../../../reward-img/lev 1 orange badge.png';
 import lev1YelBadge from '../../../reward-img/lev 1 yel badge.png';
 import lev1GrnBadge from '../../../reward-img/lev 1 grn_badge.png';
-import lev1BluBadge from '../../../reward-img/lev 1 blu badge.png';
+import lev1BluBadge from '../../../reward-img/lev_1_blu_badge.png';
 import lev1IndigoBadge from '../../../reward-img/lev 1 indigo badge.png';
 import lev1VioBadge from '../../../reward-img/lev 1 vio badge.png';
 import unicornBadge from '../../../reward-img/unicorn badge.png';
@@ -92,8 +91,6 @@ function Rewards(props) {
         </p> */}
       </section>
 
-
-
       <div className='rewards-footer'>
         <img src={flowChart} alt="flow chart" className='flow-chart' />
         <div className='bottom'>
@@ -105,9 +102,9 @@ function Rewards(props) {
         <div className="social-media">
           <h4 className='share-with'>Share with</h4>
           <a href="#" className='social-tag'>
-            <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
+            {/* <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
             <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
-            <img src={twit} alt='twitter' width="12%" height="5%"></img>
+            <img src={twit} alt='twitter' width="12%" height="5%"></img> */}
           </a>
         </div>
       </div>

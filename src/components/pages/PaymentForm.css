@@ -1,0 +1,155 @@
+.payment-container {
+  display: flex;
+  justify-content: center; /* Align to the start of the container */
+  align-items: center;
+  height: 100vh;
+  padding-top: 80px; /* Add padding to the top to push the form down slightly */
+  margin-top: -50px; /* Adjust this value to move the form up */
+}
+
+.payment-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #551aeb;
+  border-radius: 5px;
+  max-width: 700px; /* Adjust this as needed */
+  width: 100%; /* This will make the form take full width of its parent */
+  width: calc(100% - 20px); /* Adjust width to account for padding */
+
+  background-color: #f5f5f5;
+  margin: 0 auto; /* Center the form in the page */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Add shadow to the form */
+}
+
+.payment-form h2 {
+  color: #551aeb;
+  font-size: 50px;
+  margin-bottom: 10px;
+  letter-spacing: 1px; /* Add spacing between letters */
+  border: none; /* This will ensure no border is applied to the h2 element */
+}
+
+.payment-form input,
+.StripeElement {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #551aeb;
+  border-radius: 3px;
+}
+
+.payment-form button {
+  display: block; /* Block display will allow the button to respect the margin auto */
+  width: calc(25% - 20px); /* Full width minus the padding from the container */
+  background-color: #ff7300;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  padding: 10px 15px;
+  cursor: pointer;
+  margin: 10px auto; /* Top and bottom margin of 10px and auto margin on the sides */
+  transition: background-color 0.3s ease;
+}
+
+.payment-form button:hover {
+  background-color: #551aeb;
+}
+
+.payment-form .form-group {
+  width: 100%; /* Set width to 100% of its parent */
+}
+
+.payment-form .form-group.inline {
+  align-items: center;
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between; /* This will align items properly */
+}
+
+.payment-form .form-group.inline input {
+  flex: 1;
+}
+
+.form-group {
+  margin-bottom: 20px; /* Adjust spacing as needed */
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 16px; /* Adjust font size as needed */
+  color: #333; /* Adjust label color as needed */
+  width: 100%;
+}
+
+.donation-frequency-box {
+  border: 1px solid #551aeb; /* Example border color */
+  border-radius: 5px;
+  padding: 10px;
+  margin-bottom: 5px; /* Spacing below the box */
+}
+
+.donation-frequency-label {
+  font-weight: bold;
+  display: block; /* Ensures the label appears on its own line */
+  margin-bottom: 10px; /* Spacing between label and options */
+}
+
+.radio-group {
+  display: flex;
+  justify-content: space-around; /* This spreads out the radio options evenly */
+}
+
+.radio-option {
+  display: flex;
+  align-items: center;
+  margin-right: 10px; /* Ensures spacing to the right of each radio option */
+}
+
+.radio-option label {
+  font-weight: bold; /* This will make the text bolder */
+  font-size: 17px; /* You can increase the font-size as needed */
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-right: 15px; /* Spacing between radio button and label */
+  white-space: nowrap; /* Prevents wrapping of text */
+  margin-left: 5px; /* Add some space between the radio button and the label */
+  white-space: nowrap; /* Keep the label on one line */
+}
+
+.radio-option input[type="radio"] {
+  margin-right: 5px;
+  width: auto; /* Reset width in case it was altered */
+  height: auto; /* Reset height in case it was altered */
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #551aeb;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 768px) {
+  .payment-form {
+    width: 100%;
+    padding: 10px;
+  }
+}

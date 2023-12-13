@@ -53,11 +53,11 @@ function Navbar(props) {
               onMouseLeave={onMouseLeave}
             >
               <Link
-                to='/about'
+                to='/how-it-works'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                About <i className='fas fa-caret-down' />
+                How it works <i className='fas fa-caret-down' />
               </Link>
               {dropdown && <Dropdown />}
             </li>
@@ -78,7 +78,8 @@ function Navbar(props) {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Contact Us
+                {/* was Contact Us, now connect */}
+                Connect
               </Link>
             </li>
 

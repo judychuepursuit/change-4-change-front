@@ -1,26 +1,14 @@
-// import React from 'react';
-// import '../../App.css';
-
-// export default function Home() {
-//   return (
-//     <>
-//       <h1 className='home'>CHANGE
-//       </h1>
-//     </>
-//   );
-// }
-
-// test
-
 import React from 'react';
 import { useState, useEffect } from 'react';
-import '../../App.css';
+import '../../../App.css';
 import './Home.css';
-import './HomePageComponents/InfoSection';
+// import '.././HomePageComponents/InfoSection';
 import { Link, useNavigate } from 'react-router-dom';
-import info1 from '../../images/img-1a.jpeg';
-import info2 from '../../images/img-4.jpg';
-import info3 from '../../images/sm_image.jpeg';
+import info1 from '../../../images/img-1a.jpeg';
+import info2 from '../../../images/img-4.jpg';
+import info3 from '../../../images/sm_image.jpeg';
+import '../How-It-Works'
+// import HowItWorks from '../How-It-Works';
 
 
 function InfoBox({ title, description, buttonText, infoLink, img, altText }) {
@@ -29,7 +17,8 @@ function InfoBox({ title, description, buttonText, infoLink, img, altText }) {
     <div className='info-box'>
       <p>{description}</p>
       <img src={img} alt={altText}/>
-      <Link to={infoLink}><button>{buttonText}</button></Link>
+      <Link to={infoLink}><button  className='info-box-button'>{buttonText}</button></Link>
+
     </div>
   )
  }
@@ -71,6 +60,8 @@ useEffect (()=>{
         <div className="carousel-image red-cross-home"></div>
         <div className="carousel-image feed-america-home"></div>
       </div>
+      {/* this is the anchor for the how it works */}
+      {/* <HowItWorks></HowItWorks> */}
     </div>
 
     <div className="home-content"> 
@@ -109,4 +100,4 @@ useEffect (()=>{
 );
 }
 
-// export default home;
+// export default home
