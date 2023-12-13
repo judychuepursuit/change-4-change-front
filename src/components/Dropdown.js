@@ -10,7 +10,7 @@ function Dropdown() {
 
   return (
     <>
-      <ul
+      <div
         onClick={handleClick}
         className={click ? 'dropdown-menu clicked' : 'dropdown-menu'}
       >
@@ -27,7 +27,7 @@ function Dropdown() {
             </li>
           );
         })}
-      </ul>
+      </div>
     </>
   );
 }
