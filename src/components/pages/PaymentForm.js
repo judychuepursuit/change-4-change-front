@@ -111,7 +111,7 @@ const PaymentForm = (props) => {
           <input type="text" placeholder="Last Name" required />
         </div>
         <div className="form-group">
-          <label>Email</label>
+          {/* <label>Email</label> */}
           <input
             type="email"
             value={email}
