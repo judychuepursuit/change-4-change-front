@@ -2,44 +2,42 @@
   padding: 10px;
 }
 .header {
-  display: flex;
-  justify-content: row;
-  /* align-items: center; */
-  padding: 5px;
-}
-
-.earn-header {
-  font-style: italic;
-  margin-left: 180px;
-}
+    display:flex;
+    justify-content:row;
+    /* align-items: center; */
+    padding: 25px;
+  }
+  
+  .earn-header{
+    font-style: italic;
+    margin-left: 130px;
+  }
 
 .earn-two {
   font-size: 2em;
   font-style: italic;
 }
 
-.middle h1 {
-  font-size: 10em;
-}
-.points-two {
-  font-size: 2em;
-}
-.reward-header {
-  font-weight: 800;
-  margin-top: 100px;
-}
+  .middle h1 {
+    font-size: 10em;
+  }
+  .points-two{
+    font-size: 2em;
+  }
+  .reward-header {
+    font-weight: 500;
+    margin: -25px;
+  }
 
-.reward-pg {
-  padding: 12px;
-}
-.logo {
-  margin-right: 10px;
-}
-
-.hm-bttn {
-  margin-left: 10px;
-  cursor: pointer;
-}
+  .reward-pg{
+    margin-left: 120px;
+    padding: 12px;
+  }
+  
+  .hm-bttn {
+    margin-left: 10px;
+    cursor: pointer;
+  }
 
 .reward-intro {
   /* border: 2px solid #ff7300; */
@@ -59,17 +57,17 @@
   color: #ff7300;
 }
 
-.top h4 {
-  text-align: left;
-  color: #551aeb;
-  font-size: 2em;
-}
-
-.reward-intro h1 {
-  text-align: center;
-  font-size: xx-large;
-  color: #ff7300;
-}
+    .top h4{
+        text-align: left;
+        color: hsl(257, 84%, 51%);
+        font-size: 2em;
+    } 
+  
+    .reward-intro h1 {
+        text-align: center;
+        font-size: xx-large;
+        color: #ff7300;
+    }
 
 .top {
   display: flex;
@@ -97,18 +95,31 @@
 }
 
 .flow-chart {
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+   margin-left: 130px;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+}
+.bottom {
+  justify-content: space-between;/* Items will be at opposite ends */
+  padding: 10px; /* Add padding for better spacing */
+}
+.orange {
+border: 2px solid;
+background-color: #ff7300;
+padding: 10px;
 }
 
+.share-with{ 
+margin-left: 600px;
+}
 .social-tag img {
   /* display: flex;
   flex-direction: column; */
   /* align-self:center ; */
   width: 4%;
   height: 4%;
-  margin-right: 10px;
+  margin-left: 600px;
 }
 
 .hm-bttn {
@@ -117,12 +128,24 @@
   padding: 10px;
 }
 
+
 .badge-info {
   /* align-items: center; */
   display: flex;
+  gap: 20px;
   flex-direction: row;
   padding: 40px;
 }
+
+/* .badge-info img {
+  width: 10px;
+} */
+
+.badge-names {
+  text-align:center;
+  font-size: medium;
+}
+
 .rewards-footer {
   /* display: flex; */
   flex-direction: row;
@@ -152,6 +175,11 @@
   padding: 10px;
 }
 
+
+.earn-two {
+  font-size:x-large;
+  color: hsl(257, 84%, 51%);
+}
 .rewards-footer div {
   /* margin-right: 200px; */
 }

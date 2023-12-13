@@ -39,8 +39,8 @@ function Rewards(props) {
         <section className="top">
           <h4 className='earn-header'>earn</h4>
           <h1 className='reward-header'>rewards</h1>
-
         </section>
+        
         <section className="badges-container">
           
         <div className='badge-info'>
@@ -49,9 +49,9 @@ function Rewards(props) {
               <img
                 src={badge}
                 alt={`Badge ${index + 1}`}
-                style={{ width: '90px', height: '90px' }}
+                style={{ width: '70px', height: '70px' }}
               />
-              <h1>{badgeNames[index]}</h1>
+              <h1 className='badge-names'>{badgeNames[index]}</h1>
             </div>
           ))}
         </div>
@@ -66,7 +66,7 @@ function Rewards(props) {
 
         <p className='reward-pg'>
           Empower change with our revolutionary charity rewards!
-          Earn badges, unlock exclusive perks,and channel your generosity toward causes you're passionate about.
+          Earn badges, unlock exclusive perks, and channel your generosity toward causes you're passionate about.
           Join a vibrant community dedicated to making a lasting impact.
           {/* Introducing a groundbreaking charity rewards system that not only fosters generosity but also cultivates a culture of continuous giving.
           Donors earn badges for their contributions through monetary donations.
@@ -96,11 +96,11 @@ function Rewards(props) {
         <div className='bottom'>
         <div className='donate-button'>
             <a href="/charities">
-              <div><span class="orange-square"></span>CLICK HERE TO <span className='orange'>DONATE</span></div>
+              <div><span class="orange-square"></span> <span className='orange'>DONATE</span></div>
             </a>
         </div>
         <div className="social-media">
-          <h4>Share with</h4>
+          <h4 className='share-with'>Share with</h4>
           <a href="#" className='social-tag'>
             {/* <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
             <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
