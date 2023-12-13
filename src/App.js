@@ -17,7 +17,7 @@ import Signup from './components/pages/Sign-Up';
 import PaymentForm from './components/pages/PaymentForm';
 import PaymentSuccess from './components/pages/PaymentSuccess';
 import TransactionHistory from './components/pages/TransactionHistory';
-
+import PointsHistory from './components/history/PointsHistory.js';
 // import TestComponent from './components/pages/TestComponent';
 // ... other imports
 import RewardsModal from './components/modal/RewardsModal.js';
@@ -67,6 +67,7 @@ const shouldShowNavbar = !hideNavbarRoutes.includes(location.pathname);
           <Route path='/payment' element={<PaymentForm recipient={userPurchaseData.recipient}/>} />
           <Route path='/payment-success' element={<PaymentSuccess />} />
           <Route path='/TransactionHistory' element={<TransactionHistory />} />
+          <Route path='/PointsHistory' element={<PointsHistory />} />
 
           <Route path='/history' element={<History />} />
           {/* <Route path='/test' element={<TestComponent />} /> */}

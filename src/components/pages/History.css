@@ -4,22 +4,23 @@
 }
 
 .history-top {
-    display:flex;
-    justify-content:row;
+    /* display:flex; */
+    /* justify-content:row; */
     padding: 35px;
     display: flex;
 }
 
 .transaction-header{
     font-style: italic;
-    margin-left: 180px;
+    margin-left: 40px;
     text-align: center;
     font-size: 2em;
     color: hsl(257, 84%, 51%);
 }
 
 .history-header{
-    font-weight: 800;
+    font-weight: 500;
+    margin-left: 30px;
     text-align: left;
     color: #ff7300;
     font-size: 6em;
@@ -43,22 +44,17 @@
     text-align: center;
     padding: 10px;
 }
-  
-  .history-footer .donate-button a{
-    display: flex;
-    flex-direction: row;
-    color: black;
-    text-decoration: none;
-    margin: 12px;
-  }
-  
-  
-  .history-footer .donate-button a span {
-  color: #ff7300;
-  }
-  
-  .orange-square {
-    width: 15px; 
-    height: 15px; 
-    background-color: orange;
+.donate-bttn-history {
+    /* margin-left: 44%; */
+    width: 250px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 160px;
+    /* left: 43%; */
+    /* margin-bottom: 20px; */
+    border-radius: 4px;
+    background-color:#ff7300;
+    color: #ffffff;
+    /* z-index: 100; */
+    /* padding: 8px; */
   }

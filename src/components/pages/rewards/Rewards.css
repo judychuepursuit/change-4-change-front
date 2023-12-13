@@ -1,17 +1,16 @@
 .badges-container{
-   
-    padding: 10px;
+  padding: 10px;
 }
 .header {
     display:flex;
     justify-content:row;
     /* align-items: center; */
-    padding: 5px;
+    padding: 25px;
   }
   
   .earn-header{
     font-style: italic;
-    margin-left: 180px;
+    margin-left: 130px;
   }
 
   .earn-two{
@@ -26,14 +25,13 @@
     font-size: 2em;
   }
   .reward-header {
-    font-weight: 800;
+    font-weight: 500;
+    margin: -25px;
   }
 
   .reward-pg{
+    margin-left: 120px;
     padding: 12px;
-  }
-  .logo {
-    margin-right: 10px;
   }
   
   .hm-bttn {
@@ -100,18 +98,31 @@
         right: 40px;    }
 
 .flow-chart {
-    width: 100%;
+   margin-left: 130px;
+    width: 80%;
     align-items: center;
     justify-content: center;
 }
+.bottom {
+  justify-content: space-between;/* Items will be at opposite ends */
+  padding: 10px; /* Add padding for better spacing */
+}
+.orange {
+border: 2px solid;
+background-color: #ff7300;
+padding: 10px;
+}
 
+.share-with{ 
+margin-left: 600px;
+}
 .social-tag img {
   /* display: flex;
   flex-direction: column; */
   /* align-self:center ; */
   width: 4%;
   height: 4%;
-  margin-right: 10px;
+  margin-left: 600px;
 }
 
 .hm-bttn {
@@ -121,12 +132,24 @@
 
 }
 
+
 .badge-info {
   /* align-items: center; */
   display: flex;
+  gap: 20px;
   flex-direction: row;
   padding: 40px;
 }
+
+/* .badge-info img {
+  width: 10px;
+} */
+
+.badge-names {
+  text-align:center;
+  font-size: medium;
+}
+
 .rewards-footer {
   /* display: flex; */
   flex-direction: row;
@@ -159,9 +182,8 @@ color: #ff7300;
   padding: 10px;
 }
 
-.bottom {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;/* Items will be at opposite ends */
-  padding: 10px; /* Add padding for better spacing */
+
+.earn-two {
+  font-size:x-large;
+  color: hsl(257, 84%, 51%);
 }

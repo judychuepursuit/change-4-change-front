@@ -30,12 +30,10 @@ function History(props) {
         <section>
         <div className='history-footer'>
 
-          <p>Giving made simple, impact made transparent. Thank you for choosing <span className='orange'>change4change</span>.</p>
+          <p>Giving made simple, impact made transparent. Thank you for choosing <span className='change'>change4change</span>.</p>
           <div className='donate-button'>
-            <a href="/charities">
-              <div><span class="orange-square"></span>CLICK HERE TO <span className='orange'>DONATE</span></div>
-            </a>
-        </div>
+          <Link to= "/charities"><button className="donate-bttn-history">DONATE </button></Link>
+          </div>
         <div className="social-media">
           <h4>Share with</h4>
           <a href="#" className='social-tag'>
