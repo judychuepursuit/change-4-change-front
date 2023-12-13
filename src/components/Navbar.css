@@ -43,7 +43,7 @@
   flex-direction: column;
   justify-content: center;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   height: 80px;
 }
 
@@ -82,6 +82,7 @@
 
 .nav-menu {
   display: flex;
+  align-items: center;
   flex-direction: column;
   width: 100%;
   height:500px;
@@ -110,7 +111,7 @@
 
 .nav-links:hover {
     background-color: #551aeb;
-    border-radius: 0;
+    border-radius: 4px;
 }
 
 .navbar-logo {
@@ -140,8 +141,8 @@
     text-align: center;
     padding: 1rem;
     margin: .25rem auto;
-    border-radius: 8px;
-    width: 80%;
+    border-radius: 4px;
+    width: 100%;
     background: #551aeb;
     text-decoration: none;
     color: #fff;
@@ -160,5 +161,9 @@
 .sign-up-button {
   display: none;
 }
+.nav-item {
+  width: 80%;
+}
+
 }
 

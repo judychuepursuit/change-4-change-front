@@ -26,16 +26,20 @@ display: block;
 margin-bottom: 50px; */
 /* z-index: 100%; */
 }
-      
+
+.how-it-works-text{
+    margin-bottom: 50px;
+}
 
 @media (max-width: 960px) {
     .how-it-works-image {
       max-height: 300px; /* Adjust the max height for smaller screens */
     }
-  }
-  
-  @media (max-width: 480px) {
-    .how-it-works-image {
-      max-height: 200px; /* Further adjust for very small screens */
-    }
-  }
+}
+
+
+@media (max-width: 480px) {
+.how-it-works-image {
+    max-height: 200px; /* Further adjust for very small screens */
+}
+}
