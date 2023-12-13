@@ -7,9 +7,9 @@ import "./RegisterPage.css"
 const API = process.env.REACT_APP_API_URL;
 
 export default function RegisterPage() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
-  const [dob, setDob] = useState("");
+  const [first_name, setFirstName] = useState("");
+  const [last_name, setLastName] = useState("");
+  const [birth_date, setDob] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isRegistered, setIsRegistered] = useState(false);
@@ -17,25 +17,26 @@ export default function RegisterPage() {
 
   const navigate = useNavigate();
 
-  const handleRegister = async () => {
-    try {
-      const response = await axios.post(`${API}/register`, {
-        firstName,
-        lastName,
-        dob,
-        email,
-        password,
-      });
+      const handleRegister = () => {
+        if ( first_name && last_name && birth_date && email && password) {
+          axios
+          .post(`${API}/register`, {
+            first_name, 
+            last_name, 
+            birth_date, 
+            email, 
+            password
+          })
+          .then((response) => {
+            setIsRegistered(true);
+            navigate("/charities")})
+          .catch((error) => {
+            setRegistrationError("Registration failed. Please try again.") 
+            console.error("Error fetching user:", error)
+          });
+        }
+      };
 
-      if (response.status === 201) {
-        setIsRegistered(true);
-      } else {
-        setRegistrationError("Registration failed. Please try again.");
-      }
-    } catch (error) {
-      setRegistrationError("Registration failed. Please try again.");
-    }
-  };
 
   return (
     <div className="register-container">    
@@ -44,19 +45,19 @@ export default function RegisterPage() {
         <input
           type="text"
           placeholder="First Name"
-          value={firstName}
+          value={first_name}
           onChange={(e) => setFirstName(e.target.value)}
           />
         <input
           type="text"
           placeholder="Last Name"
-          value={lastName}
+          value={last_name}
           onChange={(e) => setLastName(e.target.value)}
           />
         <input
           type="date"
           placeholder="Date of Birth"
-          value={dob}
+          value={birth_date}
           onChange={(e) => setDob(e.target.value)}
           />
         <input
