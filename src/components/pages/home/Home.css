@@ -20,13 +20,14 @@
   font-size: small;
   color: #ffffff;
   background-color: #551aeb;
-  padding-top: 100px;
-  height: 290px;
+  padding-top: 98px;
+  height: 265px;
 }
 
 .main-content h1 {
   background-color: #551aeb;
   height: 35px;
+  padding-top: 10px;
   padding: -14px;
   color: #ebe8f4;
   font-size: 45px;
@@ -34,22 +35,22 @@
 }
 
 .main-content h2 {
-  padding: 19px;
+  padding: 30px;
   font-size: 36px;
   font-weight: bolder;
   /* padding-bottom: 8px; */
   color: #ffffff;
   height: 0;
-  line-height: 60px;
+  line-height: 40px;
 }
+
 .main-content h3 {
   background-color: white;
-  height: 0px;
-  padding: 5px;
+  height: 45px;
+  padding: 7px;
   color: #551aeb;
   font-size: 24px;
   font-weight: bold;
-  width: 100%;
 }
 
 .donate-btn {
@@ -144,46 +145,46 @@
   font-weight: 600;
 }
 
-.how-it-works button:hover {
+/* .how-it-works button:hover {
   background-color:#551aeb;
-}
+} */
 
-.main-content {
+/* .main-content {
     text-align: center;
     font-size: small;
     width: 100%;
     color: #ffffff;
     background-color: #551aeb;;
-  }
+  } */
   
-  .main-content h1 {
+  /* .main-content h1 {
     background-color: #551aeb;
     height: 43px;
     padding: 18px;
     color: #ebe8f4;
     font-size: 48px;
     font-weight: bolder;
-  }
+  } */
 
-  .main-content h2 {
+  /* .main-content h2 {
     padding: 16px;
     font-size: 38px;
     font-weight: bolder;
     padding-bottom: 5px;
     color: #ffffff;
     line-height: 80px;
-  }
+  } */
 
-  .main-content h3 {
+  /* .main-content h3 {
     background-color: white;
     height: 45px;
     padding: 7px;
     color: #551aeb;
     font-size: 24px;
     font-weight: bold;
-  }
+  } */
 
-  .hero-image {
+  /* .hero-image {
     background-image: url(../../../images/carousel-images/change-4-change_home.jpg);  background-position: bottom;
   }
 
@@ -236,7 +237,7 @@
     color:#ffffff;
     font-size: 5rem;
     font-weight: 600;
-  }
+  } */
   
   /* hiw button */
   .how-it-works {
@@ -293,4 +294,4 @@
     }
   }
 
-  
+  /* ask john about why the donate button is disapearing now */

@@ -38,7 +38,7 @@ import { Link } from 'react-router-dom';
 export function Button() {
   return (
     <Link to='register'>
-      <button className='btn'>Sign Up</button>
+      <button className='btn sign-up-button'>Sign Up</button>
     </Link>
   );
 }
