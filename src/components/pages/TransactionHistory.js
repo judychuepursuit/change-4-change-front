@@ -11,10 +11,7 @@ const TransactionHistory = () => {
     const fetchTransactions = async () => {
       console.log("Fetching transactions");
       try {
-        const response = await fetch(
-          `${process.env.REACT_APP_API_URL}/transactions`
-        );
-
+        const response = await fetch("http://localhost:3001/transactions");
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
         console.log(data.map((t) => t.created_at)); // This will log all the created_at values
