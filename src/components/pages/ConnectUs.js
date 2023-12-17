@@ -50,11 +50,13 @@ export default function ConnectUs() {
     <div className='header-picture'></div>
     <div className='connect-us__content'>
   
-      <div className='connect'>CONNECT</div>
+      <div className='connect'>connect</div>
       <div className='personal-mission'>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
-        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <p>The goal of the change 4 change app is to bring donating to everyone. Our app
+          serves to not only create an ease of access for individuals to donate to a cause they 
+          find personal to them, but also works to change the way people view donating by gamifying their
+          experience. 
+        </p>
       </div>
       <div className='connect-us__bios'>
         {bios.map(bio => {
