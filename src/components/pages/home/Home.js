@@ -45,7 +45,7 @@ useEffect (()=>{
   <div className="home">
     {/* add maincontent code here */}
     <div className="main-content">
-      <h3> Get started now by donating just 66¢ a day </h3>
+      <h3> Get started now by donating just 66¢ a day* </h3>
       <h1> MAKE A CHANGE </h1>
       <h2> with your change </h2>
       {/* <Link to= "/payment"><button className="donate-btn">DONATE </button></Link> */}

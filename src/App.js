@@ -24,6 +24,13 @@ import TransactionHistory from "./components/pages/TransactionHistory";
 import RewardsModal from "./components/modal/RewardsModal.js";
 
 import History from "./components/pages/History.js";
+import './App.css';
+
+// test for new hiw page
+// import RegisterIcon from './icons/RegisterIcon';
+// import DonateIcon from './icons/DonateIcon';
+// import RewardsIcon from './icons/RewardsIcon';
+// import ShareIcon from './icons/ShareIcon';
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const App = () => {

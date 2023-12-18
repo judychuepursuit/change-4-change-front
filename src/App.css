@@ -20,11 +20,11 @@
 }
 
 .info-box img {
-  width: 200px;
+  width: 230px;
   /* margin-left: 55px; */
-  padding-bottom: 12px;
+  padding-bottom: 15px;
   /* margin-left: 25px; */
-  margin-top: -25px;
+  margin-top: -15px;
 }
 
 .info-box p{
@@ -40,8 +40,8 @@
 
 .info-box-button {
   padding-top: 10px;
-  font-size: 18px;
-  width: 240px;
+  font-size: 20px;
+  width: 230px;
   font-weight: bolder;
   margin-top: 15px;
   /* margin-left: 25px; */

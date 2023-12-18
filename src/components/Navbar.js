@@ -44,7 +44,7 @@ function Navbar(props) {
           <div className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
               <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                Home
+                home
               </Link>
             </li>
             <li
@@ -57,7 +57,7 @@ function Navbar(props) {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                How it works <i className='fas fa-caret-down' />
+                how it works <i className='fas fa-caret-down' />
               </Link>
               {dropdown && <Dropdown />}
             </li>
@@ -68,7 +68,7 @@ function Navbar(props) {
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
-                Rewards
+                rewards
               </Link>
             </li>
             
@@ -79,17 +79,17 @@ function Navbar(props) {
                 onClick={closeMobileMenu}
               >
                 {/* was Contact Us, now connect */}
-                Connect
+                connect
               </Link>
             </li>
 
             <li className='nav-item'>
               <Link
-                to='/sign-up'
+                to='/register'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Sign Up
+                sign up
               </Link>
             </li>
           </div>
