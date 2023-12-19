@@ -3,6 +3,7 @@ footer {
     color: rgb(8, 0, 0);
     font-size: 11px;
     bottom: -50px;
+    padding-bottom: 30px;
     /* left: 2.5%; */
     text-align: center;
     position: relative;

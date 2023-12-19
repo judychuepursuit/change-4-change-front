@@ -19,6 +19,8 @@ export default function HowItWorks() {
       <div className="how-it-works-text"> Do you want to help make a change in someones life?, With the change 4 change app, you can donate to a charity with your spare change- although the change won't make a difference to you, it will make a big impact to charities and causes helping those in need.</div>
     <main>
       <section className="image-grid">
+      {/* add and edit this to get links */}
+      {/* <Link to= "/charities"><button className="donate-btn">DONATE </button></Link> */}
         <Link className="grid-item">
           <h2>register/create an account</h2>
           <img src={RegisterIcon}></img>
