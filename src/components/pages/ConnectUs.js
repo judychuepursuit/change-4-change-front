@@ -47,7 +47,7 @@ const bios = [
 export default function ConnectUs() {
   return (  
   <div className="connect-us">
-    <div className='header-picture'></div>
+    <div className='connect-us__header-picture'></div>
     <div className='connect-us__content'>
   
       <div className='connect'>connect</div>

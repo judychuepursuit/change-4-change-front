@@ -1,6 +1,6 @@
 .bio-box {
    width: 325px;
-   border: 1px black solid;
+   /* border: 1px black solid; */
    padding: 10px;
 }
 
@@ -8,6 +8,7 @@
     width: 100%;
     display: block;
     margin-bottom: 10px;
+    border-radius: 25px;
 }
 
 .bio-box__name {
