@@ -1,26 +1,17 @@
-/* footer {
-    color: rgb(8, 0, 0);
-    font-size: 10px;
-    position: fixed;
-    bottom: 0;
-    left: 1%;
-  } */
-
-  /* .footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    width: 100%;
-  } */
-
-  footer {
+footer {
     /* margin-top: 30%; */
     color: rgb(8, 0, 0);
-    font-size: 10px;
-    /* bottom: 0; */
-    left: 2.5%;
+    font-size: 11px;
+    bottom: -50px;
+    padding-bottom: 30px;
+    /* left: 2.5%; */
     text-align: center;
     position: relative;
   }
   
-  
-  
+  /* Hide the footer on screens narrower than 960 pixels */
+  @media (max-width: 960px) {
+    .footer {
+      display: none;
+    }
+  }

@@ -26,7 +26,8 @@ import PointsHistory from "./components/history/PointsHistory.js";
 // ... other imports
 import RewardsModal from "./components/modal/RewardsModal.js";
 import History from "./components/pages/History.js";
-// Added stripePromise for Stripe API initialization
+import './App.css';
+
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const App = () => {

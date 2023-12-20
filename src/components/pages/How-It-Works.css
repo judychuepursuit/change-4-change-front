@@ -1,5 +1,41 @@
-/* .header-picture {
-    background-image: url(images/hiw-banner_2.jpg);
-    height: 230px;
-    background-size: auto 100%;
-} */
+/* new design styling with icons  */
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+}
+
+.how-it-works icons {
+    height: 30px;
+    width: 40px;
+    Object-fit: cover;
+    object-position: center;
+}
+
+.grid-item img {
+    width: 100px;
+    margin-top: 25px;
+}
+
+.grid-item h2 {
+    font-size: 25px;
+    font-weight: 700;
+    color: #551aeb;
+    margin-top: 90px;
+}
+
+.grid-item {
+    text-decoration: none;
+    list-style: none;
+}
+
+@media (max-width: 960px) {
+    .how-it-works-image {
+    max-height: 300px; /* Adjust the max height for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .how-it-works-image {
+    max-height: 200px; /* Further adjust for very small screens */
+    }
+}
