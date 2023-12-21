@@ -12,8 +12,8 @@
 }
 
 .grid-item img {
-    width: 100px;
-    margin-top: 25px;
+    width: 110px;
+    margin-top: 30px;
 }
 
 .grid-item h2 {
@@ -23,19 +23,24 @@
     margin-top: 90px;
 }
 
+.how-it-works-page h1 {
+    font-size: 2.5em;
+}
+
 .grid-item {
     text-decoration: none;
     list-style: none;
 }
 
-@media (max-width: 960px) {
-    .how-it-works-image {
-    max-height: 300px; /* Adjust the max height for smaller screens */
-    }
+.how-it-works-text {
+    margin: 0 80px;
 }
 
-@media (max-width: 480px) {
-    .how-it-works-image {
-    max-height: 200px; /* Further adjust for very small screens */
+@media screen and (max-width: 1200px) {
+    .image-grid {
+      flex-direction: column;
+      height: auto;
+      margin-top: 0;
+      grid-template-columns: repeat(1, auto);
     }
 }
