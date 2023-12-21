@@ -21,19 +21,19 @@ export default function HowItWorks() {
       <section className="image-grid">
       {/* add and edit this to get links */}
         <Link to="/register" className="grid-item">
-          <h2>register/create an account</h2>
+          <h2>1. register/create an account</h2>
           <img src={RegisterIcon}></img>
         </Link>
         <Link to="/charities" className="grid-item">
-          <h2>donate to your favorite charities</h2>
+          <h2>2. donate to your favorite charities</h2>
           <img src={DonateIcon}></img>
         </Link>
         <Link to="/rewards" className="grid-item">
-          <h2>earn rewards/badges</h2>
+          <h2>3. earn virtual badges</h2>
           <img src={RewardsIcon}></img>
         </Link>
         <Link to="/connect-us" className="grid-item">
-          <h2>share with friends and family</h2>
+          <h2>4. share with friends and family</h2>
           <img src={ShareIcon}></img>
         </Link>
       </section>
