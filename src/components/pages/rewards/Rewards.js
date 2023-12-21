@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import flowChart from "../../../reward-img/flow-chart.png";
 import fb from "../../../sm-icon/fb-logo.jpeg";
 import ig from "../../../sm-icon/ig-logo.jpeg";
@@ -95,16 +97,15 @@ function Rewards(props) {
         <img src={flowChart} alt="flow chart" className='flow-chart' />
         <div className='bottom'>
         <div className='donate-button'>
-            <a href="/charities">
-              <div><span class="orange-square"></span> <span className='orange'>DONATE</span></div>
-            </a>
+        <Link to= "/charities"><button className="donate-bttn-history">DONATE </button></Link>
+
         </div>
         <div className="social-media">
           <h4 className='share-with'>Share with</h4>
           <a href="#" className='social-tag'>
-            {/* <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
+            <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
             <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
-            <img src={twit} alt='twitter' width="12%" height="5%"></img> */}
+            <img src={twit} alt='twitter' width="12%" height="5%"></img>
           </a>
         </div>
       </div>

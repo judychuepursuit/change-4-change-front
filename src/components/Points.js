@@ -1,9 +1,11 @@
 import React from "react";
 import {useState} from "react";
+import RewardsModal from "./modal/RewardsModal";
 
 function Points ({donationAmount}) {
 
 const[points, setPoints] = useState(0);
+const [showModal, setShowModal] = useState(false);
 
 const updatePoints = (amount) => {
     // Calculate points earned for the current donation
@@ -11,12 +13,14 @@ const updatePoints = (amount) => {
 
     // Update total points
     setPoints((prevPoints) => prevPoints + earnedPoints);
-
+};
     // Check if the user has earned an additional bonus (2 points) for every 100 points
-    if (points >= 100) {
-      setPoints((prevPoints) => prevPoints + 2);
-    }
-  };
+    useEffect(() => {
+      if (points >= 100) {
+        setPoints((prevPoints) => prevPoints + 2);
+        setShowModal(true);
+      }
+  }, [points]);
 
 
 
@@ -25,10 +29,7 @@ const updatePoints = (amount) => {
 
 
     return (
-        <div>
-        <h1>You've Earned {points} Points</h1>
-          
-      </div>
+     <RewardsModal />
     );
 }
 

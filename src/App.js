@@ -30,14 +30,19 @@ import History from "./components/pages/History.js";
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
 
 const App = () => {
+  
+
+
+
   return (
     // <Router>
-    <AppContent />
+      <AppContent />
     // </Router>
   );
 };
 
 const AppContent = () => {
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const [userPurchaseData, setUserPurchaseData] = useState({
     recipient: null,
   });
@@ -55,13 +60,13 @@ const AppContent = () => {
     <Router>
       {/* {shouldShowNavbar && <Navbar />} */}
       <Navbar />
-
       {/* Wrapped the Routes with Elements for Stripe */}
-
+    
       <Elements stripe={stripePromise}>
+        
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/rewards" element={<Rewards />} />
+          <Route path="/rewards" element={<Rewards toggleRewardsModal/>} />
           <Route path="/how-it-works" element={<HowItWorks />} />
           <Route
             path="/charities"
@@ -81,6 +86,10 @@ const AppContent = () => {
           <Route path="/history" element={<History />} />
         </Routes>
       </Elements>
+      <RewardsModal
+      isModalOpen={isModalOpen}
+      setIsModalOpen={setIsModalOpen}
+      />
       <Footer />
     </Router>
   );
