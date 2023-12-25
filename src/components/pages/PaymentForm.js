@@ -11,6 +11,9 @@ const PaymentForm = (props) => {
   const [amount, setAmount] = useState("");
   const [donationFrequency, setDonationFrequency] = useState("one-time");
   const [email, setEmail] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
+
   const [isLoading, setIsLoading] = useState(false);
   const [charityName, setCharityName] = useState("Select a Charity");
   const charities = [
@@ -65,6 +68,8 @@ const PaymentForm = (props) => {
             email,
             charityName,
             donationFrequency,
+            firstName,
+            lastName,
           }),
         }
       );
@@ -107,8 +112,20 @@ const PaymentForm = (props) => {
       <form onSubmit={handleSubmit} className="payment-form">
         <h2>payment</h2>
         <div className="form-group inline">
-          <input type="text" placeholder="First Name" required />
-          <input type="text" placeholder="Last Name" required />
+          <input
+            type="text"
+            placeholder="First Name"
+            value={firstName}
+            onChange={(e) => setFirstName(e.target.value)}
+            required
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            value={lastName}
+            onChange={(e) => setLastName(e.target.value)}
+            required
+          />
         </div>
         <div className="form-group">
           {/* <label>Email</label> */}
