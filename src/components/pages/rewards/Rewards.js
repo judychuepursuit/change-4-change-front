@@ -1,3 +1,4 @@
+// This is the Rewards page. 
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -7,6 +8,7 @@ import ig from "../../../sm-icon/ig-logo.jpeg";
 import twit from "../../../sm-icon/twitter-logo.png";
 import "./Rewards.css";
 
+import Points from '../../Points.js';
 import badgeData from "../../../reward-data/badgeData.js"
 
 import lev1RedBadge from '../../../reward-img/lev 1 red badge.png';
@@ -39,7 +41,7 @@ function Rewards(props) {
       <section className="header">
 
         <section className="top">
-          <h4 className='earn-header'>earn</h4>
+          {/* <h4 className='earn-header'>earn</h4> */}
           <h1 className='reward-header'>rewards</h1>
         </section>
         
@@ -62,10 +64,9 @@ function Rewards(props) {
 
       <section className="reward-intro">
         <section className="middle">
-          <h2 className='earn-two'>earn &nbsp;</h2>
+          {/* <h2 className='earn-two'>earn &nbsp;</h2> */}
           <h1 >Points & Badges:</h1>
         </section>
-
         <p className='reward-pg'>
           Empower change with our revolutionary charity rewards!
           Earn badges, unlock exclusive perks, and channel your generosity toward causes you're passionate about.
@@ -94,10 +95,10 @@ function Rewards(props) {
       </section>
 
       <div className='rewards-footer'>
-        <img src={flowChart} alt="flow chart" className='flow-chart' />
+        {/* <img src={flowChart} alt="flow chart" className='flow-chart' /> */}
         <div className='bottom'>
         <div className='donate-button'>
-        <Link to= "/charities"><button className="donate-bttn-history">DONATE </button></Link>
+        <Link to= "/charities"><button className="donate-bttn-badges">DONATE </button></Link>
 
         </div>
         <div className="social-media">

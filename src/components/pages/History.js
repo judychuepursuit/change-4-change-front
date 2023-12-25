@@ -1,3 +1,4 @@
+// This is the styling for the Transaction History page. 
 import { Link } from 'react-router-dom';
 import React from 'react';
 import fb from "../../sm-icon/fb-logo.jpeg";

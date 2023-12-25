@@ -20,6 +20,8 @@
 
   .middle h1 {
     font-size: 10em;
+    margin-left: 70px;
+    padding: 10px;
   }
   .points-two{
     font-size: 2em;
@@ -48,7 +50,7 @@
 
 .rewards-page {
   width: 800px;
-  margin: 0 auto;
+  margin: 50px auto;
 }
 
 .top h1 {
@@ -81,6 +83,7 @@
 }
 
 .social-media {
+  margin-left: 150px;
   padding: 20px;
 }
 
@@ -180,13 +183,17 @@ margin-left: 600px;
   font-size:x-large;
   color: hsl(257, 84%, 51%);
 }
-.rewards-footer div {
-  /* margin-right: 200px; */
-}
+
 
 .bottom {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Items will be at opposite ends */
   padding: 10px; /* Add padding for better spacing */
+}
+
+.donate-bttn-badges{
+  margin-top: 200px;
+  background-color: #ff7300;
+  color: white
 }

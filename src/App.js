@@ -24,7 +24,7 @@ import TransactionHistory from "./components/pages/TransactionHistory";
 import PointsHistory from "./components/history/PointsHistory.js";
 // import TestComponent from './components/pages/TestComponent';
 // ... other imports
-import RewardsModal from "./components/modal/RewardsModal.js";
+import RewardsModal from "./components/modal/BadgesModal.js";
 import History from "./components/pages/History.js";
 // Added stripePromise for Stripe API initialization
 const stripePromise = loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY);

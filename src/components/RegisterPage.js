@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import SignUpModal from "./modal/SignupModal";
 
 import "./RegisterPage.css";
 
@@ -17,6 +18,16 @@ export default function RegisterPage() {
 
   const navigate = useNavigate();
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+
   const handleRegister = () => {
     if (first_name && last_name && birth_date && email && password) {
       axios
@@ -29,7 +40,8 @@ export default function RegisterPage() {
         })
         .then((response) => {
           setIsRegistered(true);
-          navigate("/charities");
+          openModal();
+          // navigate("/charities");
         })
         .catch((error) => {
           setRegistrationError("Registration failed. Please try again.");
@@ -83,6 +95,8 @@ export default function RegisterPage() {
             <strong>login</strong>
           </Link>
         </p>
+
+        {/* <SignUpModal isOpen={isModalOpen} onClose={closeModal}/> */}
       </div>
     </div>
   );
