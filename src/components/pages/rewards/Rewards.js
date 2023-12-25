@@ -20,6 +20,8 @@ import lev1IndigoBadge from '../../../reward-img/lev 1 indigo badge.png';
 import lev1VioBadge from '../../../reward-img/lev 1 vio badge.png';
 import unicornBadge from '../../../reward-img/unicorn badge.png';
 
+import arrowDownImage from '../../../reward-img/down_arrow.png'
+import arrowUpImage from '../../../reward-img/up_arrow.png'
 function Rewards(props) {
   // props.hideNavBar();
 
@@ -34,6 +36,11 @@ function Rewards(props) {
     unicornBadge,
   ];
 
+  const arrowImages =  [
+    { src: arrowDownImage, className: 'arrow-down' },
+    { src: arrowUpImage, className: 'arrow-up' },
+  ];
+
   const badgeNames = badgeData.map(badge => badge.name);
   
   return (
@@ -46,17 +53,25 @@ function Rewards(props) {
         </section>
         
         <section className="badges-container">
-          
         <div className='badge-info'>
           {badgeImages.map((badge, index) => (
-            <div key={index} style={{ marginRight: '10px' }}>
-              <img
-                src={badge}
-                alt={`Badge ${index + 1}`}
-                style={{ width: '70px', height: '70px' }}
-              />
-              <h1 className='badge-names'>{badgeNames[index]}</h1>
-            </div>
+            <React.Fragment key={index}>
+              <div className={`badge-item ${index === badgeImages.length - 1 ? 'last-badge' : ''}`}>
+                <img
+                  src={badge}
+                  alt={`Badge ${index + 1}`}
+                  // style={{ width: '70px', height: '70px' }}
+                />
+                <h1 className='badge-names'>{badgeNames[index]}</h1>
+              </div>
+              {index < badgeImages.length - 1 && (
+                <img
+                src={arrowImages[index % arrowImages.length].src}
+                alt={`Arrow ${index + 1}`}
+                className={`arrow-image ${arrowImages[index % arrowImages.length].className}`}
+                />
+              )}
+            </React.Fragment>
           ))}
         </div>
       </section>
@@ -78,20 +93,11 @@ function Rewards(props) {
           With each milestone achieved, participants unlock exclusive rewards such as personalized certificates of appreciation that can be posted to social media.
           This integrated rewards system not only acknowledges the altruistic endeavors of individuals but also fosters a sense of belonging and purpose within the community, creating a powerful cycle of giving and gratitude. */}
         </p>
-        {/* <p>
-          Our reward program awards points based on each recorded purchase.
-          <br />
-          <br />
-          Sign up and earn a badge
-          <br />
-          <br />
-          2 points for every dollar spent over $100
-          <br />
-          <br />
-          1 point for every dollar spent
-          <br />
-          <br />
-        </p> */}
+        <ul className='points-info'>
+          <li> Earn points based on each recorded purchase.</li>
+          <li>Sign up and earn a badge</li>
+          <li>2 points for every dollar spent over $100</li>
+        </ul>
       </section>
 
       <div className='rewards-footer'>
@@ -102,7 +108,7 @@ function Rewards(props) {
 
         </div>
         <div className="social-media">
-          <h4 className='share-with'>Share with</h4>
+          {/* <h4 className='share-with'>Share with</h4> */}
           <a href="#" className='social-tag'>
             <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
             <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
