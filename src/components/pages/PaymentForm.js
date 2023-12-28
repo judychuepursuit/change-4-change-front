@@ -3,6 +3,23 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
 import "./PaymentForm.css";
 
+const predefinedAmounts = [5, 25, 50, 100]; // New predefined amounts array
+const AmountButton = ({ amount, selectedAmount, setAmount }) => {
+  // Add a selected class if this amount is selected
+  const isSelected = amount.toString() === selectedAmount;
+  const className = isSelected ? "amount-button selected" : "amount-button";
+  return (
+    <button
+      type="button"
+      className={className}
+      aria-pressed={isSelected ? "true" : "false"} // for accessibility
+      onClick={() => setAmount(amount.toString())}
+    >
+      ${amount}
+    </button>
+  );
+};
+
 const PaymentForm = (props) => {
   console.log(props);
   const stripe = useStripe();
@@ -13,16 +30,69 @@ const PaymentForm = (props) => {
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-
   const [isLoading, setIsLoading] = useState(false);
   const [charityName, setCharityName] = useState("Select a Charity");
-  const charities = [
-    { name: "ASPCA", id: "acct_1OEpakQTN4c4HEpl" },
-    { name: "Feeding America", id: "acct_1OCtfWQPst9pmMFX" },
-    { name: "Red Cross", id: "acct_1OCtgDQRnTyfQud7" },
-    { name: "UNICEF", id: "acct_1OCtjmQS1DLaPBq0" },
-  ];
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedAmount, setSelectedAmount] = useState(""); // New state for selected amount
+  const TickMark = () => <span className="tick-mark">✔</span>;
+  const [coverFees, setCoverFees] = useState(false);
+
+  const charities = [
+    { name: "ASPCA", dbId: 1, stripeId: "acct_1OROGCQMOAQH13kG" },
+    { name: "Feeding America", dbId: 2, stripeId: "acct_1OCtfWQPst9pmMFX" },
+    { name: "Red Cross", dbId: 3, stripeId: "acct_1OCtgDQRnTyfQud7" },
+    { name: "UNICEF", dbId: 4, stripeId: "acct_1OROrd4CW30LkdW3" },
+  ];
+  // This function could be more complex depending on how fees are calculated
+  const calculateFees = (amount) => {
+    const feePercentage = 0.029; // for example, 2.9% fee
+    const flatFee = 0.03; // plus 30 cents flat fee
+    return amount * feePercentage + flatFee;
+  };
+
+  const formatCurrency = (value) => {
+    // If there's no decimal point and it's not empty, append ".00"
+    if (!value.includes(".") && value !== "") {
+      return `${value}.00`;
+    }
+    return value; // Return the value as is if it's empty or already has a decimal point
+  };
+
+  const handleAmountChange = (e) => {
+    let value = e.target.value;
+    // Allow the value to be updated directly without formatting while typing
+    setAmount(value);
+    setSelectedAmount(value);
+  };
+
+  const handleBlur = () => {
+    // Format the value when the input field loses focus
+    const formattedValue = formatCurrency(amount);
+    setAmount(formattedValue);
+    setSelectedAmount(formattedValue);
+  };
+
+  const handleAmountButtonClick = (value) => {
+    // No need to determine the last action here as it's always an input
+    const formattedValue = formatCurrency(value.toString(), "input");
+    setAmount(formattedValue);
+    setSelectedAmount(formattedValue);
+  };
+
+  const handleCoverFeesChange = (e) => {
+    const isChecked = e.target.checked;
+    setCoverFees(isChecked);
+
+    // Recalculate the amount to include fees if checkbox is checked
+    if (isChecked) {
+      const fees = calculateFees(parseFloat(amount));
+      setAmount((parseFloat(amount) + fees).toFixed(2)); // Update amount to include fees
+    } else {
+      // If unchecked, you could subtract the fees or reset to the original amount
+      // This depends on how you're storing the original amount before fees are added
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (isSubmitting) return;
@@ -43,6 +113,17 @@ const PaymentForm = (props) => {
       return;
     }
     const cardElement = elements.getElement(CardElement);
+    // Find the charity object based on the selected charity name
+    const selectedCharity = charities.find(
+      (charity) => charity.name === charityName
+    );
+    // If charity is not found, selectedCharity will be undefined
+    if (!selectedCharity) {
+      alert("Please select a valid charity.");
+      setIsLoading(false);
+      setIsSubmitting(false); // Re-enable the form for future submissions
+      return;
+    }
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
       card: cardElement,
@@ -54,25 +135,29 @@ const PaymentForm = (props) => {
       setIsSubmitting(false); // Re-enable the form for future submissions
       return;
     }
+    // Prepare the new request body with charityId
+    const requestBody = {
+      amount,
+      currency: "usd",
+      paymentMethodId: paymentMethod.id,
+      email,
+      charityId: selectedCharity.dbId, // Use the charity's database ID
+      donationFrequency,
+      firstName,
+      lastName,
+    };
     try {
       // console.log('Calling API to create payment intent');
+
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/create-payment-intent`,
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            amount,
-            currency: "usd",
-            paymentMethodId: paymentMethod.id,
-            email,
-            charityName,
-            donationFrequency,
-            firstName,
-            lastName,
-          }),
+          body: JSON.stringify(requestBody),
         }
       );
+
       // console.log(response)
       const paymentIntentResponse = await response.json();
       // console.log(paymentIntentResponse)
@@ -111,7 +196,9 @@ const PaymentForm = (props) => {
     <div className="payment-container">
       <form onSubmit={handleSubmit} className="payment-form">
         <h2>payment</h2>
+
         <div className="form-group inline">
+          {/* <label>Email</label> */}
           <input
             type="text"
             placeholder="First Name"
@@ -119,6 +206,7 @@ const PaymentForm = (props) => {
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
+          {/* <label>Email</label> */}
           <input
             type="text"
             placeholder="Last Name"
@@ -127,18 +215,23 @@ const PaymentForm = (props) => {
             required
           />
         </div>
+
         <div className="form-group">
-          {/* <label>Email</label> */}
+          <label>Email</label>
           <input
             type="email"
+            className="email-input"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             placeholder="Enter your email"
             required
           />
+          <p className="receipt-notice">Your receipt will be emailed here.</p>
         </div>
+
         <div className="form-group">
           <select
+            className="select-charity"
             value={charityName}
             onChange={(e) => setCharityName(e.target.value)}
             required
@@ -151,51 +244,85 @@ const PaymentForm = (props) => {
             ))}
           </select>
         </div>
+
         <div className="form-group">
           <div className="donation-frequency-box">
             <label className="donation-frequency-label">
               Donation Frequency
             </label>
-            <div className="radio-group">
-              <div className="radio-option">
-                <input
-                  type="radio"
-                  id="one-time"
-                  name="donationFrequency"
-                  value="one-time"
-                  checked={donationFrequency === "one-time"}
-                  onChange={(e) => setDonationFrequency(e.target.value)}
-                />
-                <label htmlFor="one-time">One Time</label>
-              </div>
-              <div className="radio-option">
-                <input
-                  type="radio"
-                  id="monthly"
-                  name="donationFrequency"
-                  value="monthly"
-                  checked={donationFrequency === "monthly"}
-                  onChange={(e) => setDonationFrequency(e.target.value)}
-                />
-                <label htmlFor="monthly">Monthly</label>
-              </div>
+            <div className="toggle-button-container">
+              <button
+                type="button"
+                className={`toggle-button ${
+                  donationFrequency === "one-time" ? "active" : ""
+                }`}
+                onClick={() => setDonationFrequency("one-time")}
+              >
+                {donationFrequency === "one-time" && <TickMark />} One-time
+              </button>
+              <button
+                type="button"
+                className={`toggle-button ${
+                  donationFrequency === "monthly" ? "active" : ""
+                }`}
+                onClick={() => setDonationFrequency("monthly")}
+              >
+                {donationFrequency === "monthly" && <TickMark />} Monthly
+              </button>
             </div>
           </div>
         </div>
+
         <div className="form-group">
           <label>Amount ($)</label>
+          <p className="amount-instruction">
+            Choose a preset amount for one time or monthly donation .
+          </p>
+          <div className="predefined-amounts">
+            {predefinedAmounts.map((amountValue) => (
+              <AmountButton
+                key={amountValue}
+                amount={amountValue}
+                selectedAmount={selectedAmount}
+                setAmount={handleAmountButtonClick}
+              />
+            ))}
+          </div>
+          {/* <p className="amount-instruction">
+            Choose a preset amount or enter a custom amount below.
+          </p> */}
           <input
-            type="number"
+            type="text"
+            className="custom-amount-input"
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Enter amount"
+            onChange={handleAmountChange}
+            onBlur={handleBlur} // Apply formatting when the input loses focus
+            placeholder="Enter a custom amount here"
+            pattern="\d+(\.\d{2})?"
             required
           />
+          <p className="amount-notice">The minimum donation is $0.66.</p>
         </div>
+
+        <div className="form-group">
+          <label className="fees-cover-checkbox">
+            <input
+              type="checkbox"
+              checked={coverFees}
+              onChange={handleCoverFeesChange}
+            />
+            I'd like to cover the fees associated with my donation so more of my
+            donation goes directly to charity.
+            {/* I'd like to cover the fees associated with my donation so more of my
+            donation goes directly to [Charity Name]. */}
+          </label>
+        </div>
+
         <div className="form-group">
           <label>Card Information</label>
           <CardElement />
         </div>
+
         <button type="submit" disabled={!stripe || isSubmitting}>
           {isSubmitting ? (
             <>
