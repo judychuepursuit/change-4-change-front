@@ -50,10 +50,11 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
             &times;
           </div>
           <div className='modal-content'>
-            <h2>Congratulations!</h2>
+            <h1>Congratulations!</h1>
+            <br/>
             <p>You've earned a badge</p>
    
-            {/* <img src={blue} alt='badge' className='badge'></img> */}
+            <img src={blue} alt='badge' className='badge'></img>
             <BadgeDisplay points={points} hasSignedUp={hasSignedUp} hasDonated={hasDonated} />
 
             <div id="share-container">

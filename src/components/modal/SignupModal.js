@@ -24,6 +24,19 @@ const SignUpModal = ({ isOpen, onClose }) => {
         <p>You earned the sign-up badge!</p>
         <Confetti active={isOpen} config={confettiConfig} />
         <button onClick={onClose}>Close</button>
+        <section id="share-container">
+              <span>Share this:</span>
+              <div id="share-buttons">
+                {/* facebook */}
+                <a className="facebook" target="_blank"><i className="fab fa-facebook"></i></a>
+
+                {/* instagram */}
+                <a className="instagram" target="_blank"><i className="fab fa-instagram"></i></a>
+
+                {/* twitter */}
+                <a className="twitter" target="_blank"><i className="fab fa-twitter"></i></a>
+                </div>
+              </section>
       </Modal>
     );
   };

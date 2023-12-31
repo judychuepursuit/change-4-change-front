@@ -1,0 +1,111 @@
+.badge { 
+    margin-left: 170px ;
+    margin-top: 10px;
+    width: 170px;
+    height: 170px;
+  }
+  
+  .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Modal Container Styles */
+    .modalContainer {
+      background: #fff;
+      border-radius: 0px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+      overflow: hidden;
+      width: 600px; /* Adjust width as needed */
+      height: 450px;
+    }
+    
+    /* Close Button Styles */
+    .modal-button {
+      background: none;
+      border: 10px;
+      color: #333;
+      cursor: pointer;
+      font-size: 40px;
+      position: relative;
+      top: -14px;
+      left: 540px;
+    }
+  
+    .modal-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      padding: 1rem 1rem;
+  }
+    
+    /* Modal Content Styles */
+    .modal-right {
+      padding: 20px;
+    }
+    
+    h2 {
+      color: #3498db;
+    }
+    
+    .reward img {
+      align-self: center;
+      width: 250px;
+      object-fit: cover;
+      /* width: 10px;
+      height: 20px; */
+    }
+  
+    .badge img {
+      align-self:center ;
+      width: 100px;
+      object-fit: cover;
+  }
+  
+    p {
+      color: #333;
+    }
+    
+    /* Badge Display Styles - Adjust as needed based on BadgeDisplay component structure */
+    
+   
+    /* Share Container Styles */
+    #share-container {
+      margin-top: 20px;
+    }
+  
+    
+    /* Social Media Sharing Button Styles */
+    #share-buttons a {
+      display: inline-block;
+      margin-right: 10px;
+      text-decoration: none;
+      color: #fff;
+      background-color: #3498db; /* Adjust the background color as needed */
+      padding: 10px;
+      border-radius: 5px;
+    }
+    
+    #share-buttons i {
+      font-size: 18px;
+    }
+    
+    /* Individual Social Media Button Styles */
+    .facebook {
+      background-color: #3b5998; /* Facebook blue */
+    }
+    
+    .instagram {
+      background-color: #e4405f; /* Instagram red/pink */
+    }
+    
+    .twitter {
+      background-color: #1da1f2; /* Twitter blue */
+    }
