@@ -3,7 +3,16 @@ import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
 import "./PaymentForm.css";
 
-const predefinedAmounts = [5, 25, 50, 100]; // New predefined amounts array
+// Define the minimum donation amounts for one-time and monthly donations
+const MIN_DONATION_ONE_TIME = 10;
+const MIN_DONATION_MONTHLY = 0.66;
+const DAILY_RATE = 0.66; // Daily rate of $0.66
+
+// const predefinedAmounts = [5, 25, 50, 100]; // New predefined amounts array
+// Define separate arrays for one-time and monthly amounts
+const oneTimeAmounts = [10, 25, 50, 100]; // Update this array as needed
+const monthlyAmounts = [10, 25, 50, 100]; // Update this array as needed
+
 const AmountButton = ({ amount, selectedAmount, setAmount }) => {
   // Add a selected class if this amount is selected
   const isSelected = amount.toString() === selectedAmount;
@@ -19,7 +28,6 @@ const AmountButton = ({ amount, selectedAmount, setAmount }) => {
     </button>
   );
 };
-
 const PaymentForm = (props) => {
   console.log(props);
   const stripe = useStripe();
@@ -27,6 +35,11 @@ const PaymentForm = (props) => {
   const navigate = useNavigate();
   const [amount, setAmount] = useState("");
   const [donationFrequency, setDonationFrequency] = useState("one-time");
+  // Use two separate states for selected amounts for one-time and monthly
+  const [selectedOneTimeAmount, setSelectedOneTimeAmount] = useState("");
+  const [selectedMonthlyAmount, setSelectedMonthlyAmount] = useState("");
+  const [customDailyAmount, setCustomDailyAmount] = useState("");
+
   const [email, setEmail] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -36,7 +49,6 @@ const PaymentForm = (props) => {
   const [selectedAmount, setSelectedAmount] = useState(""); // New state for selected amount
   const TickMark = () => <span className="tick-mark">✔</span>;
   const [coverFees, setCoverFees] = useState(false);
-
   const charities = [
     { name: "ASPCA", dbId: 1, stripeId: "acct_1OROGCQMOAQH13kG" },
     { name: "Feeding America", dbId: 2, stripeId: "acct_1OCtfWQPst9pmMFX" },
@@ -49,7 +61,6 @@ const PaymentForm = (props) => {
     const flatFee = 0.03; // plus 30 cents flat fee
     return amount * feePercentage + flatFee;
   };
-
   const formatCurrency = (value) => {
     // If there's no decimal point and it's not empty, append ".00"
     if (!value.includes(".") && value !== "") {
@@ -57,32 +68,30 @@ const PaymentForm = (props) => {
     }
     return value; // Return the value as is if it's empty or already has a decimal point
   };
-
   const handleAmountChange = (e) => {
     let value = e.target.value;
     // Allow the value to be updated directly without formatting while typing
     setAmount(value);
     setSelectedAmount(value);
   };
-
   const handleBlur = () => {
     // Format the value when the input field loses focus
     const formattedValue = formatCurrency(amount);
     setAmount(formattedValue);
     setSelectedAmount(formattedValue);
   };
-
-  const handleAmountButtonClick = (value) => {
-    // No need to determine the last action here as it's always an input
-    const formattedValue = formatCurrency(value.toString(), "input");
+  const handleAmountButtonClick = (value, isMonthly = false) => {
+    const formattedValue = formatCurrency(value.toString());
     setAmount(formattedValue);
-    setSelectedAmount(formattedValue);
+    if (isMonthly) {
+      setSelectedMonthlyAmount(formattedValue);
+    } else {
+      setSelectedOneTimeAmount(formattedValue);
+    }
   };
-
   const handleCoverFeesChange = (e) => {
     const isChecked = e.target.checked;
     setCoverFees(isChecked);
-
     // Recalculate the amount to include fees if checkbox is checked
     if (isChecked) {
       const fees = calculateFees(parseFloat(amount));
@@ -92,6 +101,73 @@ const PaymentForm = (props) => {
       // This depends on how you're storing the original amount before fees are added
     }
   };
+  const handleDonationFrequencyChange = (frequency) => {
+    // Update the donation frequency
+    setDonationFrequency(frequency);
+
+    // Reset the selected amounts when the frequency changes
+    setSelectedOneTimeAmount("");
+    setSelectedMonthlyAmount("");
+    // Also reset the input amount
+    setAmount("");
+  };
+  // Handler for changing to the daily rate
+  const handleDailyRateChange = () => {
+    const monthlyTotal = DAILY_RATE * 30; // Assuming 30 days in a month for simplicity
+    setAmount(monthlyTotal.toFixed(2));
+    setSelectedMonthlyAmount(monthlyTotal.toFixed(2));
+  };
+  const handleCustomDailyAmountChange = (event) => {
+    const daily = Number(event.target.value);
+    const monthlyTotal = daily * 30; // Assuming 30 days for simplicity
+    setCustomDailyAmount(daily);
+    setAmount(monthlyTotal.toFixed(2));
+    setSelectedMonthlyAmount(monthlyTotal.toFixed(2));
+  };
+
+  // Conditional rendering for one-time and monthly donation amounts
+  const donationAmountSection =
+    donationFrequency === "one-time" ? (
+      <>
+        <p>Choose a preset amount for one time donation.</p>
+        <div className="predefined-amounts">
+          {/* Map through oneTimeAmounts to display buttons */}
+          {oneTimeAmounts.map((amountValue) => (
+            <AmountButton
+              key={amountValue}
+              amount={amountValue}
+              selectedAmount={selectedOneTimeAmount}
+              setAmount={handleAmountButtonClick}
+            />
+          ))}
+        </div>
+        <p>The minimum one-time donation is $10.00</p>
+      </>
+    ) : (
+      <>
+        <p>Choose a preset amount for monthly donation.</p>
+        <div className="predefined-amounts">
+          {/* Map through monthlyAmounts to display buttons */}
+          {monthlyAmounts.map((amountValue) => (
+            <AmountButton
+              key={amountValue}
+              amount={amountValue}
+              selectedAmount={selectedMonthlyAmount}
+              setAmount={handleAmountButtonClick}
+            />
+          ))}
+        </div>
+        <button type="button" onClick={handleDailyRateChange}>
+          $0.66 per day - per month
+        </button>
+        <input
+          type="text"
+          className="custom-daily-amount-input"
+          placeholder="Enter a custom daily amount"
+          onChange={handleCustomDailyAmountChange}
+        />
+      </>
+    );
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -148,7 +224,6 @@ const PaymentForm = (props) => {
     };
     try {
       // console.log('Calling API to create payment intent');
-
       const response = await fetch(
         `${process.env.REACT_APP_API_URL}/create-payment-intent`,
         {
@@ -157,7 +232,6 @@ const PaymentForm = (props) => {
           body: JSON.stringify(requestBody),
         }
       );
-
       // console.log(response)
       const paymentIntentResponse = await response.json();
       // console.log(paymentIntentResponse)
@@ -191,14 +265,12 @@ const PaymentForm = (props) => {
     setIsLoading(false);
     setIsSubmitting(false); // Re-enable the form for future submissions, if necessary
   };
-
   return (
     <div className="payment-container">
       <form onSubmit={handleSubmit} className="payment-form">
         <h2>payment</h2>
 
         <div className="form-group inline">
-          {/* <label>Email</label> */}
           <input
             type="text"
             placeholder="First Name"
@@ -206,7 +278,6 @@ const PaymentForm = (props) => {
             onChange={(e) => setFirstName(e.target.value)}
             required
           />
-          {/* <label>Email</label> */}
           <input
             type="text"
             placeholder="Last Name"
@@ -275,33 +346,73 @@ const PaymentForm = (props) => {
 
         <div className="form-group">
           <label>Amount ($)</label>
-          <p className="amount-instruction">
-            Choose a preset amount for one time or monthly donation .
-          </p>
-          <div className="predefined-amounts">
-            {predefinedAmounts.map((amountValue) => (
-              <AmountButton
-                key={amountValue}
-                amount={amountValue}
-                selectedAmount={selectedAmount}
-                setAmount={handleAmountButtonClick}
+          {donationFrequency === "one-time" ? (
+            <>
+              <p>Choose a preset amount for one-time donation.</p>
+              <div className="predefined-amounts">
+                {oneTimeAmounts.map((amountValue) => (
+                  <AmountButton
+                    key={amountValue}
+                    amount={amountValue}
+                    selectedAmount={selectedOneTimeAmount}
+                    setAmount={() => handleAmountButtonClick(amountValue)}
+                  />
+                ))}
+              </div>
+              {/* <p>The minimum one-time donation is $10.00</p> */}
+            </>
+          ) : (
+            <>
+              <p>Choose a preset amount for monthly donation.</p>
+              <div className="predefined-amounts">
+                {monthlyAmounts.map((amountValue) => (
+                  <AmountButton
+                    key={amountValue}
+                    amount={amountValue}
+                    selectedAmount={selectedMonthlyAmount}
+                    setAmount={() => handleAmountButtonClick(amountValue, true)}
+                  />
+                ))}
+              </div>
+              <button type="button" onClick={handleDailyRateChange}>
+                $0.66 per day - per month
+              </button>
+              <input
+                type="text"
+                className="custom-daily-amount-input"
+                placeholder="Enter a custom daily amount"
+                value={customDailyAmount}
+                onChange={handleCustomDailyAmountChange}
               />
-            ))}
-          </div>
-          {/* <p className="amount-instruction">
-            Choose a preset amount or enter a custom amount below.
-          </p> */}
+              <p>
+                The daily rate is billed monthly and not available for one-time
+                donations.
+              </p>
+            </>
+          )}
           <input
             type="text"
             className="custom-amount-input"
             value={amount}
             onChange={handleAmountChange}
-            onBlur={handleBlur} // Apply formatting when the input loses focus
+            onBlur={handleBlur}
             placeholder="Enter a custom amount here"
             pattern="\d+(\.\d{2})?"
             required
           />
-          <p className="amount-notice">The minimum donation is $0.66.</p>
+          <p className="amount-notice">
+            The minimum{" "}
+            <span style={{ fontWeight: "bold" }}>
+              {donationFrequency === "one-time" ? "one-time" : "daily"}
+            </span>{" "}
+            donation is{" "}
+            <span style={{ fontWeight: "bold" }}>
+              $
+              {donationFrequency === "one-time"
+                ? MIN_DONATION_ONE_TIME.toFixed(2)
+                : MIN_DONATION_MONTHLY.toFixed(2)}
+            </span>
+          </p>
         </div>
 
         <div className="form-group">
@@ -313,8 +424,6 @@ const PaymentForm = (props) => {
             />
             I'd like to cover the fees associated with my donation so more of my
             donation goes directly to charity.
-            {/* I'd like to cover the fees associated with my donation so more of my
-            donation goes directly to [Charity Name]. */}
           </label>
         </div>
 
