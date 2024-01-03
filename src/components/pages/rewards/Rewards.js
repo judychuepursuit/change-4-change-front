@@ -1,5 +1,6 @@
 // This is the Rewards page. 
 import React from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import flowChart from "../../../reward-img/flow-chart.png";
@@ -22,8 +23,10 @@ import unicornBadge from '../../../reward-img/unicorn badge.png';
 
 import arrowDownImage from '../../../reward-img/down_arrow.png'
 import arrowUpImage from '../../../reward-img/up_arrow.png'
-function Rewards(props) {
+function Rewards() {
   // props.hideNavBar();
+
+  const [points, setPoints] = useState(0);
 
   const badgeImages = [
     lev1RedBadge,
@@ -35,6 +38,18 @@ function Rewards(props) {
     lev1VioBadge,
     unicornBadge,
   ];
+
+  function addOne() {
+    
+    setPoints(points + 1)
+     }
+ 
+   function doubleIt() {
+    if (points === 0) {
+      setPoints(2)
+    }
+     setPoints(points * 2)
+   }
 
   const arrowImages =  [
     { src: arrowDownImage, className: 'arrow-down' },
@@ -99,7 +114,7 @@ function Rewards(props) {
           <li>2 points for every dollar spent over $100</li>
         </ul>
       </section>
-
+      <div className="points">Points: {points}</div>
       <div className='rewards-footer'>
         {/* <img src={flowChart} alt="flow chart" className='flow-chart' /> */}
         <div className='bottom'>

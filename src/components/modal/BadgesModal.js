@@ -1,9 +1,26 @@
 
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet';
 import BadgeDisplay from '../BadgeDisplay';
 import "./BadgesModal.css"
 import blue from "../../reward-img/lev_1_blu_badge.png"
 
+const webDisplay = () => {
+  const title = "change4change";
+  const description = "Make a change with your change";
+  const imageUrl = "URL to Your Image"; // Replace with the actual URL of your image
+  const pageUrl = "https://change-4-change-frontend.onrender.com/";
+
+  const ogTags = [
+    { property: 'og:title', content: title },
+    { property: 'og:description', content: description },
+    { property: 'og:image', content: imageUrl },
+    { property: 'og:url', content: pageUrl },
+    { property: 'og:type', content: 'website' },
+  ];
+
+  Helmet.addTags(ogTags);
+};
 export default function RewardsModal({isModalOpen, setIsModalOpen}) {
 
     const [points, setPoints] = useState(0);
