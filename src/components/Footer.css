@@ -10,7 +10,7 @@ footer {
   }
   
   /* Hide the footer on screens narrower than 960 pixels */
-  @media (max-width: 960px) {
+  @media (max-width: 1200px) {
     .footer {
       display: none;
     }
