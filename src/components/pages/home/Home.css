@@ -181,7 +181,7 @@
   /* object-fit: cover; */
   object-fit: contain;
   background-size: cover;
-  /* background-size: contain; */
+
   background-repeat: no-repeat;
   width: 100%;
   height: 460px;
@@ -203,4 +203,7 @@
   .info-box {
     margin-top: 0;
   }
+
 }
+
+
