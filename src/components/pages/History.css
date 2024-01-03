@@ -1,0 +1,60 @@
+.history-page{
+    width: 800px;
+    margin: 0 auto;
+}
+
+.history-top {
+    /* display:flex; */
+    /* justify-content:row; */
+    padding: 35px;
+    display: flex;
+}
+
+.transaction-header{
+    font-style: italic;
+    margin-left: 40px;
+    text-align: center;
+    font-size: 2em;
+    color: hsl(257, 84%, 51%);
+}
+
+.history-header{
+    font-weight: 500;
+    margin-left: 30px;
+    text-align: left;
+    color: #ff7300;
+    font-size: 6em;
+}
+
+.history-intro{
+    text-align: center;
+    font-size: medium;
+    padding: 20px;
+}
+
+.payment-history-info{
+    margin: 2px;
+}
+.history-footer {
+    margin: 4px;
+    justify-content: space-between;
+  }
+
+.history-footer p {
+    text-align: center;
+    padding: 10px;
+}
+.donate-bttn-history {
+    /* margin-left: 44%; */
+    width: 250px;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 160px;
+    /* left: 43%; */
+    /* margin-bottom: 20px; */
+    border-radius: 4px;
+    background-color:#ff7300;
+    color: #ffffff;
+    /* z-index: 100; */
+    /* padding: 8px; */
+  }

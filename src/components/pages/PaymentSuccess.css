@@ -6,24 +6,28 @@
   height: 70vh;
   text-align: center;
   background: #fff; /* Adjust the color to match your design */
-  margin-top: 10px; /* Adjust this value to move the form up */
+  margin-top: 100px; /* Adjust this value to move the form up */
 }
 
 .success-title {
   color: #ff7300; /* Adjust the color to match your design */
   margin: 0;
-  font-size: 48px; /* Adjust the size to match your design */
+  font-size: 68px; /* Adjust the size to match your design */
+  padding-bottom: 20px;
+  font-weight: 500;
 }
 
 .success-message {
   color: #ff7300; /* Adjust the color to match your design */
   margin: 0;
   font-size: 24px; /* Adjust the size to match your design */
+  padding-top: 20px;
 }
 
 .thank-you-message {
   color: #551aeb; /* Adjust the color to match your design */
   margin: 20px 0;
+  font-size: 22px;
 }
 
 .transaction-history-button {

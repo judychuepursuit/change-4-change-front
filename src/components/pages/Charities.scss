@@ -3,9 +3,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  margin-top: 220px;
-  height: 100vh; /* This will make the container take the full height of the viewport */
+  justify-content: space-between;
+  margin-top: 100px;
 }
 
 .charities__suggested-charities {
@@ -19,12 +18,13 @@
 }
 
 .charities__suggested-charities span {
-  color: #551AEB;
+  color: #551aeb;
   font-size: 32px;
   font-style: italic;
   position: relative;
   top: -30px;
 }
+
 .charity-boxes {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -34,7 +34,7 @@
 
 .button {
   border-radius: 4px;
-  color: #551AEB;
+  color: #551aeb;
 }
 
 .button hover {
@@ -43,11 +43,10 @@
 
 @media screen and (max-width: 440px) {
   .charity-boxes {
-      display: block;
-      margin-top: 220px;
+    display: block;
+    margin-top: 220px;
   }
-}   
-
+}
 
 .mission-statement {
   display: none;
@@ -68,8 +67,18 @@
 .charities__selector {
   display: flex;
   flex-direction: column;
+  margin-right: 50px;
 }
 
+.charities__type {
+  font-size: 18px;
+  padding-left: 10px;
+}
 
+.charities__label {
+  margin-left: 15px;
+}
 
-
+.charities__checkbox {
+  border-radius: 50px;
+}

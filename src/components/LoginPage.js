@@ -1,20 +1,30 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import './LoginPage.css';
+import axios from "axios";
+
+import "./LoginPage.css";
+
+// const API = process.env.REACT_APP_API_URL;
 
 export default function LoginPage() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [loginFailed, setLoginFailed] = useState(false); 
+  const [loginFailed, setLoginFailed] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = () => {
-    if (username === "user" && password === "password") {
-      setIsLoggedIn(true);
-      navigate("");
-    } else {
-      setLoginFailed(true); 
+    if (email && password) {
+      axios
+        .post(`${process.env.REACT_APP_API_URL}/login`, { email, password })
+        .then((response) => {
+          setIsLoggedIn(true);
+          navigate("/charities");
+        })
+        .catch((error) => {
+          setLoginFailed(true);
+          console.error("Error fetching user:", error);
+        });
     }
   };
 
@@ -24,21 +34,28 @@ export default function LoginPage() {
         <h2>login</h2>
         <input
           type="text"
-          placeholder="Username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-          />
+          placeholder="Email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
         <input
           type="password"
           placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
-          />
-        <button onClick={handleLogin}><strong>login</strong></button>
+        />
+        <button onClick={handleLogin}>
+          <strong>login</strong>
+        </button>
         {isLoggedIn && <p>You are logged in!</p>}
-        {loginFailed && <p>Login failed. Username or Password does not match.</p>}
+        {loginFailed && (
+          <p>Login failed. Username or Password does not match.</p>
+        )}
         <p>
-          Don't have an account? <Link to="/register"><strong>register</strong></Link>
+          Don't have an account?{" "}
+          <Link to="/register">
+            <strong>register</strong>
+          </Link>
         </p>
       </div>
     </div>

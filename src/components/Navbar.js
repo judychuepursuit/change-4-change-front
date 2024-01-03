@@ -1,14 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 // import { MenuItems } from "./MenuItems"
-import { Link } from 'react-router-dom';
-import './Navbar.css'
-import { Button } from "./Button"
-import Dropdown from './Dropdown';
-
+import { Link } from "react-router-dom";
+import "./Navbar.css";
+import { Button } from "./Button";
+import Dropdown from "./Dropdown";
 
 function Navbar(props) {
-  
-  console.log(props)
+  console.log(props);
 
     const [click, setClick] = useState(false);
     const [dropdown, setDropdown] = useState(false);
@@ -119,7 +117,7 @@ function Navbar(props) {
 //                 <div className="menu-icon" onClick={this.handleClick}>
 //                     <i className={this.state.clicked ? 'fas fa-times' : 'fas fa-bars'}>
 //                     </i>
-                    
+
 //                 </div>
 //                 <ul className={this.state.clicked ? 'nav-menu active' : 'nav-menu'}>
 //                     {MenuItems.map((item, index) => {

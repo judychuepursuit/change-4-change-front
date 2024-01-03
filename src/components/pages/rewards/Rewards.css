@@ -1,23 +1,22 @@
-.badges-container{
-   
-    padding: 10px;
+.badges-container {
+  padding: 10px;
 }
 .header {
     display:flex;
     justify-content:row;
     /* align-items: center; */
-    padding: 5px;
+    padding: 25px;
   }
   
   .earn-header{
     font-style: italic;
-    margin-left: 180px;
+    margin-left: 130px;
   }
 
-  .earn-two{
-    font-size: 2em;
-    font-style: italic;
-  }
+.earn-two {
+  font-size: 2em;
+  font-style: italic;
+}
 
   .middle h1 {
     font-size: 10em;
@@ -26,14 +25,13 @@
     font-size: 2em;
   }
   .reward-header {
-    font-weight: 800;
+    font-weight: 500;
+    margin: -25px;
   }
 
   .reward-pg{
+    margin-left: 120px;
     padding: 12px;
-  }
-  .logo {
-    margin-right: 10px;
   }
   
   .hm-bttn {
@@ -42,27 +40,26 @@
   }
 
 .reward-intro {
-    /* border: 2px solid #ff7300; */
-    /* padding: 45px; */
-    align-items: center;
-    justify-content: center;
-  } 
+  /* border: 2px solid #ff7300; */
+  /* padding: 45px; */
+  align-items: center;
+  justify-content: center;
+}
 
 .rewards-page {
   width: 800px;
   margin: 0 auto;
-  
 }
 
-  .top h1 {
-        text-align: center;
-        font-size: 6em;
-        color: #ff7300;
-    }
+.top h1 {
+  text-align: center;
+  font-size: 6em;
+  color: #ff7300;
+}
 
     .top h4{
         text-align: left;
-        color: #551AEB;
+        color: hsl(257, 84%, 51%);
         font-size: 2em;
     } 
   
@@ -72,86 +69,106 @@
         color: #ff7300;
     }
 
-    .top {
-        display: flex;
-        flex-direction: column;
-        padding: 20px;
-    }
-  
+.top {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
 
+.middle {
+  display: flex;
+  flex-direction: row;
+}
 
-    .middle {
-        display: flex;
-        flex-direction: row;
-    }
+.social-media {
+  padding: 20px;
+}
 
-    .social-media{    
-      padding: 20px;
-      }
+.header {
+  display: grid;
+}
 
-      .header {
-        display: grid;   
-
-    }
-
-    .header button{
-        position: absolute;
-        top: 10px;
-        right: 40px;    }
+.header button {
+  position: absolute;
+  top: 10px;
+  right: 40px;
+}
 
 .flow-chart {
-    width: 100%;
+   margin-left: 130px;
+    width: 80%;
     align-items: center;
     justify-content: center;
 }
+.bottom {
+  justify-content: space-between;/* Items will be at opposite ends */
+  padding: 10px; /* Add padding for better spacing */
+}
+.orange {
+border: 2px solid;
+background-color: #ff7300;
+padding: 10px;
+}
 
+.share-with{ 
+margin-left: 600px;
+}
 .social-tag img {
   /* display: flex;
   flex-direction: column; */
   /* align-self:center ; */
   width: 4%;
   height: 4%;
-  margin-right: 10px;
+  margin-left: 600px;
 }
 
 .hm-bttn {
-    margin: auto;
-    text-align: center;
-    padding: 10px;
-
+  margin: auto;
+  text-align: center;
+  padding: 10px;
 }
+
 
 .badge-info {
   /* align-items: center; */
   display: flex;
+  gap: 20px;
   flex-direction: row;
   padding: 40px;
 }
+
+/* .badge-info img {
+  width: 10px;
+} */
+
+.badge-names {
+  text-align:center;
+  font-size: medium;
+}
+
 .rewards-footer {
   /* display: flex; */
   flex-direction: row;
   justify-content: space-between;
 }
 
-.rewards-footer .donate-button a{
+.rewards-footer .donate-button a {
   display: flex;
   flex-direction: row;
   color: black;
   text-decoration: none;
 }
 
-
 .rewards-footer .donate-button a span {
-color: #ff7300;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .orange-square {
-  width: 15px; 
-  height: 15px; 
+  width: 15px;
+  height: 15px;
   background-color: orange;
 }
-
-
 
 .rewards-footer {
   /* display: flex; */
@@ -159,6 +176,11 @@ color: #ff7300;
   padding: 10px;
 }
 
+
+.earn-two {
+  font-size:x-large;
+  color: hsl(257, 84%, 51%);
+}
 .rewards-footer div {
   /* margin-right: 200px; */
 }
@@ -166,6 +188,6 @@ color: #ff7300;
 .bottom {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;/* Items will be at opposite ends */
+  justify-content: space-between; /* Items will be at opposite ends */
   padding: 10px; /* Add padding for better spacing */
 }

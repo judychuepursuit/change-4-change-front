@@ -1,63 +1,60 @@
 .transaction-history-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 80px; /* Adjusted padding for better alignment */
-    flex-direction: column; /* Stack children vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 80px; /* Adjusted padding for better alignment */
+  padding-bottom: 70px; /* Adjusted padding for better alignment */
+  flex-direction: column; /* Stack children vertically */
+}
+
+.transaction-history {
+  padding: 20px;
+  border: 1px solid #551aeb;
+  border-radius: 8px;
+  width: 80%; /* Adjust width as needed */
+  max-width: 600px; /* Set a max-width for larger screens */
+  background-color: #f5f5f5;
+  margin-top: 100px; /* Adjust as needed for your layout */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+}
+
+.transaction-history h2 {
+  color: #551aeb;
+  font-size: 24px;
+  margin-bottom: 20px;
+  width: 100%;
+  text-align: center; /* Center align text */
+}
+
+.transaction-item {
+  border-bottom: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+.transaction-item:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.transaction-item h4,
+.transaction-item p {
+  margin: 5px 0;
+  color: #333;
+}
+
+.transaction-item-amount {
+  color: #ff7300; /* Highlight color for amount */
+  font-weight: bold;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .transaction-history-container {
+    padding-top: 20px; /* Reduced padding on smaller screens */
   }
-  
+
   .transaction-history {
-    padding: 20px;
-    border: 1px solid #551aeb;
-    border-radius: 8px;
-    width: 80%; /* Adjust width as needed */
-    max-width: 600px; /* Set a max-width for larger screens */
-    background-color: #f5f5f5;
-    margin-top: 10px; /* Adjust as needed for your layout */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
-
+    width: 95%;
+    margin-top: 0;
+    padding: 10px;
   }
-  
-  .transaction-history h2 {
-    color: #551aeb;
-    font-size: 24px;
-    margin-bottom: 20px;
-    width: 100%;
-    text-align: center; /* Center align text */
-
-  }
-  
-  .transaction-item {
-    border-bottom: 1px solid #ddd;
-    padding: 10px 0;
-  }
-  
-  .transaction-item:not(:last-child) {
-    margin-bottom: 10px;
-  }
-  
-  .transaction-item h4, .transaction-item p {
-    margin: 5px 0;
-    color: #333;
-  }
-  
-  .transaction-item-amount {
-    color: #FF7300; /* Highlight color for amount */
-    font-weight: bold;
-  }
-  
-  /* Responsive layout for smaller screens */
-  @media (max-width: 768px) {
-    .transaction-history-container {
-      padding-top: 20px; /* Reduced padding on smaller screens */
-    }
-  
-    .transaction-history {
-        width: 95%;
-        margin-top: 0;
-        padding: 10px;
-    }
-  }
-  
-  
-  
+}

@@ -17,12 +17,14 @@ import ConnectUs from "./components/pages/ConnectUs";
 import LoginPage from "./components/LoginPage";
 import RegisterPage from "./components/RegisterPage";
 import Signup from "./components/pages/Sign-Up";
+// Added PaymentForm and PaymentSuccess imports
 import PaymentForm from "./components/pages/PaymentForm";
 import PaymentSuccess from "./components/pages/PaymentSuccess";
 import TransactionHistory from "./components/pages/TransactionHistory";
-
+import PointsHistory from "./components/history/PointsHistory.js";
+// import TestComponent from './components/pages/TestComponent';
+// ... other imports
 import RewardsModal from "./components/modal/RewardsModal.js";
-
 import History from "./components/pages/History.js";
 import './App.css';
 
@@ -76,6 +78,7 @@ const AppContent = () => {
           />
           <Route path="/payment-success" element={<PaymentSuccess />} />
           <Route path="/TransactionHistory" element={<TransactionHistory />} />
+          <Route path="/PointsHistory" element={<PointsHistory />} />
           <Route path="/history" element={<History />} />
         </Routes>
       </Elements>
