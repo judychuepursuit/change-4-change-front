@@ -10,8 +10,8 @@ const DAILY_RATE = 0.66; // Daily rate of $0.66
 
 // const predefinedAmounts = [5, 25, 50, 100]; // New predefined amounts array
 // Define separate arrays for one-time and monthly amounts
-const oneTimeAmounts = [10, 25, 50, 100]; // Update this array as needed
-const monthlyAmounts = [10, 25, 50, 100]; // Update this array as needed
+const oneTimeAmounts = [10.66, 25, 50, 100]; // Update this array as needed
+const monthlyAmounts = [10.66, 25, 50, 100]; // Update this array as needed
 
 const AmountButton = ({ amount, selectedAmount, setAmount }) => {
   // Add a selected class if this amount is selected
