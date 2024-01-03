@@ -2,7 +2,6 @@
 import React from 'react';
 import './ConnectUs.css'
 import BioBox from '../bioBox/BioBox'
-import { Link } from 'react-router-dom';
 
 
 const bios = [
@@ -52,7 +51,7 @@ export default function ConnectUs() {
   
       <div className='connect'>connect</div>
       <div className='personal-mission'>
-        <p>The goal of the change 4 change app is to bring donating to everyone. Our app
+        <p>The goal of the change 4 change app is to bring donating to everyone. our app
           serves to not only create an ease of access for individuals to donate to a cause they 
           find personal to them, but also works to change the way people view donating by gamifying their
           experience. 
