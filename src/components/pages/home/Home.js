@@ -80,15 +80,15 @@ useEffect (()=>{
       />
       <InfoBox
         title="rewards"
-        description="Earn Points towards Badges and monthly Milestones."
-        buttonText="rewards"
+        description="Earn points towards badges and monthly milestones."
+        buttonText="badges"
         infoLink="/rewards"
         img={info2}
-        altText="Rewards"
+        altText="Badges"
       />
       <InfoBox
         title="share"
-        description="Connect and share your Rewards with friends and family."
+        description="Connect and share your badges with friends and family."
         buttonText="share"
         infoLink="/connect-us"
         img={info3}
