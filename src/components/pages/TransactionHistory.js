@@ -8,6 +8,7 @@ const TransactionHistory = () => {
     // console.log('TransactionHistory component props:', props);
     // console.log('TransactionHistory component state:', state);
     console.log("Calling API to create payment intent");
+
     const fetchTransactions = async () => {
       console.log("Fetching transactions");
       try {
@@ -34,6 +35,7 @@ const TransactionHistory = () => {
         console.error("Fetch error:", err);
       }
     };
+
     fetchTransactions();
   }, []);
 

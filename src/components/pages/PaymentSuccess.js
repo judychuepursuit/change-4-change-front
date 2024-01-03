@@ -16,18 +16,21 @@ const PaymentSuccess = () => {
       <div className="success-logo">
         <img src={logo} alt="Logo" />
       </div>
-      {/* <h2 className="success-message">payment successful!</h2> */}
       <p className="thank-you-message">
         THANK YOU for your donations
         <br />
-        {/* Your payment was successful. */}
       </p>
       <button
         className="transaction-history-button"
         onClick={handleViewTransactions}
       >
-        transaction history
+        click to view transaction history
       </button>
+      <p className="email-receipt-message">
+        <strong>
+          A copy of your receipt will be sent to your email shortly.
+        </strong>
+      </p>
     </div>
   );
 };
