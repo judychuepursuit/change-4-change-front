@@ -4,14 +4,14 @@ import { useNavigate } from "react-router-dom";
 import "./PaymentForm.css";
 
 // Define the minimum donation amounts for one-time and monthly donations
-const MIN_DONATION_ONE_TIME = 10;
+const MIN_DONATION_ONE_TIME = 10.66;
 const MIN_DONATION_MONTHLY = 0.66;
 const DAILY_RATE = 0.66; // Daily rate of $0.66
 
 // const predefinedAmounts = [5, 25, 50, 100]; // New predefined amounts array
 // Define separate arrays for one-time and monthly amounts
 const oneTimeAmounts = [10.66, 25, 50, 100]; // Update this array as needed
-const monthlyAmounts = [10.66, 25, 50, 100]; // Update this array as needed
+const monthlyAmounts = [25, 50, 100]; // Update this array as needed
 
 const AmountButton = ({ amount, selectedAmount, setAmount }) => {
   // Add a selected class if this amount is selected
@@ -80,15 +80,20 @@ const PaymentForm = (props) => {
     setAmount(formattedValue);
     setSelectedAmount(formattedValue);
   };
+
   const handleAmountButtonClick = (value, isMonthly = false) => {
     const formattedValue = formatCurrency(value.toString());
     setAmount(formattedValue);
     if (isMonthly) {
       setSelectedMonthlyAmount(formattedValue);
+      // Calculate the daily amount by dividing the monthly amount by 30 (approximation)
+      const dailyAmount = (value / 30).toFixed(2); // This will give you the daily amount
+      setCustomDailyAmount(dailyAmount); // Update the customDailyAmount state
     } else {
       setSelectedOneTimeAmount(formattedValue);
     }
   };
+
   const handleCoverFeesChange = (e) => {
     const isChecked = e.target.checked;
     setCoverFees(isChecked);
@@ -111,18 +116,32 @@ const PaymentForm = (props) => {
     // Also reset the input amount
     setAmount("");
   };
-  // Handler for changing to the daily rate
   const handleDailyRateChange = () => {
-    const monthlyTotal = DAILY_RATE * 30; // Assuming 30 days in a month for simplicity
+    // Assuming 30 days in a month for simplicity
+    const monthlyTotal = DAILY_RATE * 30;
     setAmount(monthlyTotal.toFixed(2));
     setSelectedMonthlyAmount(monthlyTotal.toFixed(2));
+    // Set the customDailyAmount state to the DAILY_RATE constant
+    setCustomDailyAmount(DAILY_RATE.toFixed(2)); // Ensure that DAILY_RATE is in the correct format
   };
+
   const handleCustomDailyAmountChange = (event) => {
-    const daily = Number(event.target.value);
-    const monthlyTotal = daily * 30; // Assuming 30 days for simplicity
-    setCustomDailyAmount(daily);
-    setAmount(monthlyTotal.toFixed(2));
-    setSelectedMonthlyAmount(monthlyTotal.toFixed(2));
+    const inputVal = event.target.value;
+
+    // Set the input value directly without parsing it to allow for decimal input
+    setCustomDailyAmount(inputVal);
+
+    // Only perform calculations if the input value is a valid number
+    const daily = parseFloat(inputVal);
+    if (!isNaN(daily) && inputVal.trim() !== "") {
+      const monthlyTotal = daily * 30; // Assuming 30 days for simplicity
+      setAmount(monthlyTotal.toFixed(2));
+      setSelectedMonthlyAmount(monthlyTotal.toFixed(2));
+    } else {
+      // If the input is not a number, clear the related fields
+      setAmount("");
+      setSelectedMonthlyAmount("");
+    }
   };
 
   // Conditional rendering for one-time and monthly donation amounts
@@ -141,7 +160,7 @@ const PaymentForm = (props) => {
             />
           ))}
         </div>
-        <p>The minimum one-time donation is $10.00</p>
+        <p>The minimum one-time donation is $10.66</p>
       </>
     ) : (
       <>
@@ -359,11 +378,14 @@ const PaymentForm = (props) => {
                   />
                 ))}
               </div>
-              {/* <p>The minimum one-time donation is $10.00</p> */}
+              {/* <p>The minimum one-time donation is $10.66</p> */}
             </>
           ) : (
             <>
               <p>Choose a preset amount for monthly donation.</p>
+              <button type="button" onClick={handleDailyRateChange}>
+                $0.66 per day - per month
+              </button>
               <div className="predefined-amounts">
                 {monthlyAmounts.map((amountValue) => (
                   <AmountButton
@@ -374,9 +396,9 @@ const PaymentForm = (props) => {
                   />
                 ))}
               </div>
-              <button type="button" onClick={handleDailyRateChange}>
+              {/* <button type="button" onClick={handleDailyRateChange}>
                 $0.66 per day - per month
-              </button>
+              </button> */}
               <input
                 type="text"
                 className="custom-daily-amount-input"
@@ -384,6 +406,7 @@ const PaymentForm = (props) => {
                 value={customDailyAmount}
                 onChange={handleCustomDailyAmountChange}
               />
+
               <p>
                 The daily rate is billed monthly and not available for one-time
                 donations.
