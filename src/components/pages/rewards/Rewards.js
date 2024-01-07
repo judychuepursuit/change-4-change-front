@@ -1,6 +1,6 @@
 // This is the Rewards page. 
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 
 import flowChart from "../../../reward-img/flow-chart.png";
@@ -23,6 +23,7 @@ import unicornBadge from '../../../reward-img/unicorn badge.png';
 
 import arrowDownImage from '../../../reward-img/down_arrow.png'
 import arrowUpImage from '../../../reward-img/up_arrow.png'
+import axios from 'axios';
 function Rewards() {
   // props.hideNavBar();
 
@@ -58,6 +59,10 @@ function Rewards() {
 
   const badgeNames = badgeData.map(badge => badge.name);
   
+  // useEffect(() => {
+  //   axios
+  //   .get()
+  // })
   return (
     <div className='rewards-page'>
       <section className="header">
@@ -111,10 +116,15 @@ function Rewards() {
         <ul className='points-info'>
           <li> Earn points based on each recorded purchase.</li>
           <li>Sign up and earn a badge</li>
-          <li>2 points for every dollar spent over $100</li>
+          <li className='black'>First 100 dollars:</li>
+          <li>1 dollar donated = 1 point</li>
+          <li className='black'>After reaching 100 dollars:</li>
+          <li>1 dollar donated = 2 points </li>
         </ul>
       </section>
-      <div className="points">Points: {points}</div>
+      {/* <div className="points">Your Points: {points}</div> */}
+
+      <div className="points">Your Points: 53</div>
       <div className='rewards-footer'>
         {/* <img src={flowChart} alt="flow chart" className='flow-chart' /> */}
         <div className='bottom'>

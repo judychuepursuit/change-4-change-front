@@ -1,3 +1,7 @@
+body {
+  overflow-x: hidden;
+}
+
 .badges-container {
   /* margin: 20px; */
   max-width: 100vw;
@@ -48,11 +52,12 @@
   /* padding: 45px; */
   align-items: center;
   justify-content: center;
+  max-width: 90vw;
 }
 
 .rewards-page {
-  width: 800px;
-  margin: 50px auto;
+  /* width: 800px; */
+  margin: 70px auto;
 }
 
 .top h1 {
@@ -235,13 +240,13 @@ margin-top: -20px;
 }
 
 .badge-item img {
-  width: 90px;
-  height: 90px;
+  width: 65px;
+  height: 65px;
   
 }
 .last-badge img {
-  width: 150px; 
-  height: 150px; 
+  width: 120px; 
+  height: 120px; 
 }
 
 .badge-item:nth-child(1) {
@@ -269,3 +274,6 @@ margin-top: -20px;
   transform: translateY(-20px);
 }
 
+.black{
+ 
+}

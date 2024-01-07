@@ -4,23 +4,24 @@ import { Helmet } from 'react-helmet';
 import BadgeDisplay from '../BadgeDisplay';
 import "./BadgesModal.css"
 import blue from "../../reward-img/lev_1_blu_badge.png"
+import orange from "../../reward-img/lev 1 orange badge.png"
+import webImage from "../../reward-img/webImage.png"
+// const webDisplay = () => {
+//   const title = "change4change";
+//   const description = "Make a change with your change";
+//   const imageUrl = "URL to Your Image"; // Replace with the actual URL of your image
+//   const pageUrl = "https://change-4-change-frontend.onrender.com/";
 
-const webDisplay = () => {
-  const title = "change4change";
-  const description = "Make a change with your change";
-  const imageUrl = "URL to Your Image"; // Replace with the actual URL of your image
-  const pageUrl = "https://change-4-change-frontend.onrender.com/";
+//   const ogTags = [
+//     { property: 'og:title', content: title },
+//     { property: 'og:description', content: description },
+//     { property: 'og:image', content: imageUrl },
+//     { property: 'og:url', content: pageUrl },
+//     { property: 'og:type', content: 'website' },
+//   ];
 
-  const ogTags = [
-    { property: 'og:title', content: title },
-    { property: 'og:description', content: description },
-    { property: 'og:image', content: imageUrl },
-    { property: 'og:url', content: pageUrl },
-    { property: 'og:type', content: 'website' },
-  ];
-
-  Helmet.addTags(ogTags);
-};
+//   Helmet.addTags(ogTags);
+// };
 export default function RewardsModal({isModalOpen, setIsModalOpen}) {
 
     const [points, setPoints] = useState(0);
@@ -62,6 +63,13 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
   return (  
     <div onClick={closeModal} className="overlay" style={{display:isModalOpen ? "fixed" : "none"}}>
       {isModalOpen && (<div className='modalContainer'>
+      <Helmet>
+            <meta property="og:title" content="change4change" />
+            <meta property="og:description" content="Make a change with your change" />
+            <meta property="og:image" content={webImage} />
+            <meta property="og:url" content="https://change-4-change-frontend.onrender.com/" />
+            <meta property="og:type" content="website" />
+          </Helmet>
         <div className="modal-right">
           <div className="modal-button" onClick={closeModal}>
             &times;
@@ -71,8 +79,8 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
             <br/>
             <p>You've earned a badge</p>
    
-            <img src={blue} alt='badge' className='badge'></img>
-            <BadgeDisplay points={points} hasSignedUp={hasSignedUp} hasDonated={hasDonated} />
+            <img src={orange} alt='badge' className='badge'></img>
+            {/* <BadgeDisplay points={points} hasSignedUp={hasSignedUp} hasDonated={hasDonated} /> */}
 
             <div id="share-container">
               <span>Share this:</span>
@@ -89,7 +97,8 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
             </div>
           </div>
         </div>
-      </div> )}
+      </div> 
+      )}
     </div>
   );
 };
