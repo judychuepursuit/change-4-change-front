@@ -34,7 +34,6 @@ body {
   }
   .reward-header {
     font-weight: 500;
-    margin: -25px;
   }
 
   .reward-pg{
@@ -89,9 +88,15 @@ body {
   flex-direction: row;
 }
 
-.social-media {
-  margin-left: 150px;
-  padding: 20px;
+.social-media{
+  display: flex;
+  justify-content: end;
+  width: 100%;
+  background-color: palevioletred;
+}
+.social-media img {
+margin: 2px;
+width: 35px;
 }
 
 .header {
@@ -141,9 +146,12 @@ margin-left: 600px;
 
 .badge-info {
   /* align-items: center; */
+  /* background-color: blueviolet; */
   display: flex;
   gap: 20px;
   flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
   padding: 40px;
 }
 
@@ -253,27 +261,41 @@ margin-top: -20px;
   transform: translateY(0);
 }
 
-.badge-item:nth-child(2) {
+.badge-item:nth-child(3) {
   transform: translateY(10px);
 }
-.badge-item:nth-child(3) {
+.badge-item:nth-child(5) {
   transform: translateY(20px);
 }
 
-.badge-item:nth-child(4) {
+.badge-item:nth-child(7) {
   transform: translateY(70px);
 }
-.badge-item:nth-child(5) {
+.badge-item:nth-child(9) {
   transform: translateY(0px);
 }
 
-.badge-item:nth-child(6) {
-  transform: translateY(-10px);
+.badge-item:nth-child(11) {
+  transform: translateY(10px);
 }
-.badge-item:nth-child(7) {
-  transform: translateY(-20px);
+.badge-item:nth-child(13) {
+  transform: translateY(20px);
+}
+.badge-item:nth-child(15) {
+  transform: translateY(30px);
 }
 
-.black{
- 
+
+
+ul .points-info{
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 80px;
+}
+
+.points {
+color: #ff7300;
+font-size: 30px;
+margin: 60px;
 }

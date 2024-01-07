@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import React from 'react';
 import fb from "../../sm-icon/fb-logo.jpeg";
 import ig from "../../sm-icon/ig-logo.jpeg";
-import twit from "../../sm-icon/twitter-logo.png"; 
+import twit from "../../sm-icon/twit-logo.png"; 
 import TransactionHistory from './TransactionHistory';
 import "./History.css"
 

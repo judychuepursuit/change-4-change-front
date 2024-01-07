@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import flowChart from "../../../reward-img/flow-chart.png";
 import fb from "../../../sm-icon/fb-logo.jpeg";
 import ig from "../../../sm-icon/ig-logo.jpeg";
-import twit from "../../../sm-icon/twitter-logo.png";
+import twit from "../../../sm-icon/twit-logo.png";
 import "./Rewards.css";
 
 import Points from '../../Points.js';
@@ -134,10 +134,14 @@ function Rewards() {
         </div>
         <div className="social-media">
           {/* <h4 className='share-with'>Share with</h4> */}
-          <a href="#" className='social-tag'>
-            <img src={fb} alt='fb-logo' width="12%" height="5%"></img>
-            <img src={ig} alt='ig-logo' width="12%" height="5%"></img>
-            <img src={twit} alt='twitter' width="12%" height="5%"></img>
+          <a href="#" >
+            <img src={fb} alt='fb-logo'></img>
+          </a>
+          <a href="#" >
+            <img src={ig} alt='ig-logo'></img>
+          </a>
+          <a href="#">
+            <img src={twit} alt='twit-logo'></img> 
           </a>
         </div>
       </div>
