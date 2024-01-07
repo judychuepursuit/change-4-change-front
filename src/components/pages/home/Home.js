@@ -52,7 +52,7 @@ useEffect (()=>{
     </div>
     {/* <div className="hero-image"></div> */}
     <div className="hero-images">
-      <Link to= "/charities"><button className="donate-btn">DONATE </button></Link>
+      <Link to= "/charities"><button className="donate-btn">DONATE</button></Link>
       <div className="hero-image-container" style={{transform:`translateX(${currentImage*-100}%)`}}>
         <div className="carousel-image hero-image"></div>
         <div className="carousel-image unicef-home"></div>
@@ -80,15 +80,15 @@ useEffect (()=>{
       />
       <InfoBox
         title="rewards"
-        description="Earn points towards badges and monthly milestones."
-        buttonText="badges"
+        description="Earn points towards reward badges and monthly milestones."
+        buttonText="rewards"
         infoLink="/rewards"
         img={info2}
-        altText="Badges"
+        altText="Rewards"
       />
       <InfoBox
         title="share"
-        description="Connect and share your badges with friends and family."
+        description="Connect and share your reward badges with friends and family."
         buttonText="share"
         infoLink="/connect-us"
         img={info3}

@@ -11,7 +11,7 @@
 .sign-up 
 {
   display: flex;
-  height: 90vh;
+  height: 80vh;
   align-items: center;
 }
 
@@ -54,11 +54,11 @@
 }
 
 .donate-btn {
-  width: 190px;
+  width: 220px;
   align-items: center;
-  font-size: 30px;
-  font-weight: bolder;
-  margin-top: 60px;
+  font-size: 34px;
+  /* font-weight: bolder; */
+  margin-top: 580px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -66,6 +66,11 @@
   background-color:#ff7300;
   color: #ffffff;
   z-index: 100;
+}
+
+.donate-btn:hover {
+  background-color: #551aeb;
+  transform: translateX(-50%) scale(1.2);
 }
 
 .hero-image {
@@ -133,6 +138,7 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
+  margin-left: -23px;
   /* top: 80%; */
   /* position: absolute; */
   
@@ -145,9 +151,9 @@
 }
   /* hiw button */
 .how-it-works {
-  margin: 60px 0px 20px 0px;
+  margin: 60px -42px 15px 0px;
   width: 220px;
-  background-color:#ff7300;
+  background-color:#551aeb;
   font-weight: bolder;
   font-size: 22px;
   padding: 8px;
@@ -156,9 +162,9 @@
   border: none;
 }
   
-.how-it-works button:hover {
-  background-color:#551aeb;
-}
+/* .how-it-works button:hover {
+  background-color: #ff7300;
+} */
 
 .how-it-works-page {
   /* position:relative; */
