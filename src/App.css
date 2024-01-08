@@ -2,27 +2,27 @@
 /* InfoSection.css */
 .info-section {
   display: flex;
-  /* gap: 40px; */
+  gap: 70px;
   justify-content: center;
   align-items: center;
-  margin-top: -30px;
-  height: 50vh;
+  /* margin-top: -5px; */
+  height: 45vh;
   padding: 1%;
 }
 
 .info-box {
   display: flex;
   flex-direction: column;
-  width: 320px;
+  width: 300px;
   justify-content: center;
   align-items: center;
   margin-top: -100px;
 }
 
 .info-box img {
-  width: 230px;
+  width: 300px;
   /* margin-left: 55px; */
-  padding-bottom: 15px;
+  padding-bottom: 20px;
   /* margin-left: 25px; */
   margin-top: -15px;
 }
@@ -34,11 +34,12 @@
   font-weight: 600;
   /* padding-bottom: 30px; */
   /* margin-left: 25px; */
-  margin-top: 10px;
+  margin-top: 15px;
   width: 300px;
 }
 
 .info-box-button {
+  background-color:#551aeb;
   padding-top: 10px;
   font-size: 20px;
   width: 230px;
@@ -52,6 +53,9 @@
 .info-box button:hover {
   background-color: #ff7300;
 }
+
+
+
 
 /* Responsive adjustments */
 @media (max-width: 1024px) {
