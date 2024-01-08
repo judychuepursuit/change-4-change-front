@@ -1,32 +1,3 @@
-.how-it-works-page {
-  /* position:relative; */
-  /* padding-bottom: 30px; */
-  /* top: 47%; */
-  color: #ff7300;
-  text-align: center;
-  font-size: 45px;
-  margin-top: -1px;
-}
-
-.hiw-header {
-  margin-left: 19.7%;
-  height: 80vh;
-}
-
-.how-it-works-image {
-  background-image: url('images/hiw-banner_2wider.jpg');
-  object-fit: cover;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 100%;
-  height: 300px;
-  margin-bottom: 50px;
-  /* z-index: 100%; */
-}
-
-/* .hiw-centered {
-  margin-bottom: -10px;
-} */
 
 /* InfoSection.css */
 .info-section {
@@ -49,11 +20,11 @@
 }
 
 .info-box img {
-  width: 200px;
+  width: 230px;
   /* margin-left: 55px; */
-  padding-bottom: 12px;
+  padding-bottom: 15px;
   /* margin-left: 25px; */
-  margin-top: -25px;
+  margin-top: -15px;
 }
 
 .info-box p{
@@ -67,11 +38,10 @@
   width: 300px;
 }
 
-/* .info-box-button-text{ */
 .info-box-button {
   padding-top: 10px;
-  font-size: 18px;
-  width: 240px;
+  font-size: 20px;
+  width: 230px;
   font-weight: bolder;
   margin-top: 15px;
   /* margin-left: 25px; */

@@ -45,7 +45,7 @@ useEffect (()=>{
   <div className="home">
     {/* add maincontent code here */}
     <div className="main-content">
-      <h3> Get started now by donating just 66¢ a day </h3>
+      <h3> Get started now by donating just 66¢ a day* </h3>
       <h1> MAKE A CHANGE </h1>
       <h2> with your change </h2>
       {/* <Link to= "/payment"><button className="donate-btn">DONATE </button></Link> */}
@@ -80,15 +80,15 @@ useEffect (()=>{
       />
       <InfoBox
         title="rewards"
-        description="Earn Points towards Badges and monthly Milestones."
-        buttonText="rewards"
+        description="Earn points towards badges and monthly milestones."
+        buttonText="badges"
         infoLink="/rewards"
         img={info2}
-        altText="Rewards"
+        altText="Badges"
       />
       <InfoBox
         title="share"
-        description="Connect and share your Rewards with friends and family."
+        description="Connect and share your badges with friends and family."
         buttonText="share"
         infoLink="/connect-us"
         img={info3}

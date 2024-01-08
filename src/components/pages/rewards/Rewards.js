@@ -105,18 +105,11 @@ function Rewards() {
         <p className='reward-pg'>
           Empower change with our revolutionary charity rewards!
           Earn badges, unlock exclusive perks, and channel your generosity toward causes you're passionate about.
-          Join a vibrant community dedicated to making a lasting impact.
-          {/* Introducing a groundbreaking charity rewards system that not only fosters generosity but also cultivates a culture of continuous giving.
-          Donors earn badges for their contributions through monetary donations.
-          We bring an exclusive opportunity to make a meaningful impact on the charity of your choice.
-          You now have a convenient and efficient way to direct your generosity to the causes that matter most to you.
-          With each milestone achieved, participants unlock exclusive rewards such as personalized certificates of appreciation that can be posted to social media.
-          This integrated rewards system not only acknowledges the altruistic endeavors of individuals but also fosters a sense of belonging and purpose within the community, creating a powerful cycle of giving and gratitude. */}
+          Join a vibrant community dedicated to making a lasting impact. Earn points based on each recorded purchase.
         </p>
         <ul className='points-info'>
-          <li> Earn points based on each recorded purchase.</li>
           <li>Sign up and earn a badge</li>
-          <li className='black'>First 100 dollars:</li>
+          <li className='black'><strong>First 100 dollars:</strong></li>
           <li>1 dollar donated = 1 point</li>
           <li className='black'>After reaching 100 dollars:</li>
           <li>1 dollar donated = 2 points </li>

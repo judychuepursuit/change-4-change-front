@@ -20,13 +20,14 @@
   font-size: small;
   color: #ffffff;
   background-color: #551aeb;
-  padding-top: 100px;
-  height: 290px;
+  padding-top: 98px;
+  height: 265px;
 }
 
 .main-content h1 {
   background-color: #551aeb;
   height: 35px;
+  padding-top: 10px;
   padding: -14px;
   color: #ebe8f4;
   font-size: 45px;
@@ -34,22 +35,22 @@
 }
 
 .main-content h2 {
-  padding: 19px;
+  padding: 30px;
   font-size: 36px;
   font-weight: bolder;
   /* padding-bottom: 8px; */
   color: #ffffff;
   height: 0;
-  line-height: 60px;
+  line-height: 40px;
 }
+
 .main-content h3 {
   background-color: white;
-  height: 0px;
-  padding: 5px;
+  height: 45px;
+  padding: 7px;
   color: #551aeb;
   font-size: 24px;
   font-weight: bold;
-  width: 100%;
 }
 
 .donate-btn {
@@ -69,7 +70,6 @@
 
 .hero-image {
   background-image: url(../../../images/carousel-images/change-4-change_home.jpg);  background-position: bottom;
-
 }
 
 .hero-images {
@@ -92,7 +92,7 @@
   background-repeat: no-repeat;
   flex-direction: column;
   /* position: relative; */
-  height: 700px;
+  height: 780px;
   /* min-height: 90%; */
   /* height: 70vh; */
   /* display: flex;
@@ -143,154 +143,67 @@
   font-size: 5rem;
   font-weight: 600;
 }
-
+  /* hiw button */
+.how-it-works {
+  margin: 60px 0px 20px 0px;
+  width: 220px;
+  background-color:#ff7300;
+  font-weight: bolder;
+  font-size: 22px;
+  padding: 8px;
+  color: #ffffff;
+  border-radius: 4px;
+  border: none;
+}
+  
 .how-it-works button:hover {
   background-color:#551aeb;
 }
 
-.main-content {
-    text-align: center;
-    font-size: small;
-    width: 100%;
-    color: #ffffff;
-    background-color: #551aeb;;
-  }
-  
-  .main-content h1 {
-    background-color: #551aeb;
-    height: 43px;
-    padding: 18px;
-    color: #ebe8f4;
-    font-size: 48px;
-    font-weight: bolder;
-  }
+.how-it-works-page {
+  /* position:relative; */
+  /* padding-bottom: 30px; */
+  font-weight: normal;
+  /* top: 47%; */
+  color: #ff7300;
+  text-align: center;
+  font-size: 45px;
+  margin-top: -1px;
+}
 
-  .main-content h2 {
-    padding: 16px;
-    font-size: 38px;
-    font-weight: bolder;
-    padding-bottom: 5px;
-    color: #ffffff;
-    line-height: 80px;
-  }
+.hiw-header {
+  margin-left: 19.7%;
+  height: 80vh;
+}
+/* ask john about why this is disapearing when deleted and added to the hiw page) */
+.how-it-works-image {
+  background-image: url('../../../images/hiw-banner_2wider.jpg');
+  /* object-fit: cover; */
+  object-fit: contain;
+  background-size: cover;
 
-  .main-content h3 {
-    background-color: white;
-    height: 45px;
-    padding: 7px;
-    color: #551aeb;
-    font-size: 24px;
-    font-weight: bold;
-  }
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 460px;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
 
-  .hero-image {
-    background-image: url(../../../images/carousel-images/change-4-change_home.jpg);  background-position: bottom;
-  }
+.how-it-works-text {
+  text-align: left;
+  margin-top: -20px;
+}
 
-  .hero-images {
-    display: flex;
+@media screen and (max-width: 960px) {
+  .info-section {
     flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 660px;
-    overflow-x: hidden; 
+    height: auto;
+    margin-top: 0;
+  }
+  .info-box {
+    margin-top: 0;
   }
 
-  .carousel-image {
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    flex-direction: column;
-    min-width: 100%;
-    padding-top: 200px;
-  }
+}
 
-  .hero-image-container {
-    display: flex;
-    transition: transform 1s ease;
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
 
-  .unicef-home {
-    background-image: url(../../../images/carousel-images/unicef_home.jpg);
-    background-position: bottom;
-  }
-  
-  .aspca-home {
-    background-image: url(../../../images/carousel-images/aspca_home.jpg);
-    background-position: bottom;
-  }
-  
-  .red-cross-home {
-    background-image: url(../../../images/carousel-images/red-cross4_home.jpeg);
-  }
-  
-  .feed-america-home {
-    background-image: url(../../../images/carousel-images/feed_america2-home.jpg);
-    background-position: center;
-  }
-  
-  .hero-image h1{
-    color:#ffffff;
-    font-size: 5rem;
-    font-weight: 600;
-  }
-  
-  /* hiw button */
-  .how-it-works {
-    margin: 20px 0px 30px 0px;
-    width: 180px;
-    background-color:#ff7300;
-    font-weight: bolder;
-    font-size: 20px;
-    padding: 8px;
-    color: #ffffff;
-    border-radius: 4px;
-    border: none;
-  }
-  
-  .how-it-works button:hover {
-    background-color:#551aeb;
-  }
-
-  .how-it-works-page {
-    /* position:relative; */
-    /* padding-bottom: 30px; */
-    font-weight: normal;
-    /* top: 47%; */
-    color: #ff7300;
-    text-align: center;
-    font-size: 45px;
-    margin-top: -1px;
-  }
-  
-  .hiw-header {
-    margin-left: 19.7%;
-    height: 80vh;
-  }
-  
-  .how-it-works-image {
-    background-image: url('../../../images/hiw-banner_2wider.jpg');
-    object-fit: cover;
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 100%;
-    height: 340px;
-    margin-top: 100px;
-    margin-bottom: 50px;
-  }
-
-  @media screen and (max-width: 960px) {
-    .info-section {
-      flex-direction: column;
-      height: auto;
-      margin-top: 0;
-    }
-    .info-box {
-      margin-top: 0;
-    }
-  }
-
-  

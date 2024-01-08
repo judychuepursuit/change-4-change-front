@@ -8,16 +8,16 @@ body {
   padding: 10px;
 }
 .header {
-    display:flex;
-    justify-content:row;
-    /* align-items: center; */
-    padding: 25px;
-  }
-  
-  .earn-header{
-    font-style: italic;
-    margin-left: 130px;
-  }
+  display: flex;
+  justify-content: row;
+  /* align-items: center; */
+  padding: 25px;
+}
+
+.earn-header {
+  font-style: italic;
+  margin-left: 130px;
+}
 
 .earn-two {
   font-size: 2em;
@@ -36,15 +36,15 @@ body {
     font-weight: 500;
   }
 
-  .reward-pg{
-    margin-left: 120px;
-    padding: 12px;
-  }
-  
-  .hm-bttn {
-    margin-left: 10px;
-    cursor: pointer;
-  }
+.reward-pg {
+  margin-left: 120px;
+  padding: 12px;
+}
+
+.hm-bttn {
+  margin-left: 10px;
+  cursor: pointer;
+}
 
 .reward-intro {
   /* border: 2px solid #ff7300; */
@@ -56,7 +56,9 @@ body {
 
 .rewards-page {
   /* width: 800px; */
-  margin: 70px auto;
+  margin: 80px 20px;
+  margin-left: 100px;
+  margin-right: 100px;
 }
 
 .top h1 {
@@ -65,19 +67,20 @@ body {
   color: #ff7300;
 }
 
-    .top h4{
-        text-align: left;
-        color: hsl(257, 84%, 51%);
-        font-size: 2em;
-    } 
-  
-    .reward-intro h1 {
-        text-align: center;
-        font-size: xx-large;
-        color: #ff7300;
-    }
+.top h4 {
+  text-align: left;
+  color: hsl(257, 84%, 51%);
+  font-size: 2em;
+}
+
+.reward-intro h1 {
+  text-align: center;
+  font-size: xx-large;
+  color: #ff7300;
+}
 
 .top {
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -92,7 +95,7 @@ body {
   display: flex;
   justify-content: end;
   width: 100%;
-  background-color: palevioletred;
+  margin-top: -30px;
 }
 .social-media img {
 margin: 2px;
@@ -110,23 +113,23 @@ width: 35px;
 }
 
 .flow-chart {
-   margin-left: 130px;
-    width: 80%;
-    align-items: center;
-    justify-content: center;
+  margin-left: 130px;
+  width: 80%;
+  align-items: center;
+  justify-content: center;
 }
 .bottom {
-  justify-content: space-between;/* Items will be at opposite ends */
+  justify-content: space-between; /* Items will be at opposite ends */
   padding: 10px; /* Add padding for better spacing */
 }
 .orange {
-border: 2px solid;
-background-color: #ff7300;
-padding: 10px;
+  border: 2px solid;
+  background-color: #ff7300;
+  padding: 10px;
 }
 
-.share-with{ 
-margin-left: 600px;
+.share-with {
+  margin-left: 600px;
 }
 .social-tag img {
   /* display: flex;
@@ -143,12 +146,11 @@ margin-left: 600px;
   padding: 10px;
 }
 
-
 .badge-info {
   /* align-items: center; */
   /* background-color: blueviolet; */
   display: flex;
-  gap: 20px;
+  gap: 10px;
   flex-direction: row;
   justify-content: center;
   margin-top: 10px;
@@ -162,8 +164,8 @@ margin-left: 600px;
 .points-info li{
   list-style: none;
   padding: 8px;
-  font-size: 20px;
-  color: #ff7300;
+  font-size: 15px;
+  /* color: #ff7300; */
 }
 
 /* .badge-info img {
@@ -171,7 +173,7 @@ margin-left: 600px;
 } */
 
 .badge-names {
-  text-align:center;
+  text-align: center;
   font-size: medium;
 }
 
@@ -189,7 +191,8 @@ margin-left: 600px;
 }
 
 .rewards-footer .donate-button a span {
-  color: #ff7300;
+  color: #ffffff;
+  font-weight: 700;
 }
 
 .orange-square {
@@ -204,9 +207,8 @@ margin-left: 600px;
   padding: 10px;
 }
 
-
 .earn-two {
-  font-size:x-large;
+  font-size: x-large;
   color: hsl(257, 84%, 51%);
 }
 
@@ -236,7 +238,7 @@ margin-left: 600px;
   width: 50px; 
   height: 50px; 
   margin: 0px 5px; 
-margin-top: -20px;
+/* margin-top: -20px; */
 }
 
 .arrow-up{
@@ -262,36 +264,43 @@ margin-top: -20px;
 }
 
 .badge-item:nth-child(3) {
-  transform: translateY(10px);
+  transform: translateY(20px);
 }
 .badge-item:nth-child(5) {
-  transform: translateY(20px);
+  transform: translateY(40px);
 }
 
 .badge-item:nth-child(7) {
-  transform: translateY(70px);
+  transform: translateY(20px);
 }
 .badge-item:nth-child(9) {
   transform: translateY(0px);
 }
 
 .badge-item:nth-child(11) {
-  transform: translateY(10px);
-}
-.badge-item:nth-child(13) {
   transform: translateY(20px);
 }
+.badge-item:nth-child(13) {
+  transform: translateY(40px);
+}
 .badge-item:nth-child(15) {
-  transform: translateY(30px);
+  transform: translateY(0px);
 }
 
 
 
 ul .points-info{
-  padding: 20px;
-  align-items: center;
-  justify-content: center;
-  margin-left: 80px;
+  list-style: none; /* Remove default list styles */
+  padding: 0;
+  margin: 0
+}
+.points-info li {
+  text-align: left; /* Align text to the left within each list item */
+  margin-bottom: 10px; /* Add spacing between each list item */
+}
+.points-info .black {
+  color: black;
+  /* Add any additional styling for black-colored list items if needed */
 }
 
 .points {
