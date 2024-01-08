@@ -43,7 +43,7 @@ const App = () => {
 };
 
 const AppContent = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const [userPurchaseData, setUserPurchaseData] = useState({
     recipient: null,
   });

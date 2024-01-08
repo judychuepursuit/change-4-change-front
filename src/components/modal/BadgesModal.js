@@ -42,23 +42,24 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
         const c4cLink = "https://change-4-change-frontend.onrender.com/"
         const fb = document.querySelector(".facebook");
         // fb.href = `https://www.facebook.com/share.php?u=${link}`;
-           fb.href=`https://www.facebook.com/dialog/share?app_id=868771211620111&display=popup&href=${encodeURIComponent(c4cLink)}`
+          //  fb.href=`https://www.facebook.com/dialog/share?app_id=868771211620111&display=popup&href=${encodeURIComponent(c4cLink)}`
             
     
         const ig = document.querySelector(".instagram");
-        ig.href = `https://www.instagram.com/p/${encodeURIComponent(c4cLink)}/`;
+        // ig.href = `https://www.instagram.com/p/${encodeURIComponent(c4cLink)}/`;
     
         const twit = document.querySelector(".twitter");
-        twit.href = `http://twitter.com/share?url=${encodeURIComponent(c4cLink)}&text=${msg}&hashtags=donate,charity,support,kindness`;      }, []);
+        // twit.href = `http://twitter.com/share?url=${encodeURIComponent(c4cLink)}&text=${msg}&hashtags=donate,charity,support,kindness`;      }, []);
 
       // const openModal = () => {
       //   setIsModalOpen(true);
       // };
 
-      const closeModal = () => {
-        setIsModalOpen(false);
-      };
-  
+  }, [])
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   return (  
     <div onClick={closeModal} className="overlay" style={{display:isModalOpen ? "fixed" : "none"}}>
@@ -102,4 +103,3 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
     </div>
   );
 };
-
