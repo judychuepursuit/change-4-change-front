@@ -64,9 +64,7 @@ button:hover {
   background-color: #ff7300;
 }
 
-/* sign-up-button {
-  background-color: #551aeb;
-}
 sign-up-button:hover {
   transform: scale(1.2);
-} */
+  background-color: aliceblue;
+}
