@@ -100,7 +100,7 @@ function Rewards() {
       <section className="reward-intro">
         <section className="middle">
           {/* <h2 className='earn-two'>earn &nbsp;</h2> */}
-          <h1 >Points & Badges:</h1>
+          <h1 className='points-header'>points & badges:</h1>
         </section>
         <p className='reward-pg'>
           Empower change with our revolutionary charity rewards!
@@ -109,15 +109,13 @@ function Rewards() {
         </p>
         <ul className='points-info'>
           <li>Sign up and earn a badge</li>
-          <li className='black'><strong>First 100 dollars:</strong></li>
-          <li>1 dollar donated = 1 point</li>
-          <li className='black'>After reaching 100 dollars:</li>
-          <li>1 dollar donated = 2 points </li>
+          <li className='black'>First 100 dollars: 1 dollar donated = 1 point</li>
+          <li className='black'>After reaching 100 dollars: 1 dollar donated = 2 points </li>
         </ul>
       </section>
       {/* <div className="points">Your Points: {points}</div> */}
 
-      <div className="points">Your Points: 53</div>
+      <div className="points">your points: 59</div>
       <div className='rewards-footer'>
         {/* <img src={flowChart} alt="flow chart" className='flow-chart' /> */}
         <div className='bottom'>

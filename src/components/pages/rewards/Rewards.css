@@ -39,6 +39,7 @@ body {
 .reward-pg {
   margin-left: 120px;
   padding: 12px;
+  font-size: larger;
 }
 
 .hm-bttn {
@@ -63,7 +64,7 @@ body {
 
 .top h1 {
   text-align: center;
-  font-size: 6em;
+  font-size: 8em;
   color: #ff7300;
 }
 
@@ -75,8 +76,9 @@ body {
 
 .reward-intro h1 {
   text-align: center;
-  font-size: xx-large;
+  font-size: 3em;
   color: #ff7300;
+  margin-left: 120px;
 }
 
 .top {
@@ -96,6 +98,7 @@ body {
   justify-content: end;
   width: 100%;
   margin-top: -30px;
+  margin-bottom: -280px;
 }
 .social-media img {
 margin: 2px;
@@ -164,7 +167,7 @@ width: 35px;
 .points-info li{
   list-style: none;
   padding: 8px;
-  font-size: 15px;
+  font-size: 20px;
   /* color: #ff7300; */
 }
 
@@ -250,8 +253,8 @@ width: 35px;
 }
 
 .badge-item img {
-  width: 65px;
-  height: 65px;
+  width: 85px;
+  height: 85px;
   
 }
 .last-badge img {
@@ -264,27 +267,27 @@ width: 35px;
 }
 
 .badge-item:nth-child(3) {
-  transform: translateY(20px);
+  transform: translateY(40px);
 }
 .badge-item:nth-child(5) {
-  transform: translateY(40px);
+  transform: translateY(0px);
 }
 
 .badge-item:nth-child(7) {
-  transform: translateY(20px);
+  transform: translateY(40px);
 }
 .badge-item:nth-child(9) {
   transform: translateY(0px);
 }
 
 .badge-item:nth-child(11) {
-  transform: translateY(20px);
-}
-.badge-item:nth-child(13) {
   transform: translateY(40px);
 }
-.badge-item:nth-child(15) {
+.badge-item:nth-child(13) {
   transform: translateY(0px);
+}
+.badge-item:nth-child(15) {
+  transform: translateY(40px);
 }
 
 
@@ -305,6 +308,9 @@ ul .points-info{
 
 .points {
 color: #ff7300;
-font-size: 30px;
+font-size: 40px;
 margin: 60px;
+margin-top: 100px;
+margin-left: 125px;
 }
+
