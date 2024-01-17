@@ -16,24 +16,24 @@ export default function HowItWorks() {
       <div className="how-it-works-image"/>
       <h1>how it works</h1><br></br>
       <div className="text-overlay hiw-header">
-      <div className="how-it-works-text"> Do you want to help make a change in someones life?, With the change 4 change app, you can donate to a charity with your spare change- although the change won't make a difference to you, it will make a big impact to charities and causes helping those in need.</div>
+      <div className="how-it-works-text"> Do you want to help make a change in someones life?, With change 4 change, you can donate to a charity with as little as .66¢ a day, although the change won't make a difference to you, it will make a big impact to charities and causes helping those in need.</div>
     <main>
       <section className="image-grid">
       {/* add and edit this to get links */}
         <Link to="/register" className="grid-item">
-          <h2>1. register/create an account</h2>
+          <h2>sign-up/create an account</h2>
           <img src={RegisterIcon}></img>
         </Link>
         <Link to="/charities" className="grid-item">
-          <h2>2. donate to your favorite charities</h2>
+          <h2>donate to your favorite charities</h2>
           <img src={DonateIcon}></img>
         </Link>
         <Link to="/rewards" className="grid-item">
-          <h2>3. earn virtual badges</h2>
+          <h2>earn virtual reward badges</h2>
           <img src={RewardsIcon}></img>
         </Link>
         <Link to="/connect-us" className="grid-item">
-          <h2>4. share with friends and family</h2>
+          <h2>share with friends and family</h2>
           <img src={ShareIcon}></img>
         </Link>
       </section>

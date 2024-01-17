@@ -74,6 +74,13 @@
 .hidden {
   display: none;
 }
+
+.sign-up-button:hover {
+  transform: scale(1.2);
+  background-color: #ffffff;
+  color: #551aeb;
+}
+
 /* adjust to 1450 c4c logo adjust but the menu items dissapear the sign up stays */
 @media screen and (max-width: 1240px) {
   .NavbarItems {
@@ -158,9 +165,14 @@
     /* opacity: 50%;*/
   }
 
-  .sign-up-button {
+.sign-up-button {
     display: none;
   }
+
+.sign-up-button:hover {
+    transform: scale(1.2);
+  }
+
   .nav-item {
     width: 80%;
   }
