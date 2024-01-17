@@ -2,51 +2,60 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 80px; /* Adjusted padding for better alignment */
-  padding-bottom: 70px; /* Adjusted padding for better alignment */
-  flex-direction: column; /* Stack children vertically */
+  padding-top: 150px; /* Consistent padding with PaymentForm */
+  padding-bottom: 60px; /* Consistent padding with PaymentForm */
+  flex-direction: column;
 }
 
 .transaction-history {
-  padding: 20px;
+  padding: 20px; /* Match padding from PaymentForm */
   border: 1px solid #551aeb;
-  border-radius: 8px;
-  width: 80%; /* Adjust width as needed */
-  max-width: 600px; /* Set a max-width for larger screens */
+  border-radius: 5px;
+  width: calc(100% - 20px); /* Responsive width */
+  max-width: 700px; /* Consistent max-width with PaymentForm */
   background-color: #f5f5f5;
-  margin-top: 100px; /* Adjust as needed for your layout */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Added shadow for depth */
+  margin: 0 auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Consistent shadow with PaymentForm */
+  font-family: "Arial", sans-serif; /* Consistent typography with PaymentForm */
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  flex-direction: column; /* Stack children vertically if needed */
 }
 
 .transaction-history h2 {
   color: #551aeb;
-  font-size: 24px;
-  margin-bottom: 20px;
-  width: 100%;
-  text-align: center; /* Center align text */
+  font-size: 50px; /* Consistent font size with PaymentForm */
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  border: none;
+  width: 100%; /* Take full width of the container */
+  text-align: center; /* Center the text within the h2 element */
 }
 
 .transaction-item {
   border-bottom: 1px solid #ddd;
   padding: 10px 0;
-}
-
-.transaction-item:not(:last-child) {
-  margin-bottom: 10px;
+  margin: 5px 0; /* Consistent spacing with PaymentForm */
 }
 
 .transaction-item h4,
 .transaction-item p {
-  margin: 5px 0;
   color: #333;
+  font-size: 16px; /* Consistent font size with PaymentForm */
 }
 
 .transaction-item-amount {
-  color: #ff7300; /* Highlight color for amount */
+  color: #ff7300; /* Consistent color with PaymentForm */
   font-weight: bold;
 }
 
-/* Responsive layout for smaller screens */
+/* Add hover effect consistent with PaymentForm */
+.transaction-item:hover {
+  background-color: #f9f9f9;
+}
+
+/* Responsive layout for smaller screens, similar to PaymentForm */
 @media (max-width: 768px) {
   .transaction-history-container {
     padding-top: 20px; /* Reduced padding on smaller screens */
