@@ -6,22 +6,7 @@ import "./BadgesModal.css"
 import blue from "../../reward-img/lev_1_blu_badge.png"
 import orange from "../../reward-img/lev 1 orange badge.png"
 import webImage from "../../reward-img/webImage.png"
-// const webDisplay = () => {
-//   const title = "change4change";
-//   const description = "Make a change with your change";
-//   const imageUrl = "URL to Your Image"; // Replace with the actual URL of your image
-//   const pageUrl = "https://change-4-change-frontend.onrender.com/";
 
-//   const ogTags = [
-//     { property: 'og:title', content: title },
-//     { property: 'og:description', content: description },
-//     { property: 'og:image', content: imageUrl },
-//     { property: 'og:url', content: pageUrl },
-//     { property: 'og:type', content: 'website' },
-//   ];
-
-//   Helmet.addTags(ogTags);
-// };
 export default function RewardsModal({isModalOpen, setIsModalOpen}) {
 
     const [points, setPoints] = useState(0);
@@ -49,7 +34,9 @@ export default function RewardsModal({isModalOpen, setIsModalOpen}) {
         // ig.href = `https://www.instagram.com/p/${encodeURIComponent(c4cLink)}/`;
     
         const twit = document.querySelector(".twitter");
-        // twit.href = `http://twitter.com/share?url=${encodeURIComponent(c4cLink)}&text=${msg}&hashtags=donate,charity,support,kindness`;      }, []);
+        twit.href = `http://twitter.com/share?url=${encodeURIComponent(c4cLink)}&text=${msg}&hashtags=donate,charity,support,kindness`;     
+       }, []);
+
 
       // const openModal = () => {
       //   setIsModalOpen(true);

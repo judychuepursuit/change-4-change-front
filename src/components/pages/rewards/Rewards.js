@@ -20,6 +20,7 @@ import lev1BluBadge from '../../../reward-img/lev_1_blu_badge.png';
 import lev1IndigoBadge from '../../../reward-img/lev 1 indigo badge.png';
 import lev1VioBadge from '../../../reward-img/lev 1 vio badge.png';
 import unicornBadge from '../../../reward-img/unicorn badge.png';
+import BadgesModal from "../../../components/modal/BadgesModal.js"
 
 import arrowDownImage from '../../../reward-img/down_arrow.png'
 import arrowUpImage from '../../../reward-img/up_arrow.png'
@@ -28,6 +29,7 @@ function Rewards() {
   // props.hideNavBar();
 
   const [points, setPoints] = useState(0);
+  const [isModalOpen, setIsModalOpen] = useState(true);
 
   const badgeImages = [
     lev1RedBadge,
@@ -74,7 +76,7 @@ function Rewards() {
         
         <section className="badges-container">
         <div className='badge-info'>
-          {badgeImages.map((badge, index) => (
+          {/* {badgeImages.map((badge, index) => (
             <React.Fragment key={index}>
               <div className={`badge-item ${index === badgeImages.length - 1 ? 'last-badge' : ''}`}>
                 <img
@@ -92,7 +94,8 @@ function Rewards() {
                 />
               )}
             </React.Fragment>
-          ))}
+          ))} */}
+          <img style={{"width" : "900px"}} src={flowChart} />
         </div>
       </section>
       </section>
@@ -110,33 +113,38 @@ function Rewards() {
         <ul className='points-info'>
           <li>Sign up and earn a badge</li>
           <li className='black'>First 100 dollars: 1 dollar donated = 1 point</li>
-          <li className='black'>After reaching 100 dollars: 1 dollar donated = 2 points </li>
+          <li className='black'>After reaching 100 dollars get a <span style={{"fontWeight" : 600}}> 2x bonus!</span> </li>
         </ul>
       </section>
       {/* <div className="points">Your Points: {points}</div> */}
 
-      <div className="points">your points: 59</div>
+      <div className="points">Your points: 59</div>
       <div className='rewards-footer'>
         {/* <img src={flowChart} alt="flow chart" className='flow-chart' /> */}
         <div className='bottom'>
-        <div className='donate-button'>
-        <Link to= "/charities"><button className="donate-bttn-badges">DONATE </button></Link>
-
-        </div>
-        <div className="social-media">
-          {/* <h4 className='share-with'>Share with</h4> */}
-          <a href="#" >
-            <img src={fb} alt='fb-logo'></img>
-          </a>
-          <a href="#" >
-            <img src={ig} alt='ig-logo'></img>
-          </a>
-          <a href="#">
-            <img src={twit} alt='twit-logo'></img> 
-          </a>
-        </div>
+          <div className="social-media">
+            {/* <h4 className='share-with'>Share with</h4> */}
+            <a href="#" >
+              <img src={fb} alt='fb-logo'></img>
+            </a>
+            <a href="#" >
+              <img src={ig} alt='ig-logo'></img>
+            </a>
+            <a href="#">
+              <img src={twit} alt='twit-logo'></img> 
+            </a>
+          </div>
+          <div className='donate-button'>
+            <Link to= "/charities"><button className="donate-bttn-badges">DONATE </button></Link>
+          </div>
       </div>
       </div>
+      <div>
+      <BadgesModal
+        isModalOpen={isModalOpen}
+        setIsModalOpen={setIsModalOpen}
+      />
+    </div>
     </div>
 
     
