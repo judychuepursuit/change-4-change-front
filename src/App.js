@@ -43,7 +43,6 @@ const App = () => {
 };
 
 const AppContent = () => {
-  const [isModalOpen, setIsModalOpen] = useState(true);
   const [userPurchaseData, setUserPurchaseData] = useState({
     recipient: null,
   });
@@ -87,10 +86,7 @@ const AppContent = () => {
           <Route path="/history" element={<History />} />
         </Routes>
       </Elements>
-      <RewardsModal
-      isModalOpen={isModalOpen}
-      setIsModalOpen={setIsModalOpen}
-      />
+
       <Footer />
     </Router>
   );
