@@ -142,6 +142,18 @@
   min-width: 70px; /* This ensures that buttons have a minimum width */
 }
 
+.amount-button,
+.daily-rate-button {
+  /* Add this class for the daily rate button */
+  flex: 1;
+  min-width: calc(
+    20% - 10px
+  ); /* Adjust the width so that all buttons can fit on the same line */
+  text-align: center; /* Center the text inside the button */
+  padding: 5px 0; /* Adjust the padding as necessary */
+  margin-right: 0; /* Remove the margin-right since we're using gap for spacing */
+}
+
 .amount-button.selected,
 .amount-button:hover {
   background-color: #ff7300; /* Highlight color for selected/hover state */
@@ -354,6 +366,12 @@ footer {
   .amount-button {
     padding: 5px 10px; /* Smaller padding on mobile */
     font-size: 0.9em; /* Smaller font size on mobile */
+  }
+
+  .amount-button,
+  .daily-rate-button {
+    min-width: calc(25% - 10px); /* Adjust the min-width for mobile screens */
+    padding: 5px 5px; /* Adjust padding for mobile */
   }
   /* Adjust the submit button size on mobile */
   .payment-form button[type="submit"] {

@@ -1,4 +1,3 @@
-// import React, { useState } from "react";
 import React, { useState, useEffect } from "react";
 
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
@@ -165,49 +164,22 @@ const PaymentForm = (props) => {
     return () => window.removeEventListener("resize", updatePadding);
   }, []);
 
-  // Conditional rendering for one-time and monthly donation amounts
-  const donationAmountSection =
-    donationFrequency === "one-time" ? (
-      <>
-        <p>Choose a preset amount for one time donation.</p>
-        <div className="predefined-amounts">
-          {/* Map through oneTimeAmounts to display buttons */}
-          {oneTimeAmounts.map((amountValue) => (
-            <AmountButton
-              key={amountValue}
-              amount={amountValue}
-              selectedAmount={selectedOneTimeAmount}
-              setAmount={handleAmountButtonClick}
-            />
-          ))}
-        </div>
-        <p>The minimum one-time donation is $10.66</p>
-      </>
-    ) : (
-      <>
-        <p>Choose a preset amount for monthly donation.</p>
-        <div className="predefined-amounts">
-          {/* Map through monthlyAmounts to display buttons */}
-          {monthlyAmounts.map((amountValue) => (
-            <AmountButton
-              key={amountValue}
-              amount={amountValue}
-              selectedAmount={selectedMonthlyAmount}
-              setAmount={handleAmountButtonClick}
-            />
-          ))}
-        </div>
-        <button type="button" onClick={handleDailyRateChange}>
-          $0.66 per day - per month
-        </button>
-        <input
-          type="text"
-          className="custom-daily-amount-input"
-          placeholder="Enter a custom daily amount"
-          onChange={handleCustomDailyAmountChange}
-        />
-      </>
+  // Add a new button for the daily rate in the monthlyAmounts section
+  const MonthlyAmountButton = ({ dailyRate, selectedAmount, setAmount }) => {
+    // Add a selected class if this amount is selected
+    const isSelected = dailyRate.toString() === selectedAmount;
+    const className = isSelected ? "amount-button selected" : "amount-button";
+    return (
+      <button
+        type="button"
+        className={className}
+        aria-pressed={isSelected ? "true" : "false"} // for accessibility
+        onClick={() => setAmount(dailyRate.toString())}
+      >
+        ${dailyRate} per day
+      </button>
     );
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -411,7 +383,7 @@ const PaymentForm = (props) => {
             <>
               <p>Choose a preset amount for monthly donation.</p>
               <button type="button" onClick={handleDailyRateChange}>
-                $0.66 per day - per month
+                $0.66 per day
               </button>
               <div className="predefined-amounts">
                 {monthlyAmounts.map((amountValue) => (
