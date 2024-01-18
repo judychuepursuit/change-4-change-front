@@ -377,24 +377,15 @@ const PaymentForm = (props) => {
                   />
                 ))}
               </div>
+              {/* <p>The minimum one-time donation is $10.66</p> */}
             </>
           ) : (
             <>
               <p>Choose a preset amount for monthly donation.</p>
-
+              <button type="button" onClick={handleDailyRateChange}>
+                $0.66 per day
+              </button>
               <div className="predefined-amounts">
-                <button
-                  type="button"
-                  className={`amount-button ${
-                    customDailyAmount === DAILY_RATE.toFixed(2)
-                      ? "selected"
-                      : ""
-                  }`}
-                  onClick={handleDailyRateChange}
-                >
-                  $0.66 per day
-                </button>
-
                 {monthlyAmounts.map((amountValue) => (
                   <AmountButton
                     key={amountValue}
@@ -404,6 +395,9 @@ const PaymentForm = (props) => {
                   />
                 ))}
               </div>
+              {/* <button type="button" onClick={handleDailyRateChange}>
+                $0.66 per day - per month
+              </button> */}
               <input
                 type="text"
                 className="custom-daily-amount-input"
