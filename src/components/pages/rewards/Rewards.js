@@ -74,31 +74,26 @@ function Rewards() {
 
         <section className="badges-container">
           <div className="badge-info">
-            {badgeImages.map((badge, index) => (
-              <React.Fragment key={index}>
-                <div
-                  className={`badge-item ${
-                    index === badgeImages.length - 1 ? "last-badge" : ""
-                  }`}
-                >
-                  <img
-                    src={badge}
-                    alt={`Badge ${index + 1}`}
-                    // style={{ width: '70px', height: '70px' }}
-                  />
-                  <h1 className="badge-names">{badgeNames[index]}</h1>
-                </div>
-                {index < badgeImages.length - 1 && (
-                  <img
-                    src={arrowImages[index % arrowImages.length].src}
-                    alt={`Arrow ${index + 1}`}
-                    className={`arrow-image ${
-                      arrowImages[index % arrowImages.length].className
-                    }`}
-                  />
-                )}
-              </React.Fragment>
-            ))}
+            {/* {badgeImages.map((badge, index) => (
+            <React.Fragment key={index}>
+              <div className={`badge-item ${index === badgeImages.length - 1 ? 'last-badge' : ''}`}>
+                <img
+                  src={badge}
+                  alt={`Badge ${index + 1}`}
+                  // style={{ width: '70px', height: '70px' }}
+                />
+                <h1 className='badge-names'>{badgeNames[index]}</h1>
+              </div>
+              {index < badgeImages.length - 1 && (
+                <img
+                src={arrowImages[index % arrowImages.length].src}
+                alt={`Arrow ${index + 1}`}
+                className={`arrow-image ${arrowImages[index % arrowImages.length].className}`}
+                />
+              )}
+            </React.Fragment>
+          ))} */}
+            <img style={{ width: "900px" }} src={flowChart} />
           </div>
         </section>
       </section>
@@ -120,21 +115,17 @@ function Rewards() {
             First 100 dollars: 1 dollar donated = 1 point
           </li>
           <li className="black">
-            After reaching 100 dollars: 1 dollar donated = 2 points{" "}
+            After reaching 100 dollars get a{" "}
+            <span style={{ fontWeight: 600 }}> 2x bonus!</span>{" "}
           </li>
         </ul>
       </section>
       {/* <div className="points">Your Points: {points}</div> */}
 
-      <div className="points">your points: 59</div>
+      <div className="points">Your points: 59</div>
       <div className="rewards-footer">
         {/* <img src={flowChart} alt="flow chart" className='flow-chart' /> */}
         <div className="bottom">
-          <div className="donate-button">
-            <Link to="/charities">
-              <button className="donate-bttn-badges">DONATE </button>
-            </Link>
-          </div>
           <div className="social-media">
             {/* <h4 className='share-with'>Share with</h4> */}
             <a href="#">
@@ -147,13 +138,12 @@ function Rewards() {
               <img src={twit} alt="twit-logo"></img>
             </a>
           </div>
+          <div className="donate-button">
+            <Link to="/charities">
+              <button className="donate-bttn-badges">DONATE </button>
+            </Link>
+          </div>
         </div>
-      </div>
-      <div>
-        <BadgesModal
-          isModalOpen={isModalOpen}
-          setIsModalOpen={setIsModalOpen}
-        />
       </div>
       <div>
         <BadgesModal

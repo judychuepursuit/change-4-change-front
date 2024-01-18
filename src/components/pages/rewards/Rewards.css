@@ -38,7 +38,7 @@ body {
 .reward-pg {
   margin-left: 120px;
   padding: 12px;
-  font-size: larger;
+  font-size: 1.7em;
 }
 
 .hm-bttn {
@@ -92,13 +92,13 @@ body {
   flex-direction: row;
 }
 
-.social-media {
+/* .social-media{
   display: flex;
   justify-content: end;
   width: 100%;
   margin-top: -30px;
   margin-bottom: -280px;
-}
+} */
 .social-media img {
   margin: 2px;
   width: 35px;
@@ -164,7 +164,7 @@ body {
 .points-info li {
   list-style: none;
   padding: 8px;
-  font-size: 20px;
+  font-size: 1.7em;
   /* color: #ff7300; */
 }
 
@@ -220,9 +220,17 @@ body {
 }
 
 .donate-bttn-badges {
-  margin-top: 200px;
+  /* margin-top: 200px; */
   background-color: #ff7300;
   color: white;
+  padding: 15px 20px;
+  width: 200px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.donate-bttn-badges:hover {
+  background-color: #e27318;
 }
 
 .arrow-image {
@@ -303,6 +311,7 @@ ul .points-info {
   color: #ff7300;
   font-size: 40px;
   margin: 60px;
-  margin-top: 100px;
+  margin-top: 20px;
   margin-left: 125px;
+  text-align: right;
 }
