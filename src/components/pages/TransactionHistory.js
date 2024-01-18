@@ -4,6 +4,8 @@ import "./TransactionHistory.css";
 const TransactionHistory = () => {
   const [transactions, setTransactions] = useState([]);
 
+  const API = process.env.REACT_APP_API_URL;
+
   useEffect(() => {
     // console.log('TransactionHistory component props:', props);
     // console.log('TransactionHistory component state:', state);
@@ -12,7 +14,7 @@ const TransactionHistory = () => {
     const fetchTransactions = async () => {
       console.log("Fetching transactions");
       try {
-        const response = await fetch("http://localhost:3001/transactions");
+        const response = await fetch(`${API}/transactions`);
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();
         console.log(data.map((t) => t.created_at)); // This will log all the created_at values
