@@ -8,13 +8,10 @@
 }
 
 .charities__suggested-charities {
-  /* margin-top: -100px; Adjust the top margin as needed */
-  font-weight: 600;
   text-align: center;
   font-size: 3em;
   color: #ff7300;
   position: relative;
-  left: -80px;
 }
 
 .charities__suggested-charities span {
@@ -57,7 +54,7 @@
   bottom: 0;
   left: 0;
   align-self: flex-end;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 .charities__main-content {
@@ -71,7 +68,7 @@
 }
 
 .charities__type {
-  font-size: 18px;
+  font-size: 20px;
   padding-left: 10px;
 }
 

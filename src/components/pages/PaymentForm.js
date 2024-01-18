@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+
 import { useStripe, useElements, CardElement } from "@stripe/react-stripe-js";
 import { useNavigate } from "react-router-dom";
 import "./PaymentForm.css";
@@ -144,6 +146,25 @@ const PaymentForm = (props) => {
     }
   };
 
+  // States to handle dynamic padding and footer height
+  const [topPadding, setTopPadding] = useState(0);
+  const [footerHeight, setFooterHeight] = useState(0);
+
+  // Function to update padding based on element sizes
+  const updatePadding = () => {
+    const headerHeight = document.querySelector("header")?.offsetHeight || 0;
+    const footerHeight = document.querySelector("footer")?.offsetHeight || 0;
+    setTopPadding(headerHeight + 20); // add an extra 20px or more if needed
+    setFooterHeight(footerHeight);
+  };
+
+  // Update padding on mount and on window resize
+  useEffect(() => {
+    updatePadding();
+    window.addEventListener("resize", updatePadding);
+    return () => window.removeEventListener("resize", updatePadding);
+  }, []);
+
   // Conditional rendering for one-time and monthly donation amounts
   const donationAmountSection =
     donationFrequency === "one-time" ? (
@@ -285,7 +306,13 @@ const PaymentForm = (props) => {
     setIsSubmitting(false); // Re-enable the form for future submissions, if necessary
   };
   return (
-    <div className="payment-container">
+    <div
+      className="payment-container"
+      style={{
+        "--top-padding": `${topPadding}px`,
+        "--footer-height": `${footerHeight}px`,
+      }}
+    >
       <form onSubmit={handleSubmit} className="payment-form">
         <h2>payment</h2>
 
@@ -445,8 +472,8 @@ const PaymentForm = (props) => {
               checked={coverFees}
               onChange={handleCoverFeesChange}
             />
-            I'd like to cover the fees associated with my donation so more of my
-            donation goes directly to charity.
+            I'd like to include the nominal processing fees associated with my
+            donation.
           </label>
         </div>
 

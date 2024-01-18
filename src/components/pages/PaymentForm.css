@@ -1,10 +1,11 @@
 .payment-container {
   display: flex;
   justify-content: center; /* Align to the start of the container */
-  align-items: center;
-  height: 100vh;
-  padding-top: 80px; /* Add padding to the top to push the form down slightly */
-  margin-top: 100px; /* Adjust this value to move the form up */
+  align-items: flex-start; /* changed from center to flex-start */
+  min-height: 100vh;
+  padding-top: 150px;
+
+  margin-bottom: var(--footer-height, 0px); /* Dynamically set via JavaScript */
 }
 
 .payment-form {
@@ -15,7 +16,6 @@
   border: 1px solid #551aeb;
   border-radius: 5px;
   max-width: 700px; /* Adjust this as needed */
-  width: 100%; /* This will make the form take full width of its parent */
   width: calc(100% - 20px); /* Adjust width to account for padding */
 
   background-color: #f5f5f5;
@@ -57,13 +57,9 @@
   background-color: #551aeb;
 }
 
-.payment-form .form-group {
-  width: 100%; /* Set width to 100% of its parent */
-}
-
 .payment-form .form-group.inline {
   align-items: center;
-  width: 100%;
+  /* width: 100%; */
   display: flex;
   gap: 10px;
   justify-content: space-between; /* This will align items properly */
@@ -75,6 +71,7 @@
 
 .form-group {
   margin-bottom: 20px; /* Adjust spacing as needed */
+  width: 100%; /* Set width to 100% of its parent */
 }
 
 .form-group label {
@@ -337,6 +334,11 @@
   vertical-align: middle;
 }
 
+/* Add this to ensure the footer is always at the bottom of the page */
+footer {
+  margin-top: auto;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -355,10 +357,18 @@
     padding: 5px 10px; /* Smaller padding on mobile */
     font-size: 0.9em; /* Smaller font size on mobile */
   }
-
   /* Adjust the submit button size on mobile */
   .payment-form button[type="submit"] {
     padding: 10px 20px; /* Smaller padding on mobile */
     font-size: 1em; /* Adjust font size on mobile */
+  }
+  .payment-container {
+    padding-top: 60px; /* Smaller padding for mobile */
+    padding-bottom: 60px; /* Smaller padding for mobile */
+  }
+  .payment-form {
+    /* Adjust form size and layout for mobile */
+    max-width: 100%;
+    width: calc(100% - 40px); /* Add more padding on the sides */
   }
 }
